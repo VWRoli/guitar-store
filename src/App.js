@@ -10,7 +10,7 @@ import './css/main.css';
 function App() {
   return (
     <Router>
-      <div className="App">
+      <main className="App">
         <Navbar />
         <Switch>
           <Route exact path="/">
@@ -29,7 +29,7 @@ function App() {
             <ErrorPage />
           </Route>
         </Switch>
-      </div>
+      </main>
     </Router>
   );
 }

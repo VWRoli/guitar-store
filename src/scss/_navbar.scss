@@ -25,12 +25,14 @@ nav {
   h1 {
     position: relative;
     z-index: 2;
-    padding: 0.5rem;
     font-weight: 300;
-    color: #bbb;
-    span {
-      font-weight: 500;
-      color: $light-bg;
+    padding: 0.5rem;
+    a {
+      color: #bbb;
+      span {
+        font-weight: 500;
+        color: $light-bg;
+      }
     }
   }
 }

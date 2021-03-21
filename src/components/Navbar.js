@@ -17,7 +17,9 @@ const Navbar = () => {
           <div className="mobile-header">
             <div className="nav-header">
               <h1>
-                Guitar<span>Store</span>
+                <Link to="/">
+                  Guitar<span>Store</span>
+                </Link>
               </h1>
             </div>
             <button className="menu-bars" onClick={() => setActive(!active)}>
@@ -26,17 +28,17 @@ const Navbar = () => {
           </div>
           <ul className={active ? 'nav-links active-menu' : 'nav-links'}>
             <li>
-              <Link to="/" onClick={() => setActive(!active)}>
+              <Link to="/" onClick={() => setActive(false)}>
                 Home
               </Link>
             </li>
             <li>
-              <Link to="/products" onClick={() => setActive(!active)}>
+              <Link to="/products" onClick={() => setActive(false)}>
                 Products
               </Link>
             </li>
             <li>
-              <Link to="/about" onClick={() => setActive(!active)}>
+              <Link to="/about" onClick={() => setActive(false)}>
                 About
               </Link>
             </li>

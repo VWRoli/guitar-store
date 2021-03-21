@@ -50,12 +50,15 @@ nav {
 .nav-header h1 {
   position: relative;
   z-index: 2;
-  padding: 0.5rem;
   font-weight: 300;
+  padding: 0.5rem;
+}
+
+.nav-header h1 a {
   color: #bbb;
 }
 
-.nav-header h1 span {
+.nav-header h1 a span {
   font-weight: 500;
   color: #f6f6f6;
 }
@@ -146,4 +149,46 @@ nav {
 
 .active-menu {
   height: 8rem;
+}
+
+#hero {
+  position: relative;
+  display: grid;
+  place-content: center;
+  background: #016a78;
+  height: 50vh;
+}
+
+#hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../img/bg.jpg) no-repeat bottom/cover;
+  height: 100%;
+  opacity: 0.7;
+}
+
+.deals {
+  position: relative;
+  color: #fff;
+  border: 10px solid #fff;
+  border-radius: 10px;
+  padding: 2rem;
+  width: 40vw;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.deals h1 {
+  font-size: 4.5rem;
+}
+
+.deals h2 {
+  font-size: 2rem;
+  text-align: right;
 }
