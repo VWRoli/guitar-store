@@ -1,3 +1,12 @@
 $main-color: #016a78;
 $secondary-color: #424242;
 $light-bg: #f6f6f6;
+
+@mixin icon-hover {
+  color: $secondary-color;
+  cursor: pointer;
+  &:hover {
+    color: $main-color;
+    transform: scale(1.1);
+  }
+}

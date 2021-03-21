@@ -3,13 +3,30 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+a {
   color: #424242;
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+button {
+  outline: none;
+}
+
+nav {
+  background-color: #f6f6f6;
 }
 
 .nav-center {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding: 1rem;
 }
 
 .nav-header {
@@ -24,13 +41,15 @@
   left: 0;
   height: 100%;
   width: 100%;
-  z-index: -1;
+  z-index: 1;
   transform: skewX(-15deg);
   background-color: #016a78;
   box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 .nav-header h1 {
+  position: relative;
+  z-index: 2;
   padding: 0.5rem;
   font-weight: 300;
   color: #bbb;
@@ -39,4 +58,92 @@
 .nav-header h1 span {
   font-weight: 500;
   color: #f6f6f6;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-links li a {
+  padding: 1rem;
+  margin: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.nav-links li a:hover {
+  color: #016a78;
+  border-bottom: 1px solid #016a78;
+}
+
+.nav-controls .control-icons {
+  color: #424242;
+  cursor: pointer;
+  font-size: 1.5rem;
+  margin: 1rem;
+}
+
+.nav-controls .control-icons:hover {
+  color: #016a78;
+  transform: scale(1.1);
+}
+
+.sale-banner {
+  background-color: #016a78;
+  color: #f6f6f6;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.sale-banner a {
+  color: #f6f6f6;
+  text-decoration: underline;
+}
+
+.menu-bars {
+  color: #f6f6f6;
+  background-color: #016a78;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  display: grid;
+  place-content: center;
+  padding: 5px;
+  height: fit-content;
+  cursor: pointer;
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .nav-center {
+    flex-direction: column;
+  }
+  .menu-bars {
+    display: grid;
+  }
+  .nav-links {
+    height: 0;
+    overflow: hidden;
+    flex-direction: column;
+    width: 100%;
+    text-align: right;
+    transition: all 0.5s ease-in-out;
+  }
+  .nav-links li {
+    margin: 0.5rem;
+  }
+  .nav-links li a {
+    padding: 0;
+    display: block;
+    width: 100%;
+    margin: 0;
+  }
+  .mobile-header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+.active-menu {
+  height: 8rem;
 }

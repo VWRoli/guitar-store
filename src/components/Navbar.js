@@ -1,38 +1,57 @@
 import { Link } from 'react-router-dom';
-import { FaSearch, FaShoppingCart, FaBalanceScale } from 'react-icons/fa';
+import { useState } from 'react';
+import {
+  FaSearch,
+  FaShoppingCart,
+  FaBalanceScale,
+  FaBars,
+} from 'react-icons/fa';
 
 const Navbar = () => {
+  const [active, setActive] = useState(false);
+
   return (
     <>
       <nav>
         <div className="nav-center">
-          <div className="nav-header">
-            <h1>
-              Guitar<span>Store</span>
-            </h1>
+          <div className="mobile-header">
+            <div className="nav-header">
+              <h1>
+                Guitar<span>Store</span>
+              </h1>
+            </div>
+            <button className="menu-bars" onClick={() => setActive(!active)}>
+              <FaBars className="bars-icon" />
+            </button>
           </div>
-          <ul className="nav-links">
+          <ul className={active ? 'nav-links active-menu' : 'nav-links'}>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/" onClick={() => setActive(!active)}>
+                Home
+              </Link>
             </li>
             <li>
-              <Link to="/products">Products</Link>
+              <Link to="/products" onClick={() => setActive(!active)}>
+                Products
+              </Link>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <Link to="/about" onClick={() => setActive(!active)}>
+                About
+              </Link>
             </li>
           </ul>
           <div className="nav-controls">
-            <FaSearch />
-            <FaBalanceScale />
-            <FaShoppingCart />
+            <FaSearch className="control-icons" />
+            <FaBalanceScale className="control-icons" />
+            <FaShoppingCart className="control-icons" />
           </div>
         </div>
       </nav>
       <div className="sale-banner">
-        <h2>
+        <p>
           Check out our On Sale Porducts! <Link to="/onSale">Here!</Link>
-        </h2>
+        </p>
       </div>
     </>
   );
