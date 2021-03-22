@@ -4,6 +4,7 @@ import {
   FaSquare,
   FaCheckSquare,
 } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import { priceFormatter } from '../helpers';
 
 const ListItem = ({ product }) => {
@@ -15,14 +16,21 @@ const ListItem = ({ product }) => {
     type,
     is_top_seller,
     isOnSale,
+    id,
   } = product;
   return (
     <article className="list-item">
+      {isOnSale ? <div className="sale-sticker">On Sale!</div> : ''}
+
       <div className="img-container">
-        <img src={images[0]} alt={name} />
+        <Link to={`/product/${id}`}>
+          <img src={images[0]} alt={name} />
+        </Link>
       </div>
       <div className="info-box">
-        <h3>{name}</h3>
+        <h3>
+          <Link to={`/product/${id}`}>{name}</Link>
+        </h3>
         <p>{type}</p>
       </div>
       <div className="price-box">

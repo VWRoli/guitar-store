@@ -34,6 +34,30 @@ img {
   transform: scale(1.1);
 }
 
+.sale-sticker {
+  position: absolute;
+  top: 25%;
+  right: 1rem;
+  z-index: 1;
+  color: #f6f6f6;
+  padding: 0.05rem 0.35rem;
+}
+
+.sale-sticker::before {
+  display: block;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  transform: skewX(-15deg);
+  background-color: #d80e2f;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
 nav {
   background-color: #f6f6f6;
 }
@@ -225,44 +249,54 @@ nav {
   grid-gap: 1rem;
 }
 
-.list .list-item {
+.list-item {
   background-color: #f6f6f6;
   border: 1px solid #eee;
   padding: 1rem 1rem 0.25rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 
-.list .list-item h3 {
+.list-item:hover .img-container {
+  transition: all 0.15s ease-in-out;
+  opacity: 0.6;
+}
+
+.list-item:hover a {
+  color: #016a78;
+}
+
+.list-item h3 {
   color: #424242;
   font-size: 0.95rem;
 }
 
-.list .list-item p {
+.list-item p {
   color: #999;
   font-size: 0.75rem;
 }
 
-.list .list-item .img-container {
+.list-item .img-container {
   max-width: 250px;
 }
 
-.list .list-item .info-box {
+.list-item .info-box {
   width: 100%;
 }
 
-.list .list-item .price-box {
+.list-item .price-box {
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
-.list .list-item .price-box .price h2 {
+.list-item .price-box .price h2 {
   color: #016a78;
 }
 
-.list .list-item .price-box .controls {
+.list-item .price-box .controls {
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: center;
@@ -272,6 +306,6 @@ nav {
   color: #424242;
 }
 
-.list .list-item .price-box .controls .control-icons {
+.list-item .price-box .controls .control-icons {
   margin: 0;
 }
