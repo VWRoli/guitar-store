@@ -1,5 +1,9 @@
 const SingleProduct = () => {
-  return <div>SingleProduct</div>;
+  return (
+    <div>
+      <h2> Multiple items </h2>
+    </div>
+  );
 };
 
 export default SingleProduct;

@@ -25,25 +25,9 @@ img {
 }
 
 .sale-sticker {
-  position: absolute;
-  top: 25%;
-  right: 1rem;
-  z-index: 1;
-  color: $light-bg;
-  padding: 0.05rem 0.35rem;
-
-  &::before {
-    display: block;
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-    transform: skewX(-15deg);
-    background-color: $sale-color;
-    border-radius: 5px;
-    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
-  }
+  @include sticker($light-bg, $sale-color);
+}
+.top-seller-sticker {
+  @include sticker($light-bg, #2ec4b6);
+  top: 35%;
 }

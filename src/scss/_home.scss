@@ -17,7 +17,7 @@
     opacity: 0.7;
   }
 }
-.deals {
+.main-banner {
   position: relative;
   color: #fff;
   border: 10px solid #fff;
@@ -47,7 +47,11 @@
 .list {
   width: 90vw;
   margin: 2rem auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 1rem;
+  //display: grid;
+  // grid-template-columns: repeat(4, 1fr);
+  // grid-template-rows: 1fr;
+  // grid-gap: 1rem;
+  button {
+    color: #000000;
+  }
 }

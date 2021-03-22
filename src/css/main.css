@@ -58,6 +58,31 @@ img {
   box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
+.top-seller-sticker {
+  position: absolute;
+  top: 25%;
+  right: 1rem;
+  z-index: 1;
+  color: #f6f6f6;
+  padding: 0.05rem 0.35rem;
+  top: 35%;
+}
+
+.top-seller-sticker::before {
+  display: block;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  transform: skewX(-15deg);
+  background-color: #2ec4b6;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
 nav {
   background-color: #f6f6f6;
 }
@@ -211,7 +236,7 @@ nav {
   opacity: 0.7;
 }
 
-.deals {
+.main-banner {
   position: relative;
   color: #fff;
   border: 10px solid #fff;
@@ -225,12 +250,12 @@ nav {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
 }
 
-.deals h1 {
+.main-banner h1 {
   font-size: 4.5rem;
   text-shadow: 2px 2px 2px #000000;
 }
 
-.deals h2 {
+.main-banner h2 {
   font-size: 2rem;
   text-align: right;
   text-shadow: 2px 2px 2px #000000;
@@ -244,9 +269,10 @@ nav {
 .list {
   width: 90vw;
   margin: 2rem auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 1rem;
+}
+
+.list button {
+  color: #000000;
 }
 
 .list-item {
@@ -257,6 +283,7 @@ nav {
   flex-direction: column;
   align-items: center;
   position: relative;
+  margin: 1rem;
 }
 
 .list-item:hover .img-container {
@@ -308,4 +335,8 @@ nav {
 
 .list-item .price-box .controls .control-icons {
   margin: 0;
+}
+
+.list-item .stock-icon {
+  color: #016a78;
 }

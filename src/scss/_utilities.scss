@@ -11,3 +11,27 @@ $sale-color: #d80e2f;
     transform: scale(1.1);
   }
 }
+
+@mixin sticker($color, $bg) {
+  position: absolute;
+  top: 25%;
+  right: 1rem;
+  z-index: 1;
+  color: $color;
+  padding: 0.05rem 0.35rem;
+
+  &::before {
+    display: block;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    transform: skewX(-15deg);
+    background-color: $bg;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+  }
+}

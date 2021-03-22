@@ -6,6 +6,7 @@
   flex-direction: column;
   align-items: center;
   position: relative;
+  margin: 1rem;
 
   &:hover {
     .img-container {
@@ -52,5 +53,8 @@
         margin: 0;
       }
     }
+  }
+  .stock-icon {
+    color: $main-color;
   }
 }

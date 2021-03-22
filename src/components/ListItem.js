@@ -18,9 +18,15 @@ const ListItem = ({ product }) => {
     isOnSale,
     id,
   } = product;
+
   return (
     <article className="list-item">
       {isOnSale ? <div className="sale-sticker">On Sale!</div> : ''}
+      {is_top_seller ? (
+        <div className="top-seller-sticker">Top Seller</div>
+      ) : (
+        ''
+      )}
 
       <div className="img-container">
         <Link to={`/product/${id}`}>
@@ -36,7 +42,10 @@ const ListItem = ({ product }) => {
       <div className="price-box">
         <div className="price">
           <h2>{priceFormatter(price)}</h2>
-          <p>In Stock: {inStock ? <FaSquare /> : <FaCheckSquare />}</p>
+          <p>
+            In Stock:{' '}
+            {inStock ? <FaSquare /> : <FaCheckSquare className="stock-icon" />}
+          </p>
         </div>
         <div className="controls">
           <FaBalanceScale className="control-icons" />
