@@ -14,7 +14,7 @@ const reducer = (state, action) => {
   }
 
   if (action.type === ERROR) {
-    return { ...state, isError: true };
+    return { ...state, isError: true, isLoading: false };
   }
 
   return { ...state };

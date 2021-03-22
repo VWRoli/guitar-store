@@ -109,6 +109,17 @@ img {
   }
 }
 
+.error-container {
+  grid-column: span 3;
+  color: #d80e2f;
+  text-align: center;
+}
+
+.error-container .error-sign {
+  font-size: 2.5rem;
+  margin-top: 3rem;
+}
+
 nav {
   background-color: #f6f6f6;
 }
@@ -297,8 +308,8 @@ nav {
   margin: 2rem auto;
 }
 
-.list button {
-  color: #000000;
+.top-sellers {
+  background-color: #f6f6f6;
 }
 
 .list-item {
@@ -326,9 +337,19 @@ nav {
   font-size: 0.95rem;
 }
 
-.list-item p {
+.list-item .type-rating {
   color: #999;
   font-size: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.list-item .type-rating .rating-number {
+  margin-left: 5px;
+}
+
+.list-item .type-rating .star-icon {
+  color: #ffcc02;
 }
 
 .list-item .img-container {

@@ -3,6 +3,7 @@ import {
   FaBalanceScale,
   FaSquare,
   FaCheckSquare,
+  FaStar,
 } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { priceFormatter } from '../helpers';
@@ -15,13 +16,14 @@ const ListItem = ({ product }) => {
     inStock,
     type,
     is_top_seller,
-    isOnSale,
+    is_on_sale,
     id,
+    rating,
   } = product;
 
   return (
     <article className="list-item">
-      {isOnSale ? <div className="sale-sticker">On Sale!</div> : ''}
+      {is_on_sale ? <div className="sale-sticker">On Sale!</div> : ''}
       {is_top_seller ? (
         <div className="top-seller-sticker">Top Seller</div>
       ) : (
@@ -37,7 +39,16 @@ const ListItem = ({ product }) => {
         <h3>
           <Link to={`/product/${id}`}>{name}</Link>
         </h3>
-        <p>{type}</p>
+        <div className="type-rating">
+          <span>{type}</span>
+          <span>
+            {Array.from(Array(rating)).map((_, i) => (
+              <FaStar key={i} className="star-icon" />
+            ))}
+
+            <span className="rating-number">{rating}</span>
+          </span>
+        </div>
       </div>
       <div className="price-box">
         <div className="price">

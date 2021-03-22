@@ -28,20 +28,22 @@ export const StoreProvider = ({ children }) => {
         urls.map((url) => fetch(url).catch((error) => error))
       );
 
+      //Throw error
+      if (!responses[0].ok || !responses[1].ok)
+        throw new Error('Problem gettin products data.');
+
       const data = await Promise.all(
         responses.map((response) =>
           response.json ? response.json().catch((error) => error) : response
         )
       );
 
-      console.log({} === data[0]);
       //Set gutiars
       dispatch({ type: SET_GUITARS, payload: data[0] });
 
       //Set amps
       dispatch({ type: SET_AMPS, payload: data[1] });
     } catch (error) {
-      console.log(error);
       dispatch({ type: ERROR });
     }
   }, []);

@@ -47,11 +47,7 @@
 .list {
   width: 90vw;
   margin: 2rem auto;
-  //display: grid;
-  // grid-template-columns: repeat(4, 1fr);
-  // grid-template-rows: 1fr;
-  // grid-gap: 1rem;
-  button {
-    color: #000000;
-  }
+}
+.top-sellers {
+  background-color: $light-bg;
 }
