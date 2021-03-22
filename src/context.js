@@ -1,7 +1,7 @@
 import React, { useReducer, useContext, useEffect, useCallback } from 'react';
 import reducer from './reducer';
 
-import { API_ROOT, LOADING, SET_AMPS, SET_GUITARS } from './constant';
+import { API_ROOT, LOADING, SET_AMPS, SET_GUITARS, ERROR } from './constant';
 
 const StoreContext = React.createContext();
 
@@ -34,14 +34,15 @@ export const StoreProvider = ({ children }) => {
         )
       );
 
+      console.log({} === data[0]);
       //Set gutiars
       dispatch({ type: SET_GUITARS, payload: data[0] });
 
       //Set amps
       dispatch({ type: SET_AMPS, payload: data[1] });
     } catch (error) {
-      //todo error handling
       console.log(error);
+      dispatch({ type: ERROR });
     }
   }, []);
 

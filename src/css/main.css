@@ -83,6 +83,32 @@ img {
   box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
+/*? SPINNER */
+.spinner-container {
+  margin: auto;
+  width: 2rem;
+  grid-column: span 3;
+}
+
+.spinner {
+  margin: 2.5rem auto;
+  text-align: center;
+  height: 2rem;
+  width: 2rem;
+  color: #016a78;
+  transform-origin: center center;
+  animation: rotate 2s infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 nav {
   background-color: #f6f6f6;
 }

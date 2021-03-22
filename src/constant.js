@@ -4,3 +4,4 @@ export const API_ROOT = `https://my-guitarstore-api.herokuapp.com/`;
 export const LOADING = 'LOADING';
 export const SET_GUITARS = 'SET_GUITARS';
 export const SET_AMPS = 'SET_AMPS';
+export const ERROR = 'ERROR';

@@ -1,0 +1,9 @@
+.error-container {
+  grid-column: span 3;
+  color: $sale-color;
+  text-align: center;
+
+  .error-sign {
+    font-size: 2.5rem;
+  }
+}

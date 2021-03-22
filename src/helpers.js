@@ -42,7 +42,7 @@ function SamplePrevArrow(props) {
 }
 //Slider settings
 export const settings = {
-  infinite: true,
+  infinite: false,
   speed: 1500,
   slidesToShow: 4,
   slidesToScroll: 4,
