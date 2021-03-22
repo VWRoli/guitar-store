@@ -14,3 +14,12 @@ li {
 button {
   outline: none;
 }
+img {
+  width: 100%;
+}
+
+.control-icons {
+  @include icon-hover();
+  font-size: 1.5rem;
+  margin: 1rem;
+}

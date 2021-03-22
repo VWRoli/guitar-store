@@ -1,11 +1,20 @@
 import ListItem from '../ListItem';
+import { useGlobalContext } from '../../context';
 
 const OnSaleList = () => {
+  const { guitars } = useGlobalContext();
+
+  const guitarsOnSale = guitars.filter((guitars) => guitars.isOnSale);
+
   return (
-    <section className="list">
-      <h2>Our Sales:</h2>
-      <ListItem />
-    </section>
+    <>
+      <h2 className="list-title">Our Guitar Sales:</h2>
+      <section className="list">
+        {guitarsOnSale.map((product) => (
+          <ListItem key={product.id} product={product} />
+        ))}
+      </section>
+    </>
   );
 };
 
