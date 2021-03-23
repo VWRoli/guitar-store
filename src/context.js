@@ -15,7 +15,7 @@ const initialState = {
 export const StoreProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const fetchGuitars = useCallback(async () => {
+  const fetchData = useCallback(async () => {
     try {
       //Set loading
       dispatch({ type: LOADING });
@@ -30,7 +30,7 @@ export const StoreProvider = ({ children }) => {
 
       //Throw error
       if (!responses[0].ok || !responses[1].ok)
-        throw new Error('Problem gettin products data.');
+        throw new Error('Problem getting products data.');
 
       const data = await Promise.all(
         responses.map((response) =>
@@ -49,8 +49,8 @@ export const StoreProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    fetchGuitars();
-  }, [fetchGuitars]);
+    fetchData();
+  }, [fetchData]);
 
   return (
     <StoreContext.Provider

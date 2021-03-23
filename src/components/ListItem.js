@@ -21,6 +21,8 @@ const ListItem = ({ product }) => {
     rating,
   } = product;
 
+  console.log(inStock);
+
   const onSalePrice = price * 0.9;
 
   return (
@@ -66,7 +68,11 @@ const ListItem = ({ product }) => {
           </h2>
           <p>
             In Stock:{' '}
-            {inStock ? <FaSquare /> : <FaCheckSquare className="stock-icon" />}
+            {inStock ? (
+              <FaCheckSquare className="stock-icon" />
+            ) : (
+              <FaSquare className="outfostock-icon" />
+            )}
           </p>
         </div>
         <div className="controls">

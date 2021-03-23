@@ -22,18 +22,7 @@
     color: $secondary-color;
     font-size: 0.95rem;
   }
-  .type-rating {
-    color: #999;
-    font-size: 0.75rem;
-    display: flex;
-    justify-content: space-between;
-    .rating-number {
-      margin-left: 5px;
-    }
-    .star-icon {
-      color: #ffcc02;
-    }
-  }
+
   .img-container {
     max-width: 250px;
   }

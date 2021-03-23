@@ -5,7 +5,7 @@ import { useGlobalContext } from '../../context';
 import { useFetch } from '../../useFetch';
 import { API_ROOT } from '../../constant';
 
-import SingleProductMain from './SingleProductMain';
+import SingleProductHeader from './SingleProductHeader';
 
 const SingleProduct = () => {
   //Get product id
@@ -15,6 +15,8 @@ const SingleProduct = () => {
 
   //check if product is a guitar, if not it is an amp
   const checkForGuitar = guitars.some((item) => id === item.id);
+
+  console.log(id, checkForGuitar);
   const guitarUrl = `guitars/${id}`;
   const ampUrl = `amps/${id}`;
 
@@ -32,7 +34,6 @@ const SingleProduct = () => {
     return <Error />;
   }
 
-  console.log(product);
   const {
     name,
     brand,
@@ -55,7 +56,7 @@ const SingleProduct = () => {
     type,
   } = product;
 
-  return <SingleProductMain product={product} />;
+  return <SingleProductHeader product={product} />;
 };
 
 export default SingleProduct;

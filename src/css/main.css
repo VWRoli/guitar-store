@@ -83,6 +83,25 @@ img {
   box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
+.type-rating {
+  color: #999;
+  font-size: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.type-rating .rating-number {
+  margin-left: 5px;
+}
+
+.type-rating .star-icon {
+  color: #ffcc02;
+}
+
+.outfostock-icon {
+  color: #999;
+}
+
 /*? SPINNER */
 .spinner-container {
   margin: auto;
@@ -346,21 +365,6 @@ nav {
   font-size: 0.95rem;
 }
 
-.list-item .type-rating {
-  color: #999;
-  font-size: 0.75rem;
-  display: flex;
-  justify-content: space-between;
-}
-
-.list-item .type-rating .rating-number {
-  margin-left: 5px;
-}
-
-.list-item .type-rating .star-icon {
-  color: #ffcc02;
-}
-
 .list-item .img-container {
   max-width: 250px;
 }
@@ -477,6 +481,66 @@ footer .social-media svg:hover {
   }
 }
 
-.product-img-container {
-  width: 200px;
+.single-product-header {
+  max-width: 90vw;
+  margin: 2rem auto;
+}
+
+.single-product-header header {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.single-product-header header small {
+  color: #999;
+  margin-right: 1rem;
+}
+
+.single-product-header header .type-rating {
+  max-width: 250px;
+}
+
+.single-product-header .info-banner {
+  position: relative;
+  padding: 0.5rem;
+  display: flex;
+}
+
+.single-product-header .info-banner .sale-sticker,
+.single-product-header .info-banner .top-seller-sticker {
+  width: 90px;
+  position: relative;
+  margin: 0 0.5rem;
+}
+
+.single-product-header .header-wrapper {
+  display: flex;
+}
+
+.single-product-header .product-media {
+  flex: 1;
+  margin-right: 1rem;
+  background-color: #f6f6f6;
+}
+
+.single-product-header .product-media .product-img-container {
+  max-width: 400px;
+}
+
+.single-product-header .product-media .images-slider {
+  max-width: 150px;
+}
+
+.single-product-header .product-price-section {
+  flex: 1;
+  margin-left: 1rem;
+}
+
+.single-product-header .product-price-section .price h2 {
+  color: #016a78;
+  font-size: 2.5rem;
+}
+
+.single-product-header .product-price-section .price p {
+  color: #016a78;
 }

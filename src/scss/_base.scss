@@ -31,3 +31,18 @@ img {
   @include sticker($light-bg, #2ec4b6);
   top: 35%;
 }
+.type-rating {
+  color: $muted;
+  font-size: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  .rating-number {
+    margin-left: 5px;
+  }
+  .star-icon {
+    color: #ffcc02;
+  }
+}
+.outfostock-icon {
+  color: $muted;
+}

@@ -2,6 +2,7 @@ $main-color: #016a78;
 $secondary-color: #424242;
 $light-bg: #f6f6f6;
 $sale-color: #d80e2f;
+$muted: #999;
 
 @mixin icon-hover {
   color: $secondary-color;
@@ -34,4 +35,14 @@ $sale-color: #d80e2f;
     border-radius: 5px;
     box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
   }
+}
+
+@mixin top-bottom-border() {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+@mixin sticker-reset {
+  width: 90px;
+  position: relative;
+  margin: 0 0.5rem;
 }
