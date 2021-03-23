@@ -7,7 +7,7 @@ import ErrorPage from './components/ErrorPage';
 import About from './components/About';
 import Navbar from './components/Navbar';
 import OnSale from './components/OnSale';
-import SingleProduct from './components/Products/SingleProduct';
+import SingleProduct from './components/SingleProduct/SingleProduct';
 
 //CSS
 import './css/main.css';

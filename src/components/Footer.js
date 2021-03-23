@@ -29,6 +29,7 @@ const Footer = () => {
             className="social-icon-link"
             href="https://www.facebook.com/"
             target="_blank"
+            rel="noreferrer"
             aria-label="Facebook"
           >
             <FaFacebookSquare />
@@ -37,6 +38,7 @@ const Footer = () => {
             className="social-icon-link"
             href="https://www.instagram.com/"
             target="_blank"
+            rel="noreferrer"
             aria-label="Instagram"
           >
             <FaInstagramSquare />
@@ -45,6 +47,7 @@ const Footer = () => {
             className="social-icon-link"
             href="https://www.youtube.com/"
             target="_blank"
+            rel="noreferrer"
             aria-label="Youtube"
           >
             <FaYoutubeSquare />
@@ -53,6 +56,7 @@ const Footer = () => {
             className="social-icon-link"
             href="https://www.twitter.com/"
             target="_blank"
+            rel="noreferrer"
             aria-label="Twitter"
           >
             <FaTwitterSquare />

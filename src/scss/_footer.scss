@@ -12,6 +12,9 @@ footer {
       flex-direction: column;
       margin: auto;
       align-items: center;
+      input {
+        padding: 5px;
+      }
       button {
         margin: 0.5rem;
         color: $light-bg;

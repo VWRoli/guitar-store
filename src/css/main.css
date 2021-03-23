@@ -415,6 +415,10 @@ footer .footer-subscription form {
   align-items: center;
 }
 
+footer .footer-subscription form input {
+  padding: 5px;
+}
+
 footer .footer-subscription form button {
   margin: 0.5rem;
   color: #f6f6f6;
@@ -471,4 +475,8 @@ footer .social-media svg:hover {
   footer .footer-links .footer-link-items {
     text-align: center;
   }
+}
+
+.product-img-container {
+  width: 200px;
 }
