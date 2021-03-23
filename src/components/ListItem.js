@@ -21,6 +21,8 @@ const ListItem = ({ product }) => {
     rating,
   } = product;
 
+  const onSalePrice = price * 0.9;
+
   return (
     <article className="list-item">
       {is_on_sale ? <div className="sale-sticker">On Sale!</div> : ''}
@@ -52,7 +54,16 @@ const ListItem = ({ product }) => {
       </div>
       <div className="price-box">
         <div className="price">
-          <h2>{priceFormatter(price)}</h2>
+          <h2>
+            {is_on_sale ? (
+              <>
+                <span className="old-price">{priceFormatter(price)}</span>
+                <span>{priceFormatter(onSalePrice)}</span>
+              </>
+            ) : (
+              priceFormatter(price)
+            )}
+          </h2>
           <p>
             In Stock:{' '}
             {inStock ? <FaSquare /> : <FaCheckSquare className="stock-icon" />}

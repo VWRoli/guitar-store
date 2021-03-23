@@ -43,6 +43,9 @@
 .list-title {
   width: 90vw;
   margin: 2rem auto;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  color: $main-color;
 }
 .list {
   width: 90vw;
@@ -50,4 +53,9 @@
 }
 .top-sellers {
   background-color: $light-bg;
+}
+.old-price {
+  font-size: 0.8rem;
+  text-decoration: line-through;
+  color: #999;
 }

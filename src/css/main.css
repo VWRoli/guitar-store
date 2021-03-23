@@ -301,6 +301,9 @@ nav {
 .list-title {
   width: 90vw;
   margin: 2rem auto;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  color: #016a78;
 }
 
 .list {
@@ -310,6 +313,12 @@ nav {
 
 .top-sellers {
   background-color: #f6f6f6;
+}
+
+.old-price {
+  font-size: 0.8rem;
+  text-decoration: line-through;
+  color: #999;
 }
 
 .list-item {
@@ -386,4 +395,80 @@ nav {
 
 .list-item .stock-icon {
   color: #016a78;
+}
+
+footer {
+  background-color: #016a78;
+  color: #f6f6f6;
+  text-align: center;
+  padding: 2rem;
+}
+
+footer small {
+  font-size: 0.7rem;
+}
+
+footer .footer-subscription form {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  align-items: center;
+}
+
+footer .footer-subscription form button {
+  margin: 0.5rem;
+  color: #f6f6f6;
+  background-color: #424242;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+}
+
+footer .footer-links {
+  display: flex;
+  justify-content: center;
+}
+
+footer .footer-links .footer-link-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  margin: 1rem 2rem;
+}
+
+footer .footer-links .footer-link-items a {
+  font-size: 0.8rem;
+  color: #f6f6f6;
+}
+
+footer .footer-links .footer-link-items a:hover {
+  text-decoration: underline;
+}
+
+footer .footer-links .footer-link-items p {
+  font-size: 0.8rem;
+}
+
+footer .social-media {
+  font-size: 1.75rem;
+}
+
+footer .social-media svg {
+  color: #f6f6f6;
+  margin: 0.5rem;
+}
+
+footer .social-media svg:hover {
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 670px) {
+  footer .footer-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  footer .footer-links .footer-link-items {
+    text-align: center;
+  }
 }

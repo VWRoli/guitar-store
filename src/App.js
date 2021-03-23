@@ -11,6 +11,7 @@ import SingleProduct from './components/Products/SingleProduct';
 
 //CSS
 import './css/main.css';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
             <ErrorPage />
           </Route>
         </Switch>
+        <Footer />
       </main>
     </Router>
   );
