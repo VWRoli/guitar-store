@@ -1,4 +1,4 @@
-import { priceFormatter, settings, calcOnSale } from '../../helpers';
+import { priceFormatter, imageSettings, calcOnSale } from '../../helpers';
 import {
   FaCartPlus,
   FaBalanceScale,
@@ -52,6 +52,13 @@ const SingleProductHeader = ({ product }) => {
           <div className="product-img-container">
             <img src={images[0]} alt={name} />
           </div>
+          <Slider className="slider-container" {...imageSettings}>
+            {images.map((img, i) => (
+              <div className="slider-img" key={i}>
+                <img src={img} alt={name} />
+              </div>
+            ))}
+          </Slider>
         </article>
 
         <aside className="product-right">

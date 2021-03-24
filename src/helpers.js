@@ -84,3 +84,37 @@ export const settings = {
     },
   ],
 };
+
+//Slider settings
+export const imageSettings = {
+  infinite: false,
+  speed: 1250,
+  slidesToShow: 3,
+  slidesToScroll: 3,
+  focusOnSelect: true,
+  nextArrow: <SampleNextArrow />,
+  prevArrow: <SamplePrevArrow />,
+  responsive: [
+    {
+      breakpoint: 1250,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+      },
+    },
+    {
+      breakpoint: 850,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+      },
+    },
+    {
+      breakpoint: 520,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
+};

@@ -511,7 +511,7 @@ footer .social-media svg:hover {
 
 .single-product-header .info-banner {
   position: relative;
-  padding: 0.5rem;
+  padding: 0.75rem;
   display: flex;
 }
 
@@ -528,16 +528,31 @@ footer .social-media svg:hover {
 
 .single-product-header .product-left {
   flex: 1;
+  background-color: #f6f6f6;
+  border: 1px solid #ddd;
+  padding: 1rem;
   margin-right: 1rem;
   background-color: #f6f6f6;
 }
 
 .single-product-header .product-left .product-img-container {
-  max-width: 400px;
+  max-width: 300px;
+  margin: auto;
 }
 
-.single-product-header .product-left .images-slider {
-  max-width: 150px;
+.single-product-header .product-left .slider-container {
+  max-width: 500px;
+  margin: auto;
+  margin-top: 1rem;
+}
+
+.single-product-header .product-left .slider-img {
+  max-width: 60px;
+}
+
+.single-product-header .product-left .slick-slide {
+  display: flex;
+  justify-content: center;
 }
 
 .single-product-header .product-right {

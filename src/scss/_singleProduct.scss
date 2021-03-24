@@ -13,7 +13,7 @@
   }
   .info-banner {
     position: relative;
-    padding: 0.5rem;
+    padding: 0.75rem;
     display: flex;
 
     .sale-sticker,
@@ -26,13 +26,24 @@
   }
   .product-left {
     flex: 1;
+    @include border-bg();
     margin-right: 1rem;
     background-color: $light-bg;
     .product-img-container {
-      max-width: 400px;
+      max-width: 300px;
+      margin: auto;
     }
-    .images-slider {
-      max-width: 150px;
+    .slider-container {
+      max-width: 500px;
+      margin: auto;
+      margin-top: 1rem;
+    }
+    .slider-img {
+      max-width: 60px;
+    }
+    .slick-slide {
+      display: flex;
+      justify-content: center;
     }
   }
   .product-right {
