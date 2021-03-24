@@ -1,5 +1,5 @@
 import ListItem from '../ListItem';
-import { settings } from '../../helpers';
+import { settings, filterProducts } from '../../helpers';
 import Slider from 'react-slick';
 import Loading from '../../Loading';
 import Error from '../../Error';
@@ -19,24 +19,16 @@ const ListContainer = () => {
   }
 
   //Get on sale guitars
-  const guitarsOnSale = products.filter(
-    (product) => product.category === 'guitar' && product.isOnSale
-  );
+  const guitarsOnSale = filterProducts(products, 'guitar', 'isOnSale');
 
   //Get amps on sale
-  const ampsOnSale = products.filter(
-    (product) => product.category === 'amp' && product.isOnSale
-  );
+  const ampsOnSale = filterProducts(products, 'amp', 'isOnSale');
 
   //Get top seller guitars
-  const topGuitars = products.filter(
-    (product) => product.category === 'guitar' && product.isTopSeller
-  );
+  const topGuitars = filterProducts(products, 'guitar', 'isTopSeller');
 
   //Get top seller amps
-  const topAmps = products.filter(
-    (product) => product.category === 'amp' && product.isTopSeller
-  );
+  const topAmps = filterProducts(products, 'amp', 'isTopSeller');
 
   return (
     <>

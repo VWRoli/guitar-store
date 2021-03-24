@@ -13,6 +13,13 @@ export const priceFormatter = (price) => {
   return formattedPrice;
 };
 
+//Filter products
+export const filterProducts = (products, category, condition) => {
+  return products.filter(
+    (product) => product.category === category && product[condition]
+  );
+};
+
 //Slider next arrow
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
