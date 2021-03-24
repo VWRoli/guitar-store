@@ -1,7 +1,6 @@
 import { useParams } from 'react-router-dom';
 import Loading from '../../Loading';
 import Error from '../../Error';
-import { useGlobalContext } from '../../context';
 import { useFetch } from '../../useFetch';
 import { API_ROOT } from '../../constant';
 
@@ -10,18 +9,15 @@ import SingleProductHeader from './SingleProductHeader';
 const SingleProduct = () => {
   //Get product id
   const { id } = useParams();
-
   const { guitars } = useGlobalContext();
 
   //check if product is a guitar, if not it is an amp
   const checkForGuitar = guitars.some((item) => id === item.id);
 
-  console.log(id, checkForGuitar);
-  const guitarUrl = `guitars/${id}`;
-  const ampUrl = `amps/${id}`;
+  const productUrl = checkForGuitar ? `guitars/${id}` : `amps/${id}`;
 
   const { data: product, isLoading, isError } = useFetch(
-    `${API_ROOT}${checkForGuitar ? guitarUrl : ampUrl}`
+    `${API_ROOT}${productUrl}`
   );
 
   //Loading screen
@@ -34,7 +30,7 @@ const SingleProduct = () => {
     return <Error />;
   }
 
-  const {
+  /*  const {
     name,
     brand,
     color,
@@ -54,7 +50,7 @@ const SingleProduct = () => {
     rating,
     strings,
     type,
-  } = product;
+  } = product; */
 
   return <SingleProductHeader product={product} />;
 };

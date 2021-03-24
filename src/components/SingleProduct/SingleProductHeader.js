@@ -22,6 +22,8 @@ const SingleProductHeader = ({ product }) => {
     images,
   } = product;
 
+  console.log(product);
+
   //todo
   const onSalePrice = price * 0.9;
 
@@ -51,7 +53,7 @@ const SingleProductHeader = ({ product }) => {
       <div className="header-wrapper">
         <article className="product-media">
           <div className="product-img-container">
-            <img src={images[0]} alt={name} />
+            <img src="" alt={name} />
           </div>
         </article>
         <aside className="product-price-section">

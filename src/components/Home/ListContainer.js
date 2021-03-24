@@ -1,21 +1,13 @@
 import ListItem from '../ListItem';
-import { useGlobalContext } from '../../context';
 import { settings } from '../../helpers';
 import Slider from 'react-slick';
 import Loading from '../../Loading';
 import Error from '../../Error';
+import { useFetch } from '../../useFetch';
+import { API_ROOT } from '../../constant';
 
-const OnSaleList = () => {
-  const { guitars, amps, isLoading, isError } = useGlobalContext();
-
-  //Filter on sale products
-  const guitarsOnSale = guitars.filter((guitars) => guitars.is_on_sale);
-  const ampsOnSale = amps.filter((amp) => amp.is_on_sale);
-
-  //Filter top seller products
-  const topGuitars = guitars.filter((guitars) => guitars.is_top_seller);
-  const topAmps = amps.filter((amp) => amp.is_top_seller);
-
+const ListContainer = () => {
+  const { data: products, isLoading, isError } = useFetch(API_ROOT);
   //Loading screen
   if (isLoading) {
     return <Loading />;
@@ -25,6 +17,26 @@ const OnSaleList = () => {
   if (isError) {
     return <Error />;
   }
+
+  //Get on sale guitars
+  const guitarsOnSale = products.filter(
+    (product) => product.category === 'guitar' && product.isOnSale
+  );
+
+  //Get amps on sale
+  const ampsOnSale = products.filter(
+    (product) => product.category === 'amp' && product.isOnSale
+  );
+
+  //Get top seller guitars
+  const topGuitars = products.filter(
+    (product) => product.category === 'guitar' && product.isTopSeller
+  );
+
+  //Get top seller amps
+  const topAmps = products.filter(
+    (product) => product.category === 'amp' && product.isTopSeller
+  );
 
   return (
     <>
@@ -61,4 +73,4 @@ const OnSaleList = () => {
   );
 };
 
-export default OnSaleList;
+export default ListContainer;

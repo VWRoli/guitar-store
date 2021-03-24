@@ -15,24 +15,18 @@ const ListItem = ({ product }) => {
     price,
     inStock,
     type,
-    is_top_seller,
-    is_on_sale,
+    isTopSeller,
+    isOnSale,
     id,
     rating,
   } = product;
-
-  console.log(inStock);
 
   const onSalePrice = price * 0.9;
 
   return (
     <article className="list-item">
-      {is_on_sale ? <div className="sale-sticker">On Sale!</div> : ''}
-      {is_top_seller ? (
-        <div className="top-seller-sticker">Top Seller</div>
-      ) : (
-        ''
-      )}
+      {isOnSale ? <div className="sale-sticker">On Sale!</div> : ''}
+      {isTopSeller ? <div className="top-seller-sticker">Top Seller</div> : ''}
 
       <div className="img-container">
         <Link to={`/product/${id}`}>
@@ -57,7 +51,7 @@ const ListItem = ({ product }) => {
       <div className="price-box">
         <div className="price">
           <h2>
-            {is_on_sale ? (
+            {isOnSale ? (
               <>
                 <span className="old-price">{priceFormatter(price)}</span>
                 <span>{priceFormatter(onSalePrice)}</span>

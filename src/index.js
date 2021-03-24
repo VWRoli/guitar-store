@@ -1,13 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import { StoreProvider } from './context';
 
 ReactDOM.render(
   <React.StrictMode>
-    <StoreProvider>
-      <App />
-    </StoreProvider>
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
