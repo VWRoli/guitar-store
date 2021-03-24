@@ -3,6 +3,10 @@ $secondary-color: #424242;
 $light-bg: #f6f6f6;
 $sale-color: #d80e2f;
 $muted: #999;
+@mixin reset-btn {
+  background-color: transparent;
+  border: none;
+}
 
 @mixin icon-hover {
   color: $secondary-color;
@@ -69,4 +73,17 @@ $muted: #999;
   border: none;
   padding: 0.25rem 0.5rem;
   cursor: pointer;
+}
+
+@mixin arrows($position) {
+  @include reset-btn();
+  position: absolute;
+  top: 50%;
+  #{$position}: 0;
+  font-size: 1.5rem;
+  color: $secondary-color;
+  cursor: pointer;
+  &:hover {
+    color: $main-color;
+  }
 }

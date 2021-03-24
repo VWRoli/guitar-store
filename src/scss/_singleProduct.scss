@@ -29,21 +29,32 @@
     @include border-bg();
     margin-right: 1rem;
     background-color: $light-bg;
-    .product-img-container {
-      max-width: 300px;
-      margin: auto;
-    }
+
     .slider-container {
-      max-width: 500px;
-      margin: auto;
-      margin-top: 1rem;
-    }
-    .slider-img {
-      max-width: 60px;
-    }
-    .slick-slide {
+      position: relative;
       display: flex;
       justify-content: center;
+      align-items: center;
+      height: 100%;
+
+      .single-img-container {
+        max-width: 500px;
+      }
+      .left-arrow {
+        @include arrows(left);
+      }
+      .right-arrow {
+        @include arrows(right);
+      }
+      .slide {
+        opacity: 0;
+        transition-duration: 1s ease;
+      }
+
+      .slide.active {
+        opacity: 1;
+        transition-duration: 1s;
+      }
     }
   }
   .product-right {
