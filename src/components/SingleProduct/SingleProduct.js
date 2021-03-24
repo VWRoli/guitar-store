@@ -9,16 +9,8 @@ import SingleProductHeader from './SingleProductHeader';
 const SingleProduct = () => {
   //Get product id
   const { id } = useParams();
-  const { guitars } = useGlobalContext();
 
-  //check if product is a guitar, if not it is an amp
-  const checkForGuitar = guitars.some((item) => id === item.id);
-
-  const productUrl = checkForGuitar ? `guitars/${id}` : `amps/${id}`;
-
-  const { data: product, isLoading, isError } = useFetch(
-    `${API_ROOT}${productUrl}`
-  );
+  const { data: product, isLoading, isError } = useFetch(`${API_ROOT}${id}`);
 
   //Loading screen
   if (isLoading) {

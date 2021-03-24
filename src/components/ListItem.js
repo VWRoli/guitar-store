@@ -60,7 +60,7 @@ const ListItem = ({ product }) => {
               priceFormatter(price)
             )}
           </h2>
-          <p>
+          <p className="stock">
             In Stock:{' '}
             {inStock ? (
               <FaCheckSquare className="stock-icon" />

@@ -21,10 +21,10 @@
       @include sticker-reset();
     }
   }
-  .header-wrapper {
+  .header-content {
     display: flex;
   }
-  .product-media {
+  .product-left {
     flex: 1;
     margin-right: 1rem;
     background-color: $light-bg;
@@ -35,16 +35,64 @@
       max-width: 150px;
     }
   }
-  .product-price-section {
+  .product-right {
     flex: 1;
     margin-left: 1rem;
-    .price {
+    .price-section {
+      @include border-bg();
+      border-bottom: none;
       h2 {
-        color: $main-color;
         font-size: 2.5rem;
-      }
-      p {
         color: $main-color;
+      }
+    }
+    .buy-section {
+      @include border-bg();
+      border-top: none;
+
+      form {
+        input {
+          margin: 0 0.5rem;
+          width: 2rem;
+        }
+        button {
+          @include primary-btn();
+          font-size: 1rem;
+
+          svg {
+            margin-right: 5px;
+            vertical-align: middle;
+          }
+          &:hover {
+            @include secondary-btn();
+          }
+        }
+        small {
+          color: $muted;
+        }
+      }
+      .add-to-compare {
+        @include icon-hover();
+        font-size: 1.5rem;
+        margin: 0.5rem;
+      }
+    }
+    .short-description {
+      margin-top: 1rem;
+      color: $secondary-color;
+      line-height: 1.75rem;
+
+      button {
+        margin-left: 0.5rem;
+        border: none;
+        color: $main-color;
+        text-decoration: underline;
+        background-color: transparent;
+        cursor: pointer;
+        letter-spacing: 3px;
+        &:hover {
+          color: lighten($main-color, 15%);
+        }
       }
     }
   }

@@ -20,6 +20,7 @@ $muted: #999;
   z-index: 1;
   color: $color;
   padding: 0.05rem 0.35rem;
+  text-align: center;
 
   &::before {
     display: block;
@@ -45,4 +46,27 @@ $muted: #999;
   width: 90px;
   position: relative;
   margin: 0 0.5rem;
+}
+
+@mixin border-bg {
+  background-color: $light-bg;
+  border: 1px solid #ddd;
+  padding: 1rem;
+}
+@mixin primary-btn {
+  margin: 0.5rem;
+  color: $light-bg;
+  background-color: $main-color;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+@mixin secondary-btn {
+  margin: 0.5rem;
+  color: $light-bg;
+  background-color: $secondary-color;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
 }

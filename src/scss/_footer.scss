@@ -16,12 +16,7 @@ footer {
         padding: 5px;
       }
       button {
-        margin: 0.5rem;
-        color: $light-bg;
-        background-color: $secondary-color;
-        border: none;
-        padding: 0.25rem 0.5rem;
-        cursor: pointer;
+        @include secondary-btn();
       }
     }
   }

@@ -46,3 +46,12 @@ img {
 .outfostock-icon {
   color: $muted;
 }
+.stock {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  .stock-icon {
+    color: $main-color;
+    margin-left: 5px;
+  }
+}

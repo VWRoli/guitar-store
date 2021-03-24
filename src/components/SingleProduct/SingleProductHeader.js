@@ -1,4 +1,4 @@
-import { priceFormatter, settings } from '../../helpers';
+import { priceFormatter, settings, calcOnSale } from '../../helpers';
 import {
   FaCartPlus,
   FaBalanceScale,
@@ -14,18 +14,15 @@ const SingleProductHeader = ({ product }) => {
     name,
     desc,
     id: productId,
-    in_stock,
-    is_on_sale,
-    is_top_seller,
+    inStock,
+    isOnSale,
+    isTopSeller,
     price,
     rating,
     images,
   } = product;
 
-  console.log(product);
-
-  //todo
-  const onSalePrice = price * 0.9;
+  const onSalePrice = calcOnSale(price);
 
   return (
     <section className="single-product-header">
@@ -43,23 +40,24 @@ const SingleProductHeader = ({ product }) => {
         </div>
       </header>
       <div className="info-banner">
-        {is_on_sale ? <div className="sale-sticker">On Sale!</div> : ''}
-        {is_top_seller ? (
+        {isOnSale ? <div className="sale-sticker">On Sale!</div> : ''}
+        {isTopSeller ? (
           <div className="top-seller-sticker">Top Seller</div>
         ) : (
           ''
         )}
       </div>
-      <div className="header-wrapper">
-        <article className="product-media">
+      <div className="header-content">
+        <article className="product-left">
           <div className="product-img-container">
-            <img src="" alt={name} />
+            <img src={images[0]} alt={name} />
           </div>
         </article>
-        <aside className="product-price-section">
-          <div className="price">
+
+        <aside className="product-right">
+          <div className="price-section">
             <h2>
-              {is_on_sale ? (
+              {isOnSale ? (
                 <>
                   <span className="old-price">{priceFormatter(price)}</span>
                   <span>{priceFormatter(onSalePrice)}</span>
@@ -68,25 +66,44 @@ const SingleProductHeader = ({ product }) => {
                 priceFormatter(price)
               )}
             </h2>
-            <p>
+            <p className="stock">
               In Stock:{' '}
-              {in_stock ? (
+              {inStock ? (
                 <FaCheckSquare className="stock-icon" />
               ) : (
                 <FaSquare />
               )}
             </p>
           </div>
-          <div className="add-to-cart">
+
+          <div className="buy-section">
             <form action="/">
               <label htmlFor="quantity">Quantity:</label>
-              <input type="number" name="quantity" id="quantity" />
-              <button type="submit">Add to Cart</button>
+              <input
+                type="number"
+                name="quantity"
+                id="quantity"
+                placeholder="1"
+              />
+              <button type="submit">
+                <FaCartPlus />
+                Add to Cart
+              </button>{' '}
+              <br />
+              <small>
+                If you order until 12:00, we ship the same day if the item is in
+                stock.
+              </small>
             </form>
+
+            <FaBalanceScale className="add-to-compare" />
           </div>
+
           <div className="short-description">
             <h3>Product Description:</h3>
-            <p>{desc}</p>
+            <p>
+              {`${desc.substring(0, 200)}`}...<button>Read More</button>
+            </p>
           </div>
         </aside>
       </div>

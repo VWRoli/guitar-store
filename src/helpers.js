@@ -20,6 +20,11 @@ export const filterProducts = (products, category, condition) => {
   );
 };
 
+//Calculate on sale prices
+export const calcOnSale = (amount) => {
+  return amount * 0.9;
+};
+
 //Slider next arrow
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
