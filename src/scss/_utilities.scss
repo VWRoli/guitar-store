@@ -87,3 +87,7 @@ $muted: #999;
     color: $main-color;
   }
 }
+@mixin container {
+  max-width: 90vw;
+  margin: 2rem auto;
+}

@@ -676,3 +676,16 @@ footer .social-media svg:hover {
 .single-product-header .product-right .short-description button:hover {
   color: #02adc4;
 }
+
+.recommendations {
+  background-color: #f6f6f6;
+}
+
+.recommendations .container {
+  max-width: 90vw;
+  margin: 2rem auto;
+}
+
+.recommendations .container .list-item {
+  background-color: #fff;
+}

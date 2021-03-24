@@ -1,0 +1,9 @@
+.recommendations {
+  background-color: $light-bg;
+  .container {
+    @include container();
+    .list-item {
+      background-color: #fff;
+    }
+  }
+}

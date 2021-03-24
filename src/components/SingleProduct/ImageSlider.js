@@ -27,7 +27,7 @@ const ImageSlider = ({ images }) => {
         {images.map((img, i) => (
           <div className={i === current ? 'slide active' : 'slide'} key={i}>
             {i === current && (
-              <img src={img} alt="Product Image" className="single-img" />
+              <img src={img} alt="Product" className="single-img" />
             )}
           </div>
         ))}

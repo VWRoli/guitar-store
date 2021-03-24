@@ -1,6 +1,5 @@
 .single-product-header {
-  max-width: 90vw;
-  margin: 2rem auto;
+  @include container();
   header {
     @include top-bottom-border();
     small {

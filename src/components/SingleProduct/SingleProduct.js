@@ -5,6 +5,8 @@ import { useFetch } from '../../useFetch';
 import { API_ROOT } from '../../constant';
 
 import SingleProductHeader from './SingleProductHeader';
+import ProductOverview from './ProductOverview';
+import Recommendations from './Recommendations';
 
 const SingleProduct = () => {
   //Get product id
@@ -44,7 +46,13 @@ const SingleProduct = () => {
     type,
   } = product; */
 
-  return <SingleProductHeader product={product} />;
+  return (
+    <>
+      <SingleProductHeader product={product} />
+      <Recommendations />
+      <ProductOverview />
+    </>
+  );
 };
 
 export default SingleProduct;
