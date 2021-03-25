@@ -6,3 +6,4 @@ export const SET_LOADING = 'SET_LOADING';
 export const SET_ERROR = 'SET_ERROR';
 export const UPDATE_HAS_NEXT_PAGE = 'UPDATE_HAS_NEXT_PAGE';
 export const SET_PAGE = 'SET_PAGE';
+export const SET_DISPLAY_ITEMS = 'SET_DISPLAY_ITEMS';

@@ -441,6 +441,11 @@ footer .footer-subscription form button {
   border: none;
   padding: 0.25rem 0.5rem;
   cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+footer .footer-subscription form button:hover {
+  background-color: #5c5c5c;
 }
 
 footer .footer-links {
@@ -641,6 +646,11 @@ footer .social-media svg:hover {
   border: none;
   padding: 0.25rem 0.5rem;
   cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+.single-product-header .product-right .buy-section form button:hover:hover {
+  background-color: #5c5c5c;
 }
 
 .single-product-header .product-right .buy-section form small {
@@ -749,6 +759,33 @@ footer .social-media svg:hover {
   grid-template-columns: repeat(3, 1fr);
 }
 
+.result-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.display-options button {
+  margin: 0.5rem;
+  color: #f6f6f6;
+  background-color: #424242;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+.display-options button:hover {
+  background-color: #5c5c5c;
+}
+
+.sorting-options label {
+  margin-right: 5px;
+}
+
 .pagination {
   display: flex;
   justify-content: center;
@@ -770,13 +807,11 @@ footer .social-media svg:hover {
 }
 
 .pagination button:hover {
-  border-color: #f6f6f6;
   color: #f6f6f6;
   background-color: #016a78;
 }
 
 .pagination .active-page {
-  border-color: #f6f6f6;
   color: #f6f6f6;
   background-color: #016a78;
   cursor: default;

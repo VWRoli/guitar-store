@@ -7,6 +7,7 @@ import {
   SET_LOADING,
   UPDATE_HAS_NEXT_PAGE,
   SET_PAGE,
+  SET_DISPLAY_ITEMS,
 } from '../../constant';
 
 const ProductContext = React.createContext();
@@ -17,6 +18,7 @@ const initialState = {
   errorMsg: '',
   products: [],
   page: 1,
+  displayItems: 9,
   hasNextpage: false,
 };
 export const ProductsProvider = ({ children }) => {
@@ -26,10 +28,16 @@ export const ProductsProvider = ({ children }) => {
     dispatch({ type: SET_PAGE, payload: page });
   };
 
+  const setDisplayItems = (itemNumber) => {
+    dispatch({ type: SET_DISPLAY_ITEMS, payload: itemNumber });
+  };
+
   const fetchProducts = useCallback(async () => {
     dispatch({ type: SET_LOADING });
     try {
-      const response = await fetch(`${API_ROOT}?_page=${state.page}&_limit=9`);
+      const response = await fetch(
+        `${API_ROOT}?_page=${state.page}&_limit=${state.displayItems}`
+      );
 
       if (!response.ok)
         throw new Error(`${response.status} Products not found`);
@@ -38,7 +46,7 @@ export const ProductsProvider = ({ children }) => {
 
       //Checking for next page
       const nextPageResponse = await fetch(
-        `${API_ROOT}?_page=${state.page + 1}&_limit=9`
+        `${API_ROOT}?_page=${state.page + 1}&_limit=${state.displayItems}`
       );
 
       if (!nextPageResponse.ok)
@@ -54,14 +62,14 @@ export const ProductsProvider = ({ children }) => {
     } catch (error) {
       dispatch({ type: SET_ERROR, payload: error.message });
     }
-  }, [state.page]);
+  }, [state.page, state.displayItems]);
 
   useEffect(() => {
     fetchProducts();
   }, [fetchProducts]);
 
   return (
-    <ProductContext.Provider value={{ ...state, setPage }}>
+    <ProductContext.Provider value={{ ...state, setPage, setDisplayItems }}>
       {children}
     </ProductContext.Provider>
   );

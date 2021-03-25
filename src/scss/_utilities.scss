@@ -73,6 +73,11 @@ $muted: #999;
   border: none;
   padding: 0.25rem 0.5rem;
   cursor: pointer;
+  transition: all 0.15s ease-in-out;
+
+  &:hover {
+    background-color: lighten($secondary-color, 10%);
+  }
 }
 
 @mixin arrows($position) {
