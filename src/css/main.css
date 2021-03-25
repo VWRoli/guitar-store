@@ -735,13 +735,59 @@ footer .social-media svg:hover {
   flex: 3;
 }
 
-.products .container .filters {
+.filters {
   flex: 1;
   background-color: #f6f6f6;
 }
 
-.products .container .products-list {
+.products-list {
   flex: 3;
+}
+
+.products-list .product-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination button {
+  border: 1px solid #016a78;
+  background-color: transparent;
+  border-radius: 5px;
+  width: 2.2rem;
+  height: 2.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0.5rem;
+  font-weight: 500;
+  color: #016a78;
+  cursor: pointer;
+}
+
+.pagination button:hover {
+  border-color: #f6f6f6;
+  color: #f6f6f6;
+  background-color: #016a78;
+}
+
+.pagination .active-page {
+  border-color: #f6f6f6;
+  color: #f6f6f6;
+  background-color: #016a78;
+  cursor: default;
+}
+
+.pagination .ellipsis {
+  cursor: default;
+}
+
+.pagination .ellipsis:hover {
+  border-color: #016a78;
+  color: #016a78;
+  background-color: transparent;
 }

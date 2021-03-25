@@ -12,14 +12,16 @@
     .error-container {
       flex: 3;
     }
-    .filters {
-      flex: 1;
-      background-color: $light-bg;
-    }
-    .products-list {
-      flex: 3;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-    }
+  }
+}
+.filters {
+  flex: 1;
+  background-color: $light-bg;
+}
+.products-list {
+  flex: 3;
+  .product-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
   }
 }

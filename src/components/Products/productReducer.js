@@ -1,4 +1,10 @@
-import { SET_PRODUCTS, SET_ERROR, SET_LOADING } from '../../constant';
+import {
+  SET_PRODUCTS,
+  SET_ERROR,
+  SET_LOADING,
+  UPDATE_HAS_NEXT_PAGE,
+  SET_PAGE,
+} from '../../constant';
 
 const productReducer = (state, action) => {
   if (action.type === SET_PRODUCTS) {
@@ -7,6 +13,12 @@ const productReducer = (state, action) => {
 
   if (action.type === SET_LOADING) {
     return { ...state, isLoading: true };
+  }
+  if (action.type === UPDATE_HAS_NEXT_PAGE) {
+    return { ...state, hasNextPage: action.payload };
+  }
+  if (action.type === SET_PAGE) {
+    return { ...state, page: action.payload };
   }
 
   if (action.type === SET_ERROR) {

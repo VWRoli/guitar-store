@@ -1,0 +1,37 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  button {
+    border: 1px solid $main-color;
+    background-color: transparent;
+    border-radius: 5px;
+    width: 2.2rem;
+    height: 2.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0.5rem;
+    font-weight: 500;
+    color: $main-color;
+    cursor: pointer;
+    &:hover {
+      border-color: $light-bg;
+      color: $light-bg;
+      background-color: $main-color;
+    }
+  }
+  .active-page {
+    border-color: $light-bg;
+    color: $light-bg;
+    background-color: $main-color;
+    cursor: default;
+  }
+  .ellipsis {
+    cursor: default;
+    &:hover {
+      border-color: $main-color;
+      color: $main-color;
+      background-color: transparent;
+    }
+  }
+}

@@ -2,6 +2,7 @@ import { useProductContext } from './productContext';
 import ListItem from '../ListItem';
 import Loading from '../../Loading';
 import Error from '../../Error';
+import Pagination from './Pagination';
 
 const ProductsList = () => {
   const { products, isLoading, isError, errorMsg } = useProductContext();
@@ -14,9 +15,12 @@ const ProductsList = () => {
 
   return (
     <section className="products-list">
-      {products.map((product) => (
-        <ListItem product={product} key={product.id} />
-      ))}
+      <div className="product-wrapper">
+        {products.map((product) => (
+          <ListItem product={product} key={product.id} />
+        ))}
+      </div>
+      <Pagination />
     </section>
   );
 };
