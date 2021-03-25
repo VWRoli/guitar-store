@@ -2,7 +2,7 @@ import { priceFormatter, calcOnSale } from '../../helpers';
 import {
   FaCartPlus,
   FaBalanceScale,
-  FaSquare,
+  FaMinusSquare,
   FaCheckSquare,
   FaStar,
 } from 'react-icons/fa';
@@ -66,11 +66,11 @@ const SingleProductHeader = ({ product }) => {
               )}
             </h2>
             <p className="stock">
-              In Stock:{' '}
+              In Stock:
               {inStock ? (
                 <FaCheckSquare className="stock-icon" />
               ) : (
-                <FaSquare />
+                <FaMinusSquare className="outofstock-icon" />
               )}
             </p>
           </div>

@@ -100,8 +100,9 @@ img {
   color: #ffcc02;
 }
 
-.outfostock-icon {
+.outofstock-icon {
   color: #999;
+  margin-left: 5px;
 }
 
 .stock {

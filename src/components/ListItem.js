@@ -1,7 +1,7 @@
 import {
   FaCartPlus,
   FaBalanceScale,
-  FaSquare,
+  FaMinusSquare,
   FaCheckSquare,
   FaStar,
 } from 'react-icons/fa';
@@ -65,7 +65,7 @@ const ListItem = ({ product }) => {
             {inStock ? (
               <FaCheckSquare className="stock-icon" />
             ) : (
-              <FaSquare className="outfostock-icon" />
+              <FaMinusSquare className="outfostock-icon" />
             )}
           </p>
         </div>

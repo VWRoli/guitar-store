@@ -46,22 +46,28 @@ const GuitarOverview = ({ product }) => {
         <td>Number of Frets:</td>
         <td>{fretNumber}</td>
       </tr>
-      <tr>
-        <td>Pickups:</td>
-        <td>{pickups.config}</td>
-      </tr>
-      <tr>
-        <td>Neck:</td>
-        <td>{pickups.neck}</td>
-      </tr>
-      <tr>
-        <td>Middle:</td>
-        <td>{pickups.middle}</td>
-      </tr>
-      <tr>
-        <td>Bridge:</td>
-        <td>{pickups.bridge}</td>
-      </tr>
+      {pickups ? (
+        <>
+          <tr>
+            <td>Pickups:</td>
+            <td>{pickups.config}</td>
+          </tr>
+          <tr>
+            <td>Neck:</td>
+            <td>{pickups.neck}</td>
+          </tr>
+          <tr>
+            <td>Middle:</td>
+            <td>{pickups.middle}</td>
+          </tr>
+          <tr>
+            <td>Bridge:</td>
+            <td>{pickups.bridge}</td>
+          </tr>
+        </>
+      ) : (
+        <tr></tr>
+      )}
 
       <tr>
         <td>Made in:</td>

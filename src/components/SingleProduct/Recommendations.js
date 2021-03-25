@@ -9,6 +9,11 @@ import ListItem from '../ListItem';
 const Recommendations = () => {
   const { data: products, isLoading, isError } = useFetch(API_ROOT);
 
+  //Generate a random number
+  const random = Math.floor(Math.random() * products.length);
+
+  //Get recommended guitars (6 random products)
+  const recommendations = products.slice(random - 6, random);
   //Loading screen
   if (isLoading) {
     return <Loading />;
@@ -18,13 +23,6 @@ const Recommendations = () => {
   if (isError) {
     return <Error />;
   }
-
-  //Generate a random number
-  const random = Math.floor(Math.random() * products.length);
-
-  //Get recommended guitars (6 random products)
-  const recommendations = products.slice(random - 6, random);
-  console.log(recommendations);
 
   return (
     <section className="recommendations">
