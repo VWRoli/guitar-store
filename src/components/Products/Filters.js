@@ -2,11 +2,11 @@ import { useProductContext } from './productContext';
 
 const Filters = () => {
   const { products } = useProductContext();
-  console.log(products);
+  //console.log(products);
   return (
-    <div>
+    <section className="filters">
       <h1>Filters</h1>
-    </div>
+    </section>
   );
 };
 

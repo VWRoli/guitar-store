@@ -65,7 +65,7 @@ const ListItem = ({ product }) => {
             {inStock ? (
               <FaCheckSquare className="stock-icon" />
             ) : (
-              <FaMinusSquare className="outfostock-icon" />
+              <FaMinusSquare className="outofstock-icon" />
             )}
           </p>
         </div>

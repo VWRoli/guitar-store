@@ -3,11 +3,13 @@ import ProductsList from './ProductsList';
 
 const Products = () => {
   return (
-    <div>
+    <section className="products">
       <h2>Products</h2>
-      <Filters />
-      <ProductsList />
-    </div>
+      <div className="container">
+        <Filters />
+        <ProductsList />
+      </div>
+    </section>
   );
 };
 

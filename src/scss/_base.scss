@@ -43,16 +43,16 @@ img {
     color: #ffcc02;
   }
 }
-.outofstock-icon {
-  color: $muted;
-  margin-left: 5px;
-}
 .stock {
   display: flex;
   align-items: center;
   font-size: 0.9rem;
   .stock-icon {
     color: $main-color;
+    margin-left: 5px;
+  }
+  .outofstock-icon {
+    color: $muted;
     margin-left: 5px;
   }
 }

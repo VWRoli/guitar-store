@@ -100,11 +100,6 @@ img {
   color: #ffcc02;
 }
 
-.outofstock-icon {
-  color: #999;
-  margin-left: 5px;
-}
-
 .stock {
   display: flex;
   align-items: center;
@@ -113,6 +108,11 @@ img {
 
 .stock .stock-icon {
   color: #016a78;
+  margin-left: 5px;
+}
+
+.stock .outofstock-icon {
+  color: #999;
   margin-left: 5px;
 }
 
@@ -715,4 +715,33 @@ footer .social-media svg:hover {
 .product-overview table td {
   border: 1px solid #ddd;
   padding: 5px;
+}
+
+.products {
+  max-width: 90vw;
+  margin: 2rem auto;
+}
+
+.products .container {
+  display: flex;
+}
+
+.products .container .spinner-container {
+  flex: 3;
+  display: flex;
+}
+
+.products .container .error-container {
+  flex: 3;
+}
+
+.products .container .filters {
+  flex: 1;
+  background-color: #f6f6f6;
+}
+
+.products .container .products-list {
+  flex: 3;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }

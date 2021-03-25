@@ -1,13 +1,11 @@
 import { FaExclamationTriangle } from 'react-icons/fa';
 
-const Error = () => {
+const Error = ({ msg }) => {
   return (
     <div className="error-container">
       <FaExclamationTriangle className="error-sign" />
-      <p>
-        Something went wrong, product not found. Please refresh the page or try
-        again later...
-      </p>
+      <p>Something went wrong. {msg}</p>
+      <p>Please refresh the page or try again later...</p>
     </div>
   );
 };
