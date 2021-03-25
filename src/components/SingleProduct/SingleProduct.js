@@ -24,33 +24,11 @@ const SingleProduct = () => {
     return <Error />;
   }
 
-  /*  const {
-    name,
-    brand,
-    color,
-    country_origin,
-    desc,
-    fantasy_color,
-    frert_number,
-    id: productId,
-    images,
-    in_stock,
-    is_on_sale,
-    is_top_seller,
-    neck_wood,
-    orientation,
-    pickups,
-    price,
-    rating,
-    strings,
-    type,
-  } = product; */
-
   return (
     <>
       <SingleProductHeader product={product} />
       <Recommendations />
-      <ProductOverview />
+      <ProductOverview product={product} />
     </>
   );
 };

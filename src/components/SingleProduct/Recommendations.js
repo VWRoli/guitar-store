@@ -24,6 +24,7 @@ const Recommendations = () => {
 
   //Get recommended guitars (6 random products)
   const recommendations = products.slice(random - 6, random);
+  console.log(recommendations);
 
   return (
     <section className="recommendations">

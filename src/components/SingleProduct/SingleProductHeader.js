@@ -6,6 +6,7 @@ import {
   FaCheckSquare,
   FaStar,
 } from 'react-icons/fa';
+import { Link } from 'react-scroll';
 
 import ImageSlider from './ImageSlider';
 
@@ -100,7 +101,15 @@ const SingleProductHeader = ({ product }) => {
           <div className="short-description">
             <h3>Product Description:</h3>
             <p>
-              {`${desc.substring(0, 200)}`}...<button>Read More</button>
+              {`${desc.substring(0, 200)}`}...
+              <Link
+                to="overview"
+                smooth={true}
+                duration={500}
+                className="read-more"
+              >
+                Read More
+              </Link>
             </p>
           </div>
         </aside>

@@ -2,6 +2,7 @@
   background-color: $light-bg;
   .container {
     @include container();
+    padding-top: 1rem;
     .list-item {
       background-color: #fff;
     }

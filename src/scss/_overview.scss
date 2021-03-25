@@ -1,0 +1,18 @@
+.product-overview {
+  @include container();
+  header {
+    @include top-bottom-border();
+  }
+  table {
+    border-collapse: collapse;
+    margin: 1rem 0;
+
+    tr:nth-child(even) {
+      background-color: $light-bg;
+    }
+    td {
+      border: 1px solid #ddd;
+      padding: 5px;
+    }
+  }
+}

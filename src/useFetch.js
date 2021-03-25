@@ -12,6 +12,9 @@ export const useFetch = (url) => {
     setIsLoading(true);
     try {
       const response = await fetch(url);
+
+      if (!response.ok) throw new Error(`${response.status} Product not found`);
+
       const data = await response.json();
 
       setData(data);

@@ -5,8 +5,8 @@ const Error = () => {
     <div className="error-container">
       <FaExclamationTriangle className="error-sign" />
       <p>
-        Error fetching products data, please refresh the page or try again
-        later...
+        Something went wrong, product not found. Please refresh the page or try
+        again later...
       </p>
     </div>
   );

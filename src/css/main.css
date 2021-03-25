@@ -145,6 +145,7 @@ img {
   grid-column: span 3;
   color: #d80e2f;
   text-align: center;
+  margin-bottom: 3rem;
 }
 
 .error-container .error-sign {
@@ -663,7 +664,7 @@ footer .social-media svg:hover {
   line-height: 1.75rem;
 }
 
-.single-product-header .product-right .short-description button {
+.single-product-header .product-right .short-description .read-more {
   margin-left: 0.5rem;
   border: none;
   color: #016a78;
@@ -673,7 +674,7 @@ footer .social-media svg:hover {
   letter-spacing: 3px;
 }
 
-.single-product-header .product-right .short-description button:hover {
+.single-product-header .product-right .short-description .read-more:hover {
   color: #02adc4;
 }
 
@@ -684,8 +685,33 @@ footer .social-media svg:hover {
 .recommendations .container {
   max-width: 90vw;
   margin: 2rem auto;
+  padding-top: 1rem;
 }
 
 .recommendations .container .list-item {
   background-color: #fff;
+}
+
+.product-overview {
+  max-width: 90vw;
+  margin: 2rem auto;
+}
+
+.product-overview header {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.product-overview table {
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.product-overview table tr:nth-child(even) {
+  background-color: #f6f6f6;
+}
+
+.product-overview table td {
+  border: 1px solid #ddd;
+  padding: 5px;
 }
