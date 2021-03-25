@@ -8,7 +8,7 @@ import About from './components/About';
 import Navbar from './components/Navbar';
 import OnSale from './components/OnSale';
 import SingleProduct from './components/SingleProduct/SingleProduct';
-
+import { ProductsProvider } from './components/Products/productContext';
 //CSS
 import './css/main.css';
 import Footer from './components/Footer';
@@ -23,7 +23,9 @@ function App() {
             <Home />
           </Route>
           <Route path="/products">
-            <Products />
+            <ProductsProvider>
+              <Products />
+            </ProductsProvider>
           </Route>
           <Route path="/product/:id">
             <SingleProduct />
