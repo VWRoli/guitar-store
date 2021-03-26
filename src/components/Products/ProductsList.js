@@ -8,7 +8,7 @@ const ProductsList = () => {
   const { products, isLoading, isError, errorMsg } = useProductContext();
 
   //Loading screen
-  if (isLoading) return <Loading />;
+  //if (isLoading) return ;
 
   //Error message
   if (isError) return <Error msg={errorMsg} />;
@@ -16,11 +16,15 @@ const ProductsList = () => {
   return (
     <section className="products-list">
       <ResultOptions />
-      <div className="product-wrapper">
-        {products.map((product) => (
-          <ListItem product={product} key={product.id} />
-        ))}
-      </div>
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <div className="product-wrapper">
+          {products.map((product) => (
+            <ListItem product={product} key={product.id} />
+          ))}
+        </div>
+      )}
       <ResultOptions />
     </section>
   );

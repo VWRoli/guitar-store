@@ -8,7 +8,17 @@ import {
 } from 'react-icons/fa';
 
 const Navbar = () => {
+  //Toggle mobile menu
   const [active, setActive] = useState(false);
+
+  //Activemenu
+  const [activeLink, setActiveLink] = useState(0);
+
+  const LINK_ITEMS = [
+    { label: 'Home', route: '/' },
+    { label: 'Products', route: '/products' },
+    { label: 'About', route: '/about' },
+  ];
 
   return (
     <>
@@ -27,21 +37,22 @@ const Navbar = () => {
             </button>
           </div>
           <ul className={active ? 'nav-links active-menu' : 'nav-links'}>
-            <li>
-              <Link to="/" onClick={() => setActive(false)}>
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link to="/products" onClick={() => setActive(false)}>
-                Products
-              </Link>
-            </li>
-            <li>
-              <Link to="/about" onClick={() => setActive(false)}>
-                About
-              </Link>
-            </li>
+            {LINK_ITEMS.map((link, i) => {
+              return (
+                <li key={i}>
+                  <Link
+                    to={link.route}
+                    onClick={() => {
+                      setActive(false);
+                      setActiveLink(i);
+                    }}
+                    className={i === activeLink ? 'active-link' : ''}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
           <div className="nav-controls">
             <FaSearch className="control-icons" />

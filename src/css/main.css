@@ -214,6 +214,11 @@ nav {
   border-bottom: 1px solid #016a78;
 }
 
+.nav-links .active-link {
+  color: #016a78;
+  border-bottom: 1px solid #016a78;
+}
+
 .nav-controls .control-icons {
   color: #424242;
   cursor: pointer;
@@ -780,6 +785,14 @@ footer .social-media svg:hover {
 
 .display-options button:hover {
   background-color: #5c5c5c;
+}
+
+.display-options button:hover {
+  background-color: #016a78;
+}
+
+.display-options .active-btn {
+  background-color: #016a78;
 }
 
 .sorting-options label {

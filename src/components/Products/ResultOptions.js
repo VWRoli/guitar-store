@@ -1,21 +1,15 @@
 import Pagination from './Pagination';
-import { useProductContext } from './productContext';
+import { useState } from 'react';
+import DisplayButtons from './DisplayButtons';
 
 const ResultOptions = () => {
-  const { setDisplayItems, setPage } = useProductContext();
+  const [active, setActive] = useState(0);
 
-  const adjustDisplayItems = (item) => {
-    setDisplayItems(item);
-    setPage(1);
-  };
+  const BUTTONS = [{ label: '9' }, { label: '18' }, { label: '36' }];
 
   return (
     <section className="result-options">
-      <div className="display-options">
-        <button onClick={() => adjustDisplayItems(9)}>9</button>
-        <button onClick={() => adjustDisplayItems(18)}>18</button>
-        <button onClick={() => adjustDisplayItems(36)}>36</button>
-      </div>
+      <DisplayButtons buttons={BUTTONS} setActive={setActive} active={active} />
       <Pagination />
       <form className="sorting-options">
         <label htmlFor="sort">Sort:</label>
