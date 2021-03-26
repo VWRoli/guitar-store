@@ -1,7 +1,7 @@
 import { useProductContext } from './productContext';
 
 const DisplayButtons = ({ buttons, active, setActive }) => {
-  const { setDisplayItems, setPage } = useProductContext();
+  const { setPage, setDisplayItems } = useProductContext();
 
   const adjustDisplayItems = (item, i) => {
     setDisplayItems(item);

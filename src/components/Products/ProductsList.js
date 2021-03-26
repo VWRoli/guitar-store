@@ -7,9 +7,6 @@ import ResultOptions from './ResultOptions';
 const ProductsList = () => {
   const { products, isLoading, isError, errorMsg } = useProductContext();
 
-  //Loading screen
-  //if (isLoading) return ;
-
   //Error message
   if (isError) return <Error msg={errorMsg} />;
 

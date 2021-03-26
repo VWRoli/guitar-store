@@ -5,6 +5,7 @@ import {
   UPDATE_HAS_NEXT_PAGE,
   SET_PAGE,
   SET_DISPLAY_ITEMS,
+  SET_SORT_OPTION,
 } from '../../constant';
 
 const productReducer = (state, action) => {
@@ -23,6 +24,9 @@ const productReducer = (state, action) => {
   }
   if (action.type === SET_DISPLAY_ITEMS) {
     return { ...state, displayItems: action.payload };
+  }
+  if (action.type === SET_SORT_OPTION) {
+    return { ...state, sorting: action.payload };
   }
 
   if (action.type === SET_ERROR) {
