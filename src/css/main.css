@@ -770,11 +770,6 @@ footer .social-media svg:hover {
   flex: 3;
 }
 
-.filters {
-  flex: 1;
-  background-color: #f6f6f6;
-}
-
 .products-list {
   flex: 3;
 }
@@ -782,6 +777,16 @@ footer .social-media svg:hover {
 .products-list .product-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+}
+
+.filters {
+  flex: 1;
+  background-color: #f6f6f6;
+}
+
+.filters h1 {
+  text-align: center;
+  margin-top: 1rem;
 }
 
 .result-options {

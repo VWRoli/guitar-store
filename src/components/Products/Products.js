@@ -1,4 +1,4 @@
-import Filters from './Filters';
+import Filters from './Filter/Filters';
 import ProductsList from './ProductsList';
 
 const Products = () => {
