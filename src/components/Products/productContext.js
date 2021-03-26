@@ -9,6 +9,7 @@ import {
   SET_PAGE,
   SET_DISPLAY_ITEMS,
   SET_SORT_OPTION,
+  SET_FILTER_OPTION,
 } from '../../constant';
 
 const ProductContext = React.createContext();
@@ -22,6 +23,7 @@ const initialState = {
   displayItems: 9,
   hasNextpage: false,
   sorting: '?_sort=',
+  filter: '',
 };
 export const ProductsProvider = ({ children }) => {
   const [state, dispatch] = useReducer(productReducer, initialState);
@@ -33,15 +35,20 @@ export const ProductsProvider = ({ children }) => {
   const setDisplayItems = (itemNumber) => {
     dispatch({ type: SET_DISPLAY_ITEMS, payload: itemNumber });
   };
+
   const setSorting = (sortOption) => {
     dispatch({ type: SET_SORT_OPTION, payload: sortOption });
+  };
+
+  const setFilters = (filterOption) => {
+    dispatch({ type: SET_FILTER_OPTION, payload: filterOption });
   };
 
   const fetchProducts = useCallback(async () => {
     dispatch({ type: SET_LOADING });
     try {
       const response = await fetch(
-        `${API_ROOT}${state.sorting}&_page=${state.page}&_limit=${state.displayItems}`
+        `${API_ROOT}${state.sorting}&_page=${state.page}&_limit=${state.displayItems}${state.filter}`
       );
 
       if (!response.ok)
@@ -67,7 +74,7 @@ export const ProductsProvider = ({ children }) => {
     } catch (error) {
       dispatch({ type: SET_ERROR, payload: error.message });
     }
-  }, [state.page, state.displayItems, state.sorting]);
+  }, [state.page, state.displayItems, state.sorting, state.filter]);
 
   useEffect(() => {
     fetchProducts();
@@ -75,7 +82,7 @@ export const ProductsProvider = ({ children }) => {
 
   return (
     <ProductContext.Provider
-      value={{ ...state, setPage, setDisplayItems, setSorting }}
+      value={{ ...state, setPage, setDisplayItems, setSorting, setFilters }}
     >
       {children}
     </ProductContext.Provider>

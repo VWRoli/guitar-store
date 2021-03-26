@@ -6,6 +6,7 @@ import {
   SET_PAGE,
   SET_DISPLAY_ITEMS,
   SET_SORT_OPTION,
+  SET_FILTER_OPTION,
 } from '../../constant';
 
 const productReducer = (state, action) => {
@@ -27,6 +28,9 @@ const productReducer = (state, action) => {
   }
   if (action.type === SET_SORT_OPTION) {
     return { ...state, sorting: action.payload };
+  }
+  if (action.type === SET_FILTER_OPTION) {
+    return { ...state, filter: action.payload };
   }
 
   if (action.type === SET_ERROR) {
