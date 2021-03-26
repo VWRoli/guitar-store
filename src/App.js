@@ -9,9 +9,10 @@ import Navbar from './components/Navbar';
 import OnSale from './components/OnSale';
 import SingleProduct from './components/SingleProduct/SingleProduct';
 import { ProductsProvider } from './components/Products/productContext';
+import Footer from './components/Footer';
+
 //CSS
 import './css/main.css';
-import Footer from './components/Footer';
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
             <ErrorPage />
           </Route>
         </Switch>
+
         <Footer />
       </main>
     </Router>

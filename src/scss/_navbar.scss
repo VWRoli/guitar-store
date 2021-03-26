@@ -61,7 +61,7 @@ nav {
     margin: 1rem;
   }
 }
-.sale-banner {
+#sale-banner {
   background-color: $main-color;
   color: $light-bg;
   padding: 0.5rem;
@@ -119,4 +119,22 @@ nav {
 }
 .active-menu {
   height: 8rem;
+}
+
+.to-top {
+  color: $secondary-color;
+  font-size: 2rem;
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+}
+.to-top-visible {
+  visibility: visible;
+  opacity: 0.5;
+  cursor: pointer;
+  &:hover {
+    opacity: 1;
+  }
 }
