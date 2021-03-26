@@ -1,0 +1,23 @@
+.about {
+  @include container();
+  text-align: center;
+  h2 {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  img {
+    max-width: 500px;
+    margin: 1rem;
+  }
+  .about-img1 {
+    float: right;
+  }
+  .about-img2 {
+    float: left;
+  }
+  p {
+    line-height: 2.25;
+    margin: 1rem 0;
+  }
+}

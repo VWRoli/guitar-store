@@ -859,3 +859,32 @@ footer .social-media svg:hover {
   color: #016a78;
   background-color: transparent;
 }
+
+.about {
+  max-width: 90vw;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.about img {
+  max-width: 500px;
+  margin: 1rem;
+}
+
+.about .about-img1 {
+  float: right;
+}
+
+.about .about-img2 {
+  float: left;
+}
+
+.about p {
+  line-height: 2.25;
+  margin: 1rem 0;
+}
