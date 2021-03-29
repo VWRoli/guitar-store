@@ -1,13 +1,13 @@
 import React, { useReducer, useContext } from 'react';
 import cartReducer from './cartReducer';
-import { CLEAR_CART } from '../../constant';
+import { CLEAR_CART, REMOVE_ITEM } from '../../constant';
 
 const CartContext = React.createContext();
 
 const initialState = {
   cart: [
     {
-      id: 1500000286807,
+      id: 1,
       name: 'Ibanez AZ2402',
       price: 1799.99,
       image:
@@ -15,7 +15,7 @@ const initialState = {
       amount: 1,
     },
     {
-      id: 150000286807,
+      id: 2,
       name: 'Ibanez AZ2402',
       price: 1799.99,
       image:
@@ -23,7 +23,7 @@ const initialState = {
       amount: 1,
     },
     {
-      id: 150000028607,
+      id: 3,
       name: 'Ibanez AZ2402',
       price: 1799.99,
       image:
@@ -42,8 +42,12 @@ export const CartProvider = ({ children }) => {
     dispatch({ type: CLEAR_CART });
   };
 
+  const removeItem = (id) => {
+    dispatch({ type: REMOVE_ITEM, payload: id });
+  };
+
   return (
-    <CartContext.Provider value={{ ...state, clearCart }}>
+    <CartContext.Provider value={{ ...state, clearCart, removeItem }}>
       {children}
     </CartContext.Provider>
   );

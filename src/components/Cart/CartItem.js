@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
 import { FaChevronUp, FaChevronDown, FaTrash } from 'react-icons/fa';
+import { useCartContext } from './cartContext';
 
 const CartItem = ({ item }) => {
+  const { removeItem } = useCartContext();
   console.log(item);
   const { name, id, price, image, amount } = item;
 
@@ -22,7 +24,7 @@ const CartItem = ({ item }) => {
           Orders placed until 12:00, will be shipped the same day, if the item
           is in stock.
         </p>
-        <button className="delete-item">
+        <button className="delete-item" onClick={() => removeItem(id)}>
           <FaTrash />
         </button>
       </div>
