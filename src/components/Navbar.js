@@ -84,9 +84,18 @@ const Navbar = () => {
             })}
           </ul>
           <div className="nav-controls">
-            <FaSearch className="control-icons" />
-            <FaBalanceScale className="control-icons" />
-            <FaShoppingCart className="control-icons" />
+            <button className="navbar-icons">
+              <FaSearch />
+            </button>
+            <button className="navbar-icons">
+              <FaBalanceScale />
+            </button>
+            <button className="navbar-icons navbar-cart">
+              <Link to="/cart">
+                <FaShoppingCart />
+                <span className="cart-item-total">0</span>
+              </Link>
+            </button>
           </div>
         </div>
       </nav>

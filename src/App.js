@@ -1,5 +1,8 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
+//CSS
+import './css/main.css';
+
 //Pages
 import Home from './components/Home/Home';
 import Products from './components/Products/Products';
@@ -10,40 +13,44 @@ import OnSale from './components/OnSale';
 import SingleProduct from './components/SingleProduct/SingleProduct';
 import { ProductsProvider } from './components/Products/productContext';
 import Footer from './components/Footer';
-
-//CSS
-import './css/main.css';
+import Cart from './components/Cart/Cart';
+import { CartProvider } from './components/Cart/cartContext';
 
 function App() {
   return (
     <Router>
-      <main className="App">
-        <Navbar />
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/products">
-            <ProductsProvider>
-              <Products />
-            </ProductsProvider>
-          </Route>
-          <Route path="/product/:id">
-            <SingleProduct />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/onsale">
-            <OnSale />
-          </Route>
-          <Route path="*">
-            <ErrorPage />
-          </Route>
-        </Switch>
+      <CartProvider>
+        <main className="App">
+          <Navbar />
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/products">
+              <ProductsProvider>
+                <Products />
+              </ProductsProvider>
+            </Route>
+            <Route path="/product/:id">
+              <SingleProduct />
+            </Route>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/onsale">
+              <OnSale />
+            </Route>
+            <Route path="/cart">
+              <Cart />
+            </Route>
+            <Route path="*">
+              <ErrorPage />
+            </Route>
+          </Switch>
 
-        <Footer />
-      </main>
+          <Footer />
+        </main>
+      </CartProvider>
     </Router>
   );
 }

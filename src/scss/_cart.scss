@@ -1,0 +1,108 @@
+.cart {
+  @include container();
+  width: 100%;
+
+  .cart-title {
+    @include top-bottom-border();
+  }
+  .clear-btn-wrapper {
+    display: flex;
+    justify-content: center;
+    .clear-cart {
+      @include secondary-btn();
+    }
+  }
+  .cart-total {
+    @include top-bottom-border();
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.your-cart {
+  min-height: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .empty-cart-msg {
+    color: $secondary-color;
+  }
+}
+.your-cart {
+  display: flex;
+  flex-direction: column;
+
+  .your-cart-item {
+    margin: 0.5rem 0;
+    @include border-bg();
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 0.5rem;
+
+    .cart-item-img {
+      max-width: 125px;
+      grid-column: span 2;
+    }
+    .item-info {
+      grid-column: span 8;
+
+      a {
+        color: $main-color;
+      }
+      small {
+        color: $muted;
+        font-size: 0.75rem;
+      }
+      p {
+        color: $muted;
+        font-size: 0.85rem;
+      }
+    }
+    .item-price {
+      grid-column: span 2;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      h3 {
+        font-size: 1.5rem;
+        color: $main-color;
+      }
+      .quantity-controls {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        //Hide arrows
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+        /* Firefox */
+        input[type='number'] {
+          -moz-appearance: textfield;
+        }
+
+        input {
+          //background-color: #fff;
+          padding: 0 0.75rem;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          max-width: 1.25rem;
+        }
+        button {
+          display: grid;
+          place-content: center;
+          font-size: 1rem;
+          @include reset-btn();
+          color: $secondary-color;
+          @include icon-hover();
+        }
+      }
+    }
+  }
+}
