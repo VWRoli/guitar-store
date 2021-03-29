@@ -770,6 +770,10 @@ footer .social-media svg:hover {
   flex: 3;
 }
 
+.products .container .no-match-msg {
+  flex: 3;
+}
+
 .products-list {
   flex: 3;
 }

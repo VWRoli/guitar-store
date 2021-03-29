@@ -5,10 +5,20 @@ import Error from '../../Error';
 import ResultOptions from './ResultOptions';
 
 const ProductsList = () => {
-  const { products, isLoading, isError, errorMsg } = useProductContext();
-  console.log(products);
+  const {
+    products,
+    isLoading,
+    isError,
+    errorMsg,
+    filter,
+  } = useProductContext();
+
   //Error message
   if (isError) return <Error msg={errorMsg} />;
+
+  //Render if there is no match for the filters
+  if (products[0] === undefined && filter[0])
+    return <h2 className="no-match-msg">No Products Match</h2>;
 
   return (
     <section className="products-list">

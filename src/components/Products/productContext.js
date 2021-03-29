@@ -60,7 +60,9 @@ export const ProductsProvider = ({ children }) => {
 
       //Checking for next page
       const nextPageResponse = await fetch(
-        `${API_ROOT}?_page=${state.page + 1}&_limit=${state.displayItems}`
+        `${API_ROOT}${state.sorting}&_page=${state.page + 1}&_limit=${
+          state.displayItems
+        }${state.filter.join('')}`
       );
 
       if (!nextPageResponse.ok)

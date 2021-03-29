@@ -3,7 +3,7 @@ import { useProductContext } from '../productContext';
 import Checkbox from './Checkbox';
 
 const FilterGroup = ({ items, name }) => {
-  const { setFilters, filter } = useProductContext();
+  const { setFilters, filter, setPage } = useProductContext();
 
   const handleChange = (name, item) => {
     const clickedItem = `&${name.toLowerCase()}=${item}`;
@@ -18,6 +18,7 @@ const FilterGroup = ({ items, name }) => {
     } else {
       setFilters([...filter, clickedItem]);
     }
+    setPage(1);
   };
 
   return (
