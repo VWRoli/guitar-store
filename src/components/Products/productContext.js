@@ -23,7 +23,7 @@ const initialState = {
   displayItems: 9,
   hasNextpage: false,
   sorting: '?_sort=',
-  filter: '',
+  filter: [],
 };
 export const ProductsProvider = ({ children }) => {
   const [state, dispatch] = useReducer(productReducer, initialState);
@@ -48,7 +48,9 @@ export const ProductsProvider = ({ children }) => {
     dispatch({ type: SET_LOADING });
     try {
       const response = await fetch(
-        `${API_ROOT}${state.sorting}&_page=${state.page}&_limit=${state.displayItems}${state.filter}`
+        `${API_ROOT}${state.sorting}&_page=${state.page}&_limit=${
+          state.displayItems
+        }${state.filter.join('')}`
       );
 
       if (!response.ok)
