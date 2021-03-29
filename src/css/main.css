@@ -1079,11 +1079,11 @@ footer .social-media svg:hover {
   -moz-appearance: textfield;
 }
 
-.your-cart .your-cart-item .item-price .quantity-controls input {
+.your-cart .your-cart-item .item-price .quantity-controls p {
+  background-color: #fff;
   padding: 0 0.75rem;
   border: 1px solid #ddd;
   border-radius: 5px;
-  max-width: 1.25rem;
 }
 
 .your-cart .your-cart-item .item-price .quantity-controls button {

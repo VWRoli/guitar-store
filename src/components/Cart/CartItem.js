@@ -3,13 +3,10 @@ import { FaChevronUp, FaChevronDown, FaTrash } from 'react-icons/fa';
 import { useCartContext } from './cartContext';
 
 const CartItem = ({ item }) => {
-  const { removeItem } = useCartContext();
-  console.log(item);
+  const { removeItem, increaseAmount, decreaseAmount } = useCartContext();
+
   const { name, id, price, image, amount } = item;
 
-  const handleChange = (e) => {
-    console.log(e.target.value);
-  };
   return (
     <div className="your-cart-item">
       <div className="cart-item-img">
@@ -33,22 +30,15 @@ const CartItem = ({ item }) => {
         <div>
           Quantity
           <div className="quantity-controls">
-            <button>
-              <FaChevronUp />
-            </button>
-            <form>
-              <label htmlFor="quantity">
-                <input
-                  type="number"
-                  value={amount}
-                  placeholder={amount}
-                  onChange={handleChange}
-                />
-              </label>
-            </form>
-
-            <button>
+            <button onClick={() => decreaseAmount(id)}>
               <FaChevronDown />
+            </button>
+
+            <form>
+              <p>{amount}</p>
+            </form>
+            <button onClick={() => increaseAmount(id)}>
+              <FaChevronUp />
             </button>
           </div>
         </div>

@@ -97,12 +97,11 @@
           -moz-appearance: textfield;
         }
 
-        input {
-          //background-color: #fff;
+        p {
+          background-color: #fff;
           padding: 0 0.75rem;
           border: 1px solid #ddd;
           border-radius: 5px;
-          max-width: 1.25rem;
         }
         button {
           display: grid;
