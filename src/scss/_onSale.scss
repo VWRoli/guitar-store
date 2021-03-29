@@ -1,0 +1,10 @@
+.onsale-wrapper {
+  @include container();
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.onsale-title {
+  @include container();
+  @include top-bottom-border();
+  color: $main-color;
+}

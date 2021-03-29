@@ -918,3 +918,18 @@ footer .social-media svg:hover {
   line-height: 2.25;
   margin: 1rem 0;
 }
+
+.onsale-wrapper {
+  max-width: 90vw;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.onsale-title {
+  max-width: 90vw;
+  margin: 2rem auto;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  color: #016a78;
+}
