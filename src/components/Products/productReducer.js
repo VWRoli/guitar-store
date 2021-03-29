@@ -30,7 +30,7 @@ const productReducer = (state, action) => {
     return { ...state, sorting: action.payload };
   }
   if (action.type === SET_FILTER_OPTION) {
-    return { ...state, filter: [...state.filter, action.payload] };
+    return { ...state, filter: action.payload };
   }
 
   if (action.type === SET_ERROR) {
