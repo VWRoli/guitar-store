@@ -1,6 +1,6 @@
 export const API_ROOT = `https://my-guitarstore-api.herokuapp.com/products/`;
 
-//ACTION TYPES
+//ACTION TYPES FOR PRODUCT CONTEXT
 export const SET_PRODUCTS = 'SET_PRODUCTS';
 export const SET_LOADING = 'SET_LOADING';
 export const SET_ERROR = 'SET_ERROR';
@@ -9,3 +9,6 @@ export const SET_PAGE = 'SET_PAGE';
 export const SET_DISPLAY_ITEMS = 'SET_DISPLAY_ITEMS';
 export const SET_SORT_OPTION = 'SET_SORT_OPTION';
 export const SET_FILTER_OPTION = 'SET_FILTER_OPTION';
+
+//ACTION TYPES FOR CART CONTEXT
+export const CLEAR_CART = 'CLEAR_CART';

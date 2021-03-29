@@ -1,8 +1,9 @@
 import { useCartContext } from './cartContext';
 import CartItem from './CartItem';
+import { priceFormatter } from '../../helpers';
 
 const Cart = () => {
-  const { cart } = useCartContext();
+  const { cart, total, clearCart } = useCartContext();
 
   return (
     <section className="cart">
@@ -20,12 +21,19 @@ const Cart = () => {
           ))}
         </div>
       )}
-      <div className="clear-btn-wrapper">
-        <button className="clear-cart">Clear Cart</button>
-      </div>
+      {cart.length === 0 ? (
+        ''
+      ) : (
+        <div className="clear-btn-wrapper">
+          <button className="clear-cart" onClick={clearCart}>
+            Clear Cart
+          </button>
+        </div>
+      )}
+
       <div className="cart-total">
         <h3>Total:</h3>
-        <h3>0.00$</h3>
+        <h3>{priceFormatter(total)}</h3>
       </div>
     </section>
   );

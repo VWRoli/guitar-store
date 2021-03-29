@@ -1,5 +1,6 @@
 import React, { useReducer, useContext } from 'react';
 import cartReducer from './cartReducer';
+import { CLEAR_CART } from '../../constant';
 
 const CartContext = React.createContext();
 
@@ -30,13 +31,21 @@ const initialState = {
       amount: 1,
     },
   ],
+  total: 0,
+  amount: 0,
 };
 
 export const CartProvider = ({ children }) => {
   const [state, dispatch] = useReducer(cartReducer, initialState);
 
+  const clearCart = () => {
+    dispatch({ type: CLEAR_CART });
+  };
+
   return (
-    <CartContext.Provider value={{ ...state }}>{children}</CartContext.Provider>
+    <CartContext.Provider value={{ ...state, clearCart }}>
+      {children}
+    </CartContext.Provider>
   );
 };
 

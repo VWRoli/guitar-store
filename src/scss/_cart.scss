@@ -46,6 +46,10 @@
     }
     .item-info {
       grid-column: span 8;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-around;
 
       a {
         color: $main-color;
@@ -57,6 +61,12 @@
       p {
         color: $muted;
         font-size: 0.85rem;
+      }
+      .delete-item {
+        font-size: 1rem;
+        @include reset-btn();
+        color: $secondary-color;
+        @include icon-hover();
       }
     }
     .item-price {

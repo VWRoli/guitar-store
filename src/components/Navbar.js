@@ -8,8 +8,10 @@ import {
   FaChevronCircleUp,
 } from 'react-icons/fa';
 import { Link as ScrollLink } from 'react-scroll';
+import { useCartContext } from './Cart/cartContext';
 
 const Navbar = () => {
+  const { amount } = useCartContext();
   //Scroll to top button
   const bannerRef = useRef(null);
 
@@ -93,7 +95,7 @@ const Navbar = () => {
             <button className="navbar-icons navbar-cart">
               <Link to="/cart">
                 <FaShoppingCart />
-                <span className="cart-item-total">0</span>
+                <span className="cart-item-total">{amount}</span>
               </Link>
             </button>
           </div>

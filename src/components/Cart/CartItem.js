@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FaChevronUp, FaChevronDown } from 'react-icons/fa';
+import { FaChevronUp, FaChevronDown, FaTrash } from 'react-icons/fa';
 
 const CartItem = ({ item }) => {
   console.log(item);
@@ -22,6 +22,9 @@ const CartItem = ({ item }) => {
           Orders placed until 12:00, will be shipped the same day, if the item
           is in stock.
         </p>
+        <button className="delete-item">
+          <FaTrash />
+        </button>
       </div>
       <div className="item-price">
         <h3>{price}</h3>
