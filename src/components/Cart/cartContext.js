@@ -1,10 +1,11 @@
-import React, { useReducer, useContext } from 'react';
+import React, { useReducer, useContext, useEffect } from 'react';
 import cartReducer from './cartReducer';
 import {
   CLEAR_CART,
   REMOVE_ITEM,
   INCREASE_AMOUNT,
   DECREASE_AMOUNT,
+  GET_TOTAL,
 } from '../../constant';
 
 const CartContext = React.createContext();
@@ -58,6 +59,10 @@ export const CartProvider = ({ children }) => {
   const decreaseAmount = (id) => {
     dispatch({ type: DECREASE_AMOUNT, payload: id });
   };
+
+  useEffect(() => {
+    dispatch({ type: GET_TOTAL });
+  }, [state.cart]);
 
   return (
     <CartContext.Provider
