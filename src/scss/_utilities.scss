@@ -96,3 +96,12 @@ $muted: #999;
   max-width: 90vw;
   margin: 2rem auto;
 }
+
+@mixin disable-btn {
+  margin: 0.5rem;
+  color: $light-bg;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  cursor: not-allowed;
+  background-color: #999;
+}

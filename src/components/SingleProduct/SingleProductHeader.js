@@ -93,7 +93,10 @@ const SingleProductHeader = ({ product }) => {
                 id="quantity"
                 placeholder="1"
               />
-              <button onClick={handleClick}>
+              <button
+                className={inStock ? 'add-to-cart-btn' : 'disable'}
+                onClick={handleClick}
+              >
                 <FaCartPlus />
                 Add to Cart
               </button>

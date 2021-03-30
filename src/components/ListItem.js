@@ -81,7 +81,10 @@ const ListItem = ({ product }) => {
           <button className="control-icons">
             <FaBalanceScale />
           </button>
-          <button className="control-icons" onClick={handleClick}>
+          <button
+            className={inStock ? 'control-icons' : 'disable-btn'}
+            onClick={handleClick}
+          >
             <FaCartPlus />
           </button>
         </div>
