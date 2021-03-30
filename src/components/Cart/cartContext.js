@@ -53,8 +53,6 @@ export const CartProvider = ({ children }) => {
     dispatch({ type: CLOSE_MESSAGE });
   };
 
-  console.log(state.cart);
-  console.log(state.compare);
   return (
     <CartContext.Provider
       value={{

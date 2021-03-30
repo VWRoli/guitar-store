@@ -15,53 +15,53 @@ const GuitarOverview = ({ product }) => {
   return (
     <tbody>
       <tr colSpan="2">
-        <td>Name:</td>
+        <th>Name:</th>
         <td>{name}</td>
       </tr>
       <tr>
-        <td>Brand:</td>
+        <th>Brand:</th>
         <td>{brand}</td>
       </tr>
       <tr>
-        <td>Type:</td>
+        <th>Type:</th>
         <td>{type}</td>
       </tr>
       <tr>
-        <td>Color:</td>
+        <th>Color:</th>
         <td>{fantasyColor}</td>
       </tr>
       <tr>
-        <td>Orientation:</td>
+        <th>Orientation:</th>
         <td>{orientation}</td>
       </tr>
       <tr>
-        <td>Neck wood:</td>
+        <th>Neck wood:</th>
         <td>{neckWood}</td>
       </tr>
       <tr>
-        <td>Number of Strings:</td>
+        <th>Number of Strings:</th>
         <td>{strings}</td>
       </tr>
       <tr>
-        <td>Number of Frets:</td>
+        <th>Number of Frets:</th>
         <td>{fretNumber}</td>
       </tr>
       {pickups ? (
         <>
           <tr>
-            <td>Pickups:</td>
+            <th>Pickups:</th>
             <td>{pickups.config}</td>
           </tr>
           <tr>
-            <td>Neck:</td>
+            <th>Neck:</th>
             <td>{pickups.neck}</td>
           </tr>
           <tr>
-            <td>Middle:</td>
+            <th>Middle:</th>
             <td>{pickups.middle}</td>
           </tr>
           <tr>
-            <td>Bridge:</td>
+            <th>Bridge:</th>
             <td>{pickups.bridge}</td>
           </tr>
         </>
@@ -70,7 +70,7 @@ const GuitarOverview = ({ product }) => {
       )}
 
       <tr>
-        <td>Made in:</td>
+        <th>Made in:</th>
         <td>{countryOrigin}</td>
       </tr>
     </tbody>

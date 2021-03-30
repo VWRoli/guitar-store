@@ -13,36 +13,36 @@ const AmpOverview = ({ product }) => {
   return (
     <tbody>
       <tr>
-        <td>Name:</td>
+        <th>Name:</th>
         <td>{name}</td>
       </tr>
       <tr>
-        <td>Brand:</td>
+        <th>Brand:</th>
         <td>{brand}</td>
       </tr>
       <tr>
-        <td>Type:</td>
+        <th>Type:</th>
         <td>{type}</td>
       </tr>
       <tr>
-        <td>Power:</td>
+        <th>Power:</th>
         <td>{power}</td>
       </tr>
 
       <tr>
-        <td>Speakers:</td>
+        <th>Speakers:</th>
         <td>{speakers}</td>
       </tr>
       <tr>
-        <td>Speaker Type:</td>
+        <th>Speaker Type:</th>
         <td>{speakerType}</td>
       </tr>
       <tr>
-        <td>Reverb:</td>
+        <th>Reverb:</th>
         <td>{reverb ? 'Yes' : 'No'}</td>
       </tr>
       <tr>
-        <td>USB:</td>
+        <th>USB:</th>
         <td>{usb ? 'Yes' : 'No'}</td>
       </tr>
     </tbody>

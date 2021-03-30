@@ -1,5 +1,161 @@
+import { useCartContext } from '../Cart/cartContext';
+import CompareItem from './CompareItem';
+
 const Compare = () => {
-  return <div>Compare</div>;
+  const { compare } = useCartContext();
+  console.log(compare);
+  return (
+    <section className="compare">
+      <table>
+        <tbody>
+          <tr>
+            <th>Image:</th>
+            {compare.map((item) => (
+              <td key={item.id}>
+                <img src={item.images[0]} alt={item.name} />
+              </td>
+            ))}
+          </tr>
+          <tr>
+            <th>Name:</th>
+            {compare.map((item) => (
+              <td key={item.id}>{item.name}</td>
+            ))}
+          </tr>
+
+          <tr>
+            <th>Brand:</th>
+            {compare.map((item) => (
+              <td key={item.id}>{item.brand}</td>
+            ))}
+          </tr>
+
+          <tr>
+            <th>Type:</th>
+            {compare.map((item) => (
+              <td key={item.id}>{item.type}</td>
+            ))}
+          </tr>
+
+          <tr>
+            <th>Color:</th>
+            {compare.map((item) => (
+              <td key={item.id}>{item.fantasyColor}</td>
+            ))}
+          </tr>
+
+          <tr>
+            <th>Orientation:</th>
+            {compare.map((item) => (
+              <td key={item.id}>{item.orientation}</td>
+            ))}
+          </tr>
+
+          <tr>
+            <th>Neck Wood:</th>
+            {compare.map((item) => (
+              <td key={item.id}>{item.neckWood}</td>
+            ))}
+          </tr>
+
+          <tr>
+            <th>Number of Strings:</th>
+            {compare.map((item) => (
+              <td key={item.id}>{item.strings}</td>
+            ))}
+          </tr>
+
+          <tr>
+            <th>Number of Frets:</th>
+            {compare.map((item) => (
+              <td key={item.id}>{item.fretNumber}</td>
+            ))}
+          </tr>
+
+          <tr>
+            <th>Pickups:</th>
+            {compare.map((item) =>
+              item.pickups ? (
+                <td key={item.id}>{item.pickups.config}</td>
+              ) : (
+                <td key={item.id}></td>
+              )
+            )}
+          </tr>
+
+          <tr>
+            <th>Neck:</th>
+            {compare.map((item) =>
+              item.pickups ? (
+                <td key={item.id}>{item.pickups.neck}</td>
+              ) : (
+                <td key={item.id}></td>
+              )
+            )}
+          </tr>
+          <tr>
+            <th>Middle:</th>
+            {compare.map((item) =>
+              item.pickups ? (
+                <td key={item.id}>{item.pickups.middle}</td>
+              ) : (
+                <td key={item.id}></td>
+              )
+            )}
+          </tr>
+          <tr>
+            <th>Bridge:</th>
+            {compare.map((item) =>
+              item.pickups ? (
+                <td key={item.id}>{item.pickups.bridge}</td>
+              ) : (
+                <td key={item.id}></td>
+              )
+            )}
+          </tr>
+
+          <tr>
+            <th>Made in:</th>
+            {compare.map((item) => (
+              <td key={item.id}>{item.countryOrigin ? 'Yes' : 'No'}</td>
+            ))}
+          </tr>
+
+          <tr>
+            <th>Power:</th>
+            {compare.map((item) => (
+              <td key={item.id}>{item.power ? 'Yes' : 'No'}</td>
+            ))}
+          </tr>
+          <tr>
+            <th>Speakers:</th>
+            {compare.map((item) => (
+              <td key={item.id}>{item.speakers ? 'Yes' : 'No'}</td>
+            ))}
+          </tr>
+          <tr>
+            <th>Speaker Type:</th>
+            {compare.map((item) => (
+              <td key={item.id}>{item.speakerType ? 'Yes' : 'No'}</td>
+            ))}
+          </tr>
+
+          <tr>
+            <th>Reverb:</th>
+            {compare.map((item) => (
+              <td key={item.id}>{item.reverb ? 'Yes' : 'No'}</td>
+            ))}
+          </tr>
+          <tr>
+            <th>USB:</th>
+            {compare.map((item) => (
+              <td key={item.id}>{item.usb ? 'Yes' : 'No'}</td>
+            ))}
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  );
 };
 
 export default Compare;

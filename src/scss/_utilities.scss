@@ -105,3 +105,21 @@ $muted: #999;
   cursor: not-allowed;
   background-color: #999;
 }
+
+@mixin table-config() {
+  border-collapse: collapse;
+  margin: 1rem 0;
+
+  tr:nth-child(even) {
+    background-color: $light-bg;
+  }
+  th {
+    text-align: left;
+    font-weight: 500;
+  }
+  th,
+  td {
+    border: 1px solid #ddd;
+    padding: 5px;
+  }
+}

@@ -1,0 +1,14 @@
+.compare {
+  @include container();
+  display: flex;
+  table {
+    @include table-config();
+    img {
+      max-width: 150px;
+    }
+    .table-image {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
