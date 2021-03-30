@@ -70,8 +70,12 @@ const ListItem = ({ product }) => {
           </p>
         </div>
         <div className="controls">
-          <FaBalanceScale className="control-icons" />
-          <FaCartPlus className="control-icons" />
+          <button>
+            <FaBalanceScale className="control-icons" />
+          </button>
+          <button>
+            <FaCartPlus className="control-icons" />
+          </button>
         </div>
       </div>
     </article>

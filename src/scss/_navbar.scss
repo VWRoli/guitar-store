@@ -57,22 +57,26 @@ nav {
 .nav-controls {
   .navbar-icons {
     @include reset-btn();
-    @include icon-hover();
     font-size: 1.5rem;
     margin: 0.5rem;
+    svg {
+      @include icon-hover();
+    }
   }
   .navbar-cart {
     position: relative;
     .cart-item-total {
       position: absolute;
-      top: 0;
-      right: -0.5rem;
+      top: -5px;
+      right: -10px;
       background-color: $main-color;
       color: $light-bg;
       font-size: 0.85rem;
       width: 1.15rem;
       height: 1.15rem;
       border-radius: 50%;
+      display: grid;
+      place-content: center;
     }
     &:hover {
       .cart-item-total {

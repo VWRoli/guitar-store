@@ -1,9 +1,8 @@
 import {
   CLEAR_CART,
   REMOVE_ITEM,
-  INCREASE_AMOUNT,
-  DECREASE_AMOUNT,
   GET_TOTAL,
+  TOGGLE_AMOUNT,
 } from '../../constant';
 
 const cartReducer = (state, action) => {
@@ -16,20 +15,14 @@ const cartReducer = (state, action) => {
     return { ...state, cart: newCart };
   }
 
-  if (action.type === INCREASE_AMOUNT) {
-    const newCart = state.cart.map((item) => {
-      if (item.id === action.payload) {
-        return { ...item, amount: item.amount + 1 };
-      }
-      return item;
-    });
-    return { ...state, cart: newCart };
-  }
-
-  if (action.type === DECREASE_AMOUNT) {
+  if (action.type === TOGGLE_AMOUNT) {
     const newCart = state.cart
       .map((item) => {
-        if (item.id === action.payload) {
+        if (item.id === action.payload.id) {
+          if (action.payload.type === 'increase') {
+            return { ...item, amount: item.amount + 1 };
+          } else {
+          }
           return { ...item, amount: item.amount - 1 };
         }
         return item;

@@ -3,7 +3,7 @@ import { FaChevronUp, FaChevronDown, FaTrash } from 'react-icons/fa';
 import { useCartContext } from './cartContext';
 
 const CartItem = ({ item }) => {
-  const { removeItem, increaseAmount, decreaseAmount } = useCartContext();
+  const { removeItem, toggleAmount } = useCartContext();
 
   const { name, id, price, image, amount } = item;
 
@@ -30,14 +30,14 @@ const CartItem = ({ item }) => {
         <div>
           Quantity
           <div className="quantity-controls">
-            <button onClick={() => decreaseAmount(id)}>
+            <button onClick={() => toggleAmount(id, 'decrease')}>
               <FaChevronDown />
             </button>
 
             <form>
               <p>{amount}</p>
             </form>
-            <button onClick={() => increaseAmount(id)}>
+            <button onClick={() => toggleAmount(id, 'increase')}>
               <FaChevronUp />
             </button>
           </div>

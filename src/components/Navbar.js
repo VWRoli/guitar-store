@@ -89,15 +89,14 @@ const Navbar = () => {
             <button className="navbar-icons">
               <FaSearch />
             </button>
-            <button className="navbar-icons">
+            <Link to="/compare" className="navbar-icons">
               <FaBalanceScale />
-            </button>
-            <button className="navbar-icons navbar-cart">
-              <Link to="/cart">
-                <FaShoppingCart />
-                <span className="cart-item-total">{amount}</span>
-              </Link>
-            </button>
+            </Link>
+
+            <Link to="/cart" className="navbar-icons navbar-cart">
+              <FaShoppingCart />
+              <span className="cart-item-total">{amount}</span>
+            </Link>
           </div>
         </div>
       </nav>

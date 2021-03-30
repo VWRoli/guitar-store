@@ -11,6 +11,10 @@ const Footer = () => {
     <footer>
       <section className="footer-subscription">
         <h3>Subscribe to our newsletter for the best deals possible</h3>
+        <p>
+          This a project site for my portfolio only. The pictures are the
+          property of Muziker.hu
+        </p>
         <small>You can unsubscribe at any time.</small>
         <form>
           <input
@@ -91,6 +95,7 @@ const Footer = () => {
           <Link to="/">Affiliate</Link>
         </div>
       </section>
+
       <small>GuitarStore &copy; 2021</small>
     </footer>
   );

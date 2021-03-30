@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 //CSS
-import './css/main.css';
+import './css/main.min.css';
 
 //Pages
 import Home from './components/Home/Home';
@@ -15,6 +15,7 @@ import { ProductsProvider } from './components/Products/productContext';
 import Footer from './components/Footer';
 import Cart from './components/Cart/Cart';
 import { CartProvider } from './components/Cart/cartContext';
+import Compare from './components/Compare';
 
 function App() {
   return (
@@ -39,6 +40,9 @@ function App() {
             </Route>
             <Route path="/onsale">
               <OnSale />
+            </Route>
+            <Route path="/compare">
+              <Compare />
             </Route>
             <Route path="/cart">
               <Cart />
