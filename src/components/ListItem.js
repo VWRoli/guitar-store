@@ -10,7 +10,7 @@ import { priceFormatter } from '../helpers';
 import { useCartContext } from './Cart/cartContext';
 
 const ListItem = ({ product }) => {
-  const { addItem, openMessage } = useCartContext();
+  const { addItem, openMessage, cart } = useCartContext();
 
   const {
     images,
@@ -28,6 +28,8 @@ const ListItem = ({ product }) => {
 
   const handleClick = () => {
     openMessage();
+    console.log(product);
+    console.log(cart);
     addItem(product, 'cart');
   };
 

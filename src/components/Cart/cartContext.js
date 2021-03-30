@@ -28,16 +28,16 @@ export const CartProvider = ({ children }) => {
     dispatch({ type: CLEAR_CART });
   };
 
-  const removeItem = (id) => {
-    dispatch({ type: REMOVE_ITEM, payload: id });
+  const removeItem = (id, source) => {
+    dispatch({ type: REMOVE_ITEM, payload: { id, source } });
   };
 
   const toggleAmount = (id, type) => {
     dispatch({ type: TOGGLE_AMOUNT, payload: { id, type } });
   };
 
-  const addItem = (product, destination) => {
-    dispatch({ type: ADD_ITEM, payload: { product, destination } });
+  const addItem = (product, source) => {
+    dispatch({ type: ADD_ITEM, payload: { product, source } });
   };
 
   useEffect(() => {

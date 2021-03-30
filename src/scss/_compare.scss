@@ -1,8 +1,14 @@
 .compare {
   @include container();
   display: flex;
+  min-height: 20rem;
+  justify-content: center;
+
   table {
     @include table-config();
+    td {
+      position: relative;
+    }
     img {
       max-width: 150px;
     }
@@ -11,4 +17,16 @@
       justify-content: center;
     }
   }
+}
+.no-comparison-msg {
+  align-self: center;
+  color: $secondary-color;
+}
+.delete-compare-item {
+  @include reset-btn();
+  color: $sale-color;
+  cursor: pointer;
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
 }

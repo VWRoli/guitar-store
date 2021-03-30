@@ -14,12 +14,23 @@ const cartReducer = (state, action) => {
   }
 
   if (action.type === REMOVE_ITEM) {
-    const newCart = state.cart.filter((item) => item.id !== action.payload);
-    return { ...state, cart: newCart };
+    if (action.payload.source === 'cart') {
+      const newCart = state.cart.filter(
+        (item) => item.id !== action.payload.id
+      );
+      return { ...state, cart: newCart };
+    }
+    if (action.payload.source === 'compare') {
+      const newCompare = state.compare.filter(
+        (item) => item.id !== action.payload.id
+      );
+      return { ...state, compare: newCompare };
+    }
   }
+
   if (action.type === ADD_ITEM) {
     //! ADDING TO CART
-    if (action.payload.destination === 'cart') {
+    if (action.payload.source === 'cart') {
       //Check for product in cart
       const inCart = state.cart.some(
         (item) => action.payload.product.id === item.id
@@ -46,7 +57,7 @@ const cartReducer = (state, action) => {
     }
     /////
     //! ADDING TO COMPARE
-    if (action.payload.destination === 'compare') {
+    if (action.payload.source === 'compare') {
       return { ...state, compare: [...state.compare, action.payload.product] };
     }
   }

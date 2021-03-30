@@ -24,7 +24,7 @@ const CartItem = ({ item }) => {
           Orders placed until 12:00, will be shipped the same day, if the item
           is in stock.
         </p>
-        <button className="delete-item" onClick={() => removeItem(id)}>
+        <button className="delete-item" onClick={() => removeItem(id, 'cart')}>
           <FaTrash />
         </button>
       </div>
