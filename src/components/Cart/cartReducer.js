@@ -3,6 +3,7 @@ import {
   REMOVE_ITEM,
   GET_TOTAL,
   TOGGLE_AMOUNT,
+  ADD_ITEM,
 } from '../../constant';
 
 const cartReducer = (state, action) => {
@@ -13,6 +14,11 @@ const cartReducer = (state, action) => {
   if (action.type === REMOVE_ITEM) {
     const newCart = state.cart.filter((item) => item.id !== action.payload);
     return { ...state, cart: newCart };
+  }
+  if (action.type === ADD_ITEM) {
+    const newItem = { ...action.payload, amount: 1 };
+
+    return { ...state, cart: [...state.cart, newItem] };
   }
 
   if (action.type === TOGGLE_AMOUNT) {

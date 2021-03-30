@@ -1,16 +1,17 @@
 import { Link } from 'react-router-dom';
 import { FaChevronUp, FaChevronDown, FaTrash } from 'react-icons/fa';
 import { useCartContext } from './cartContext';
+import { priceFormatter } from '../../helpers';
 
 const CartItem = ({ item }) => {
   const { removeItem, toggleAmount } = useCartContext();
 
-  const { name, id, price, image, amount } = item;
+  const { name, id, price, images, amount } = item;
 
   return (
     <div className="your-cart-item">
       <div className="cart-item-img">
-        <img src={image} alt={name} />
+        <img src={images[0]} alt={name} />
       </div>
       <div className="item-info">
         <h3>
@@ -26,7 +27,7 @@ const CartItem = ({ item }) => {
         </button>
       </div>
       <div className="item-price">
-        <h3>{price}</h3>
+        <h3>{priceFormatter(price)}</h3>
         <div>
           Quantity
           <div className="quantity-controls">

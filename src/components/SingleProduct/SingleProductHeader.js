@@ -9,8 +9,11 @@ import {
 import { Link } from 'react-scroll';
 
 import ImageSlider from './ImageSlider';
+import { useCartContext } from '../Cart/cartContext';
 
 const SingleProductHeader = ({ product }) => {
+  const { addItem } = useCartContext();
+
   const {
     name,
     desc,
@@ -24,6 +27,11 @@ const SingleProductHeader = ({ product }) => {
   } = product;
 
   const onSalePrice = calcOnSale(price);
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    addItem(product);
+  };
 
   return (
     <section className="single-product-header">
@@ -84,10 +92,10 @@ const SingleProductHeader = ({ product }) => {
                 id="quantity"
                 placeholder="1"
               />
-              <button type="submit">
+              <button onClick={handleClick}>
                 <FaCartPlus />
                 Add to Cart
-              </button>{' '}
+              </button>
               <br />
               <small>
                 If you order until 12:00, we ship the same day if the item is in

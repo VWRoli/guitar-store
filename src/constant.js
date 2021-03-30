@@ -13,5 +13,6 @@ export const SET_FILTER_OPTION = 'SET_FILTER_OPTION';
 //ACTION TYPES FOR CART CONTEXT
 export const CLEAR_CART = 'CLEAR_CART';
 export const REMOVE_ITEM = 'REMOVE_ITEM';
+export const ADD_ITEM = 'ADD_ITEM';
 export const GET_TOTAL = 'GET_TOTAL';
 export const TOGGLE_AMOUNT = 'TOGGLE_AMOUNT';

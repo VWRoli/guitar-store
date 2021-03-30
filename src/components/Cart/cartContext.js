@@ -5,37 +5,13 @@ import {
   REMOVE_ITEM,
   GET_TOTAL,
   TOGGLE_AMOUNT,
+  ADD_ITEM,
 } from '../../constant';
 
 const CartContext = React.createContext();
 
 const initialState = {
-  cart: [
-    {
-      id: 1,
-      name: 'Ibanez AZ2402',
-      price: 1799.99,
-      image:
-        'https://muzikercdn.com/uploads/products/6256/625697/main_b504a8bc.jpg',
-      amount: 1,
-    },
-    {
-      id: 2,
-      name: 'Ibanez AZ2402',
-      price: 1799.99,
-      image:
-        'https://muzikercdn.com/uploads/products/6256/625697/main_b504a8bc.jpg',
-      amount: 1,
-    },
-    {
-      id: 3,
-      name: 'Ibanez AZ2402',
-      price: 1799.99,
-      image:
-        'https://muzikercdn.com/uploads/products/6256/625697/main_b504a8bc.jpg',
-      amount: 1,
-    },
-  ],
+  cart: [],
   total: 0,
   amount: 0,
 };
@@ -55,6 +31,10 @@ export const CartProvider = ({ children }) => {
     dispatch({ type: TOGGLE_AMOUNT, payload: { id, type } });
   };
 
+  const addItem = (product) => {
+    dispatch({ type: ADD_ITEM, payload: product });
+  };
+
   useEffect(() => {
     dispatch({ type: GET_TOTAL });
   }, [state.cart]);
@@ -65,7 +45,7 @@ export const CartProvider = ({ children }) => {
         ...state,
         clearCart,
         removeItem,
-
+        addItem,
         toggleAmount,
       }}
     >

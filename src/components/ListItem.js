@@ -7,8 +7,11 @@ import {
 } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { priceFormatter } from '../helpers';
+import { useCartContext } from './Cart/cartContext';
 
 const ListItem = ({ product }) => {
+  const { addItem } = useCartContext();
+
   const {
     images,
     name,
@@ -70,11 +73,11 @@ const ListItem = ({ product }) => {
           </p>
         </div>
         <div className="controls">
-          <button>
-            <FaBalanceScale className="control-icons" />
+          <button className="control-icons">
+            <FaBalanceScale />
           </button>
-          <button>
-            <FaCartPlus className="control-icons" />
+          <button className="control-icons" onClick={() => addItem(product)}>
+            <FaCartPlus />
           </button>
         </div>
       </div>
