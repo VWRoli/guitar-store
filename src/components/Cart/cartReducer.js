@@ -4,6 +4,8 @@ import {
   GET_TOTAL,
   TOGGLE_AMOUNT,
   ADD_ITEM,
+  OPEN_MESSAGE,
+  CLOSE_MESSAGE,
 } from '../../constant';
 
 const cartReducer = (state, action) => {
@@ -40,8 +42,11 @@ const cartReducer = (state, action) => {
   if (action.type === GET_TOTAL) {
     const { total, amount } = state.cart.reduce(
       (cartTotal, cartItem) => {
-        const { price, amount } = cartItem;
-        const itemTotal = price * amount;
+        const { price, amount, isOnSale } = cartItem;
+
+        const onSalePrice = price * 0.9;
+
+        const itemTotal = (isOnSale ? onSalePrice : price) * amount;
 
         //get cart total value
         cartTotal.total += itemTotal;
@@ -53,6 +58,13 @@ const cartReducer = (state, action) => {
       { total: 0, amount: 0 }
     );
     return { ...state, total, amount };
+  }
+
+  if (action.type === OPEN_MESSAGE) {
+    return { ...state, isMessageOpen: true };
+  }
+  if (action.type === CLOSE_MESSAGE) {
+    return { ...state, isMessageOpen: false };
   }
 
   return state;

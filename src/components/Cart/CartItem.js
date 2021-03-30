@@ -6,7 +6,9 @@ import { priceFormatter } from '../../helpers';
 const CartItem = ({ item }) => {
   const { removeItem, toggleAmount } = useCartContext();
 
-  const { name, id, price, images, amount } = item;
+  const { name, id, price, images, amount, isOnSale } = item;
+
+  const onSalePrice = price * 0.9;
 
   return (
     <div className="your-cart-item">
@@ -27,7 +29,16 @@ const CartItem = ({ item }) => {
         </button>
       </div>
       <div className="item-price">
-        <h3>{priceFormatter(price)}</h3>
+        <h3>
+          {isOnSale ? (
+            <>
+              <span className="old-price">{priceFormatter(price)}</span>
+              <span>{priceFormatter(onSalePrice)}</span>
+            </>
+          ) : (
+            priceFormatter(price)
+          )}
+        </h3>
         <div>
           Quantity
           <div className="quantity-controls">

@@ -12,7 +12,7 @@ import ImageSlider from './ImageSlider';
 import { useCartContext } from '../Cart/cartContext';
 
 const SingleProductHeader = ({ product }) => {
-  const { addItem } = useCartContext();
+  const { addItem, openMessage } = useCartContext();
 
   const {
     name,
@@ -30,6 +30,7 @@ const SingleProductHeader = ({ product }) => {
 
   const handleClick = (e) => {
     e.preventDefault();
+    openMessage();
     addItem(product);
   };
 

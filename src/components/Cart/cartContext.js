@@ -6,6 +6,8 @@ import {
   GET_TOTAL,
   TOGGLE_AMOUNT,
   ADD_ITEM,
+  OPEN_MESSAGE,
+  CLOSE_MESSAGE,
 } from '../../constant';
 
 const CartContext = React.createContext();
@@ -14,6 +16,7 @@ const initialState = {
   cart: [],
   total: 0,
   amount: 0,
+  isMessageOpen: false,
 };
 
 export const CartProvider = ({ children }) => {
@@ -39,6 +42,15 @@ export const CartProvider = ({ children }) => {
     dispatch({ type: GET_TOTAL });
   }, [state.cart]);
 
+  //Open and close message
+  const openMessage = () => {
+    dispatch({ type: OPEN_MESSAGE });
+  };
+
+  const closeMessage = () => {
+    dispatch({ type: CLOSE_MESSAGE });
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -47,6 +59,8 @@ export const CartProvider = ({ children }) => {
         removeItem,
         addItem,
         toggleAmount,
+        openMessage,
+        closeMessage,
       }}
     >
       {children}

@@ -16,6 +16,7 @@ import Footer from './components/Footer';
 import Cart from './components/Cart/Cart';
 import { CartProvider } from './components/Cart/cartContext';
 import Compare from './components/Compare';
+import SuccessMessage from './components/SuccessMessage';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <CartProvider>
         <main className="App">
           <Navbar />
+          <SuccessMessage />
           <Switch>
             <Route exact path="/">
               <Home />

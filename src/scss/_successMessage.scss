@@ -1,0 +1,47 @@
+.overlay {
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(3px);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100vh;
+  width: 100vw;
+  z-index: 8;
+  display: grid;
+  place-content: center;
+  transition: all 0.3s;
+  opacity: 0;
+  visibility: hidden;
+}
+.msg-container {
+  @include border-bg();
+  padding: 2rem;
+  border-radius: 25px;
+
+  h2 {
+    @include top-bottom-border();
+    color: $main-color;
+  }
+  .summary-msg {
+    margin: 1rem 0;
+    span {
+      font-weight: 600;
+      color: $main-color;
+    }
+  }
+
+  .continue-btn {
+    @include secondary-btn();
+    margin-right: 1rem;
+  }
+  .cart-btn {
+    @include primary-btn();
+    margin-left: 1rem;
+  }
+}
+
+.show-message {
+  opacity: 1;
+  visibility: visible;
+}

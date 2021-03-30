@@ -67,6 +67,7 @@
         @include reset-btn();
         color: $secondary-color;
         @include icon-hover();
+        margin-left: 1rem;
       }
     }
     .item-price {
@@ -79,6 +80,8 @@
       h3 {
         font-size: 1.5rem;
         color: $main-color;
+        display: flex;
+        flex-direction: column;
       }
       .quantity-controls {
         display: flex;

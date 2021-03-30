@@ -10,7 +10,7 @@ import { priceFormatter } from '../helpers';
 import { useCartContext } from './Cart/cartContext';
 
 const ListItem = ({ product }) => {
-  const { addItem } = useCartContext();
+  const { addItem, openMessage } = useCartContext();
 
   const {
     images,
@@ -25,6 +25,11 @@ const ListItem = ({ product }) => {
   } = product;
 
   const onSalePrice = price * 0.9;
+
+  const handleClick = () => {
+    openMessage();
+    addItem(product);
+  };
 
   return (
     <article className="list-item">
@@ -76,7 +81,7 @@ const ListItem = ({ product }) => {
           <button className="control-icons">
             <FaBalanceScale />
           </button>
-          <button className="control-icons" onClick={() => addItem(product)}>
+          <button className="control-icons" onClick={handleClick}>
             <FaCartPlus />
           </button>
         </div>
