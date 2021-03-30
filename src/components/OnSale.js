@@ -5,7 +5,7 @@ import Loading from '../Loading';
 import Error from '../Error';
 import { API_ROOT } from '../constant';
 
-const ProductsList = () => {
+const OnSale = () => {
   const { data: products, isLoading, isError } = useFetch(API_ROOT);
   //Loading screen
   if (isLoading) {
@@ -38,4 +38,4 @@ const ProductsList = () => {
   );
 };
 
-export default ProductsList;
+export default OnSale;

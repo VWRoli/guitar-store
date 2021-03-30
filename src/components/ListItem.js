@@ -5,6 +5,7 @@ import {
   FaCheckSquare,
   FaStar,
 } from 'react-icons/fa';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { priceFormatter } from '../helpers';
 import { useCartContext } from './Cart/cartContext';
@@ -99,3 +100,7 @@ const ListItem = ({ product }) => {
 };
 
 export default ListItem;
+
+ListItem.propTypes = {
+  product: PropTypes.object.isRequired,
+};

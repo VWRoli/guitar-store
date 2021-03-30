@@ -1,5 +1,5 @@
 import { useProductContext } from '../productContext';
-
+import PropTypes from 'prop-types';
 import Checkbox from './Checkbox';
 
 const FilterGroup = ({ items, name }) => {
@@ -41,3 +41,8 @@ const FilterGroup = ({ items, name }) => {
 };
 
 export default FilterGroup;
+
+FilterGroup.propTypes = {
+  items: PropTypes.array.isRequired,
+  name: PropTypes.string.isRequired,
+};

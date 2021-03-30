@@ -1,4 +1,5 @@
 import { FaExclamationTriangle } from 'react-icons/fa';
+import PropTypes from 'prop-types';
 
 const Error = ({ msg }) => {
   return (
@@ -11,3 +12,7 @@ const Error = ({ msg }) => {
 };
 
 export default Error;
+
+Error.propTypes = {
+  msg: PropTypes.string.isRequired,
+};

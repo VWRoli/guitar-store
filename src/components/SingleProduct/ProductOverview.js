@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import AmpOverview from './AmpOverview';
 import GuitarOverview from './GuitarOverview';
 
@@ -24,3 +25,7 @@ const ProductOverview = ({ product }) => {
 };
 
 export default ProductOverview;
+
+ProductOverview.propTypes = {
+  product: PropTypes.object.isRequired,
+};

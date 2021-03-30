@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const AmpOverview = ({ product }) => {
   const {
     name,
@@ -50,3 +52,7 @@ const AmpOverview = ({ product }) => {
 };
 
 export default AmpOverview;
+
+AmpOverview.propTypes = {
+  product: PropTypes.object.isRequired,
+};

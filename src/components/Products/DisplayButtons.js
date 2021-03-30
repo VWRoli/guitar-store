@@ -1,4 +1,5 @@
 import { useProductContext } from './productContext';
+import PropTypes from 'prop-types';
 
 const DisplayButtons = ({ buttons, active, setActive }) => {
   const { setPage, setDisplayItems } = useProductContext();
@@ -26,3 +27,9 @@ const DisplayButtons = ({ buttons, active, setActive }) => {
 };
 
 export default DisplayButtons;
+
+DisplayButtons.propTypes = {
+  buttons: PropTypes.array.isRequired,
+  active: PropTypes.number,
+  setActive: PropTypes.func,
+};

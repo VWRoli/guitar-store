@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const GuitarOverview = ({ product }) => {
   const {
     name,
@@ -78,3 +80,7 @@ const GuitarOverview = ({ product }) => {
 };
 
 export default GuitarOverview;
+
+GuitarOverview.propTypes = {
+  product: PropTypes.object.isRequired,
+};

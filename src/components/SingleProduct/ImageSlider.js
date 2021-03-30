@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
 
 const ImageSlider = ({ images }) => {
@@ -37,3 +38,7 @@ const ImageSlider = ({ images }) => {
 };
 
 export default ImageSlider;
+
+ImageSlider.propTypes = {
+  images: PropTypes.array.isRequired,
+};

@@ -6,6 +6,7 @@ import {
   FaCheckSquare,
   FaStar,
 } from 'react-icons/fa';
+import PropTypes from 'prop-types';
 import { Link } from 'react-scroll';
 
 import ImageSlider from './ImageSlider';
@@ -120,3 +121,7 @@ const SingleProductHeader = ({ product }) => {
 };
 
 export default SingleProductHeader;
+
+SingleProductHeader.propTypes = {
+  product: PropTypes.object.isRequired,
+};

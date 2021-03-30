@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { FaChevronUp, FaChevronDown, FaTrash } from 'react-icons/fa';
 import { useCartContext } from './cartContext';
 import { priceFormatter } from '../../helpers';
@@ -60,3 +61,7 @@ const CartItem = ({ item }) => {
 };
 
 export default CartItem;
+
+CartItem.propTypes = {
+  item: PropTypes.object,
+};
