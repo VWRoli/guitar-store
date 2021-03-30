@@ -28,7 +28,7 @@ const ListItem = ({ product }) => {
 
   const handleClick = () => {
     openMessage();
-    addItem(product);
+    addItem(product, 'cart');
   };
 
   return (
@@ -78,7 +78,10 @@ const ListItem = ({ product }) => {
           </p>
         </div>
         <div className="controls">
-          <button className="control-icons">
+          <button
+            className="control-icons"
+            onClick={() => addItem(product, 'compare')}
+          >
             <FaBalanceScale />
           </button>
           <button

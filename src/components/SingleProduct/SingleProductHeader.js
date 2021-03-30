@@ -28,8 +28,7 @@ const SingleProductHeader = ({ product }) => {
 
   const onSalePrice = calcOnSale(price);
 
-  const handleClick = (e) => {
-    e.preventDefault();
+  const handleClick = () => {
     openMessage();
     addItem(product);
   };
@@ -85,27 +84,17 @@ const SingleProductHeader = ({ product }) => {
           </div>
 
           <div className="buy-section">
-            <form action="/">
-              <label htmlFor="quantity">Quantity:</label>
-              <input
-                type="number"
-                name="quantity"
-                id="quantity"
-                placeholder="1"
-              />
-              <button
-                className={inStock ? 'add-to-cart-btn' : 'disable'}
-                onClick={handleClick}
-              >
-                <FaCartPlus />
-                Add to Cart
-              </button>
-              <br />
-              <small>
-                If you order until 12:00, we ship the same day if the item is in
-                stock.
-              </small>
-            </form>
+            <button
+              className={inStock ? 'add-to-cart-btn' : 'disable'}
+              onClick={handleClick}
+            >
+              <FaCartPlus />
+              Add to Cart
+            </button>
+            <small>
+              If you order until 12:00, we ship the same day if the item is in
+              stock.
+            </small>
 
             <FaBalanceScale className="add-to-compare" />
           </div>

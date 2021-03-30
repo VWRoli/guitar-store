@@ -11,7 +11,7 @@ import { Link as ScrollLink } from 'react-scroll';
 import { useCartContext } from './Cart/cartContext';
 
 const Navbar = () => {
-  const { amount } = useCartContext();
+  const { amount, compare } = useCartContext();
   //Scroll to top button
   const bannerRef = useRef(null);
 
@@ -89,8 +89,9 @@ const Navbar = () => {
             <button className="navbar-icons">
               <FaSearch />
             </button>
-            <Link to="/compare" className="navbar-icons">
+            <Link to="/compare" className="navbar-icons navbar-cart">
               <FaBalanceScale />
+              <span className="cart-item-total">{compare.length}</span>
             </Link>
 
             <Link to="/cart" className="navbar-icons navbar-cart">

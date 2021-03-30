@@ -14,8 +14,10 @@ const CartContext = React.createContext();
 
 const initialState = {
   cart: [],
+  compare: [],
   total: 0,
   amount: 0,
+  compareAmount: 0,
   isMessageOpen: false,
 };
 
@@ -34,8 +36,8 @@ export const CartProvider = ({ children }) => {
     dispatch({ type: TOGGLE_AMOUNT, payload: { id, type } });
   };
 
-  const addItem = (product) => {
-    dispatch({ type: ADD_ITEM, payload: product });
+  const addItem = (product, destination) => {
+    dispatch({ type: ADD_ITEM, payload: { product, destination } });
   };
 
   useEffect(() => {
@@ -51,6 +53,8 @@ export const CartProvider = ({ children }) => {
     dispatch({ type: CLOSE_MESSAGE });
   };
 
+  console.log(state.cart);
+  console.log(state.compare);
   return (
     <CartContext.Provider
       value={{

@@ -15,7 +15,7 @@ import { ProductsProvider } from './components/Products/productContext';
 import Footer from './components/Footer';
 import Cart from './components/Cart/Cart';
 import { CartProvider } from './components/Cart/cartContext';
-import Compare from './components/Compare';
+import Compare from './components/Compare/Compare';
 import SuccessMessage from './components/SuccessMessage';
 
 function App() {

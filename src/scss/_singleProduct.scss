@@ -70,32 +70,29 @@
     .buy-section {
       @include border-bg();
       border-top: none;
+      display: flex;
+      flex-direction: column;
 
-      form {
-        input {
-          margin: 0 0.5rem;
-          width: 2rem;
-        }
-        .add-to-cart-btn {
-          @include primary-btn();
-          font-size: 1rem;
+      .add-to-cart-btn {
+        @include primary-btn();
+        font-size: 1rem;
 
-          svg {
-            margin-right: 5px;
-            vertical-align: middle;
-          }
-          &:hover {
-            @include secondary-btn();
-          }
+        svg {
+          margin-right: 5px;
+          vertical-align: middle;
         }
-        .disable {
-          @include disable-btn();
-        }
-
-        small {
-          color: $muted;
+        &:hover {
+          @include secondary-btn();
         }
       }
+      .disable {
+        @include disable-btn();
+      }
+
+      small {
+        color: $muted;
+      }
+
       .add-to-compare {
         @include icon-hover();
         font-size: 1.5rem;

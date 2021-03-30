@@ -33,10 +33,10 @@ const CartItem = ({ item }) => {
           {isOnSale ? (
             <>
               <span className="old-price">{priceFormatter(price)}</span>
-              <span>{priceFormatter(onSalePrice)}</span>
+              <span>{priceFormatter(onSalePrice * amount)}</span>
             </>
           ) : (
-            priceFormatter(price)
+            priceFormatter(price * amount)
           )}
         </h3>
         <div>
