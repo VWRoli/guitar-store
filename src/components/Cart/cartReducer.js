@@ -62,7 +62,7 @@ const cartReducer = (state, action) => {
     }
     /////
     //! ADDING TO COMPARE
-    if (action.payload.source === 'compare') {
+    if (action.payload.source === 'compare' && state.compare.length < 5) {
       return { ...state, compare: [...state.compare, action.payload.product] };
     }
   }

@@ -10,11 +10,11 @@ const Footer = () => {
   return (
     <footer>
       <section className="footer-subscription">
-        <h3>Subscribe to our newsletter for the best deals possible</h3>
         <p>
           This a project site for my portfolio only. The pictures are the
           property of Muziker.hu
         </p>
+        <h3>Subscribe to our newsletter for the best deals possible</h3>
         <small>You can unsubscribe at any time.</small>
         <form>
           <input

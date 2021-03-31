@@ -1,5 +1,6 @@
 .recommendations {
   background-color: $light-bg;
+  padding: 0 1rem;
   .container {
     @include container();
     padding-top: 1rem;

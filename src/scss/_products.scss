@@ -1,5 +1,6 @@
 .products {
   @include container();
+
   .container {
     display: flex;
 
@@ -19,9 +20,39 @@
 }
 
 .products-list {
-  flex: 3;
+  flex: 9;
   .product-wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .products {
+    max-width: 98vw;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .products-list {
+    flex: 10;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .products-list {
+    flex: 9;
+    .product-wrapper {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media screen and (max-width: 875px) {
+  .products-list {
+    flex: 8;
+    .product-wrapper {
+      grid-template-columns: 1fr;
+    }
   }
 }

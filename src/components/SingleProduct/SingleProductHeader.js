@@ -33,7 +33,7 @@ const SingleProductHeader = ({ product }) => {
 
   const handleCart = () => {
     openMessage();
-    addItem(product);
+    addItem(product, 'cart');
   };
 
   const handleCompare = () => {

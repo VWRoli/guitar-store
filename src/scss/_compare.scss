@@ -8,6 +8,7 @@
 
   table {
     @include table-config();
+    overflow-y: scroll;
     td {
       position: relative;
     }

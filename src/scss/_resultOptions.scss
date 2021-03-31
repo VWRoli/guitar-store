@@ -57,3 +57,18 @@
     }
   }
 }
+
+@media screen and (max-width: 875px) {
+  .display-options {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .result-options {
+    flex-direction: column-reverse;
+  }
+  .pagination {
+    margin-top: 1rem;
+  }
+}

@@ -1,5 +1,5 @@
 .filters {
-  flex: 1;
+  flex: 3;
   background-color: $light-bg;
   padding: 0.5rem;
   margin: 0 0.5rem;
@@ -23,5 +23,28 @@
         text-transform: capitalize;
       }
     }
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .filters {
+    flex: 2;
+  }
+}
+@media screen and (max-width: 1150px) {
+  .filters {
+    flex: 3;
+  }
+}
+
+@media screen and (max-width: 875px) {
+  .filters {
+    flex: 4;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .filters {
+    display: none;
   }
 }
