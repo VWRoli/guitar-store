@@ -3,8 +3,9 @@ import ListItem from '../ListItem';
 import Loading from '../../Loading';
 import Error from '../../Error';
 import ResultOptions from './ResultOptions';
+import PropTypes from 'prop-types';
 
-const ProductsList = () => {
+const ProductsList = ({ setVisible, visible }) => {
   const {
     products,
     isLoading,
@@ -17,12 +18,12 @@ const ProductsList = () => {
   if (isError) return <Error msg={errorMsg} />;
 
   //Render if there is no match for the filters
-  if (products[0] === undefined && filter[0])
+  if (products.length === 0 && filter[0])
     return <h2 className="no-match-msg">No Products Match</h2>;
 
   return (
     <section className="products-list">
-      <ResultOptions />
+      <ResultOptions visible={visible} setVisible={setVisible} />
       {isLoading ? (
         <Loading />
       ) : (
@@ -32,9 +33,14 @@ const ProductsList = () => {
           ))}
         </div>
       )}
-      <ResultOptions />
+      <ResultOptions visible={visible} setVisible={setVisible} />
     </section>
   );
 };
 
 export default ProductsList;
+
+ProductsList.propTypes = {
+  setVisible: PropTypes.func.isRequired,
+  visible: PropTypes.bool.isRequired,
+};

@@ -1,12 +1,14 @@
 import Filters from './Filter/Filters';
 import ProductsList from './ProductsList';
+import { useState } from 'react';
 
 const Products = () => {
+  const [visible, setVisible] = useState(false);
   return (
     <section className="products">
       <div className="container">
-        <Filters />
-        <ProductsList />
+        <Filters visible={visible} />
+        <ProductsList visible={visible} setVisible={setVisible} />
       </div>
     </section>
   );

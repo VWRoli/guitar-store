@@ -21,6 +21,11 @@
     margin-right: 5px;
   }
 }
+
+.toggle-filters {
+  @include primary-btn();
+  display: none;
+}
 //?PAGINATION
 .pagination {
   display: flex;
@@ -61,6 +66,13 @@
 @media screen and (max-width: 875px) {
   .display-options {
     display: none;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .toggle-filters {
+    display: block;
+    margin: 1rem;
   }
 }
 

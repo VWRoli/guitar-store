@@ -5,9 +5,12 @@
     font-size: 1rem;
     margin-bottom: 2rem;
   }
+  .about-img-container {
+    max-width: 500px;
+  }
 
   img {
-    max-width: 500px;
+    max-width: 100%;
     margin: 1rem;
   }
   .about-img1 {
@@ -21,3 +24,26 @@
     margin: 1rem 0;
   }
 }
+
+@media screen and (max-width: 1000px) {
+  .about {
+    .about-img-container {
+      max-width: 350px;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .about {
+    .about-img-container {
+      max-width: 250px;
+      margin: auto;
+    }
+    .about-img1 {
+      float: none;
+    }
+    .about-img2 {
+      float: none;
+    }
+  }
+} ;

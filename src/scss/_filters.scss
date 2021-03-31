@@ -45,6 +45,13 @@
 
 @media screen and (max-width: 650px) {
   .filters {
-    display: none;
+    position: absolute;
+    top: 5rem;
+    left: -500px;
+    z-index: 10;
+    transition: all 0.75s ease-out;
+  }
+  .show-filters {
+    left: 0;
   }
 }

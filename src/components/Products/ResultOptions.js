@@ -2,8 +2,9 @@ import Pagination from './Pagination';
 import { useState } from 'react';
 import DisplayButtons from './DisplayButtons';
 import { useProductContext } from './productContext';
+import PropTypes from 'prop-types';
 
-const ResultOptions = () => {
+const ResultOptions = ({ setVisible, visible }) => {
   const [active, setActive] = useState(0);
   const { sorting, setSorting } = useProductContext();
 
@@ -13,9 +14,17 @@ const ResultOptions = () => {
     setSorting(e.target.value);
   };
 
+  const handleClick = () => {
+    // console.log(visible);
+    setVisible(!visible);
+  };
+
   return (
     <section className="result-options">
       <DisplayButtons buttons={BUTTONS} setActive={setActive} active={active} />
+      <button className="toggle-filters" onClick={handleClick}>
+        Filters
+      </button>
       <Pagination />
       <form className="sorting-options">
         <label htmlFor="sort">Sort:</label>
@@ -31,3 +40,8 @@ const ResultOptions = () => {
 };
 
 export default ResultOptions;
+
+ResultOptions.propTypes = {
+  setVisible: PropTypes.func.isRequired,
+  visible: PropTypes.bool.isRequired,
+};
