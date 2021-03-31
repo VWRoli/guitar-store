@@ -24,8 +24,8 @@ const initialState = {
 export const CartProvider = ({ children }) => {
   const [state, dispatch] = useReducer(cartReducer, initialState);
 
-  const clearCart = () => {
-    dispatch({ type: CLEAR_CART });
+  const clearItems = (source) => {
+    dispatch({ type: CLEAR_CART, payload: source });
   };
 
   const removeItem = (id, source) => {
@@ -57,7 +57,7 @@ export const CartProvider = ({ children }) => {
     <CartContext.Provider
       value={{
         ...state,
-        clearCart,
+        clearItems,
         removeItem,
         addItem,
         toggleAmount,

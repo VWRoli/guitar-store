@@ -3,7 +3,7 @@ import CartItem from './CartItem';
 import { priceFormatter } from '../../helpers';
 
 const Cart = () => {
-  const { cart, total, clearCart } = useCartContext();
+  const { cart, total, clearItems } = useCartContext();
 
   return (
     <section className="cart">
@@ -25,7 +25,7 @@ const Cart = () => {
         ''
       ) : (
         <div className="clear-btn-wrapper">
-          <button className="clear-cart" onClick={clearCart}>
+          <button className="clear-cart" onClick={() => clearItems('cart')}>
             Clear Cart
           </button>
         </div>

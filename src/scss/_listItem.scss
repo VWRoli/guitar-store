@@ -54,6 +54,7 @@
           @include icon-hover();
         }
       }
+
       .disable-btn {
         @include reset-btn();
         font-size: 1.5rem;

@@ -97,6 +97,16 @@
         @include icon-hover();
         font-size: 1.5rem;
         margin: 0.5rem;
+        @include reset-btn();
+        width: fit-content;
+      }
+      .disable-btn {
+        @include reset-btn();
+        font-size: 1.5rem;
+        margin: 0.5rem;
+        color: $muted;
+        cursor: not-allowed;
+        width: fit-content;
       }
     }
     .short-description {

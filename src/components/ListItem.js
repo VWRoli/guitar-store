@@ -11,7 +11,7 @@ import { priceFormatter } from '../helpers';
 import { useCartContext } from './Cart/cartContext';
 
 const ListItem = ({ product }) => {
-  const { addItem, openMessage, cart } = useCartContext();
+  const { addItem, openMessage, compare } = useCartContext();
 
   const {
     images,
@@ -27,11 +27,16 @@ const ListItem = ({ product }) => {
 
   const onSalePrice = price * 0.9;
 
-  const handleClick = () => {
+  const handleCart = () => {
     openMessage();
-    console.log(product);
-    console.log(cart);
     addItem(product, 'cart');
+  };
+
+  const isCompare = compare.some((item) => item.id === id);
+  const handleCompare = () => {
+    if (!isCompare) {
+      addItem(product, 'compare');
+    }
   };
 
   return (
@@ -82,14 +87,14 @@ const ListItem = ({ product }) => {
         </div>
         <div className="controls">
           <button
-            className="control-icons"
-            onClick={() => addItem(product, 'compare')}
+            className={!isCompare ? 'control-icons' : 'disable-btn'}
+            onClick={handleCompare}
           >
             <FaBalanceScale />
           </button>
           <button
             className={inStock ? 'control-icons' : 'disable-btn'}
-            onClick={handleClick}
+            onClick={handleCart}
           >
             <FaCartPlus />
           </button>

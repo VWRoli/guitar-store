@@ -1,7 +1,9 @@
 .compare {
   @include container();
   display: flex;
+  flex-direction: column;
   min-height: 20rem;
+  width: fit-content;
   justify-content: center;
 
   table {
@@ -11,8 +13,10 @@
     }
     img {
       max-width: 150px;
+      display: block;
+      margin: auto;
     }
-    .table-image {
+    tfoot {
       display: flex;
       justify-content: center;
     }
@@ -29,4 +33,13 @@
   position: absolute;
   top: 0.25rem;
   right: 0.25rem;
+  opacity: 0.4;
+  &:hover {
+    opacity: 1;
+  }
+}
+.clear-compare-btn {
+  @include secondary-btn();
+  width: fit-content;
+  margin: auto;
 }

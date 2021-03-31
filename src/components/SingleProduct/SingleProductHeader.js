@@ -13,7 +13,7 @@ import ImageSlider from './ImageSlider';
 import { useCartContext } from '../Cart/cartContext';
 
 const SingleProductHeader = ({ product }) => {
-  const { addItem, openMessage } = useCartContext();
+  const { addItem, openMessage, compare } = useCartContext();
 
   const {
     name,
@@ -29,9 +29,17 @@ const SingleProductHeader = ({ product }) => {
 
   const onSalePrice = calcOnSale(price);
 
-  const handleClick = () => {
+  const isCompare = compare.some((item) => item.id === productId);
+
+  const handleCart = () => {
     openMessage();
     addItem(product);
+  };
+
+  const handleCompare = () => {
+    if (!isCompare) {
+      addItem(product, 'compare');
+    }
   };
 
   return (
@@ -87,7 +95,7 @@ const SingleProductHeader = ({ product }) => {
           <div className="buy-section">
             <button
               className={inStock ? 'add-to-cart-btn' : 'disable'}
-              onClick={handleClick}
+              onClick={handleCart}
             >
               <FaCartPlus />
               Add to Cart
@@ -97,7 +105,12 @@ const SingleProductHeader = ({ product }) => {
               stock.
             </small>
 
-            <FaBalanceScale className="add-to-compare" />
+            <button
+              className={!isCompare ? 'add-to-compare' : 'disable-btn'}
+              onClick={handleCompare}
+            >
+              <FaBalanceScale />
+            </button>
           </div>
 
           <div className="short-description">

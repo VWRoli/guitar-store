@@ -10,7 +10,12 @@ import {
 
 const cartReducer = (state, action) => {
   if (action.type === CLEAR_CART) {
-    return { ...state, cart: [] };
+    if (action.payload === 'cart') {
+      return { ...state, cart: [] };
+    }
+    if (action.payload === 'compare') {
+      return { ...state, compare: [] };
+    }
   }
 
   if (action.type === REMOVE_ITEM) {
