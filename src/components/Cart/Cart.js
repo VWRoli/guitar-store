@@ -1,6 +1,7 @@
 import { useCartContext } from './cartContext';
 import CartItem from './CartItem';
 import { priceFormatter } from '../../helpers';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
   const { cart, total, clearItems } = useCartContext();
@@ -13,6 +14,9 @@ const Cart = () => {
           <h3 className="empty-cart-msg">
             You don't have any products in your cart yet.
           </h3>
+          <Link to="/products" className="cart-products-link">
+            Products
+          </Link>
         </div>
       ) : (
         <div className="your-cart">

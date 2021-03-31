@@ -1,5 +1,5 @@
 import { FaChevronRight, FaChevronLeft } from 'react-icons/fa';
-import { useProductContext } from './productContext';
+import { useProductContext } from '../productContext';
 
 const Pagination = () => {
   const { page, hasNextPage, setPage } = useProductContext();

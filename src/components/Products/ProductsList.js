@@ -2,7 +2,7 @@ import { useProductContext } from './productContext';
 import ListItem from '../ListItem';
 import Loading from '../../Loading';
 import Error from '../../Error';
-import ResultOptions from './ResultOptions';
+import ResultOptions from './ResultOptions/ResultOptions';
 import PropTypes from 'prop-types';
 
 const ProductsList = ({ setVisible, visible }) => {

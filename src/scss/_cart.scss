@@ -116,6 +116,9 @@
     }
   }
 }
+.cart-products-link {
+  @include primary-btn();
+}
 
 @media screen and (max-width: 550px) {
   .your-cart {

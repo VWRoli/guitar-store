@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { useState, useRef, useEffect } from 'react';
 import {
   FaSearch,
@@ -42,9 +42,6 @@ const Navbar = () => {
   //Toggle mobile menu
   const [active, setActive] = useState(false);
 
-  //Activemenu
-  const [activeLink, setActiveLink] = useState(0);
-
   const LINK_ITEMS = [
     { label: 'Home', route: '/' },
     { label: 'Products', route: '/products' },
@@ -71,16 +68,16 @@ const Navbar = () => {
             {LINK_ITEMS.map((link, i) => {
               return (
                 <li key={i}>
-                  <Link
+                  <NavLink
                     to={link.route}
+                    activeClassName="active-link"
+                    exact={true}
                     onClick={() => {
                       setActive(false);
-                      setActiveLink(i);
                     }}
-                    className={i === activeLink ? 'active-link' : ''}
                   >
                     {link.label}
-                  </Link>
+                  </NavLink>
                 </li>
               );
             })}

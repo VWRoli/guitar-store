@@ -7,15 +7,16 @@
 
     //Loading screen
     .spinner-container {
-      flex: 3;
+      flex: 9;
       display: flex;
     }
     //Error screen
     .error-container {
-      flex: 3;
+      flex: 9;
     }
     .no-match-msg {
-      flex: 3;
+      flex: 9;
+      text-align: center;
     }
   }
 }
