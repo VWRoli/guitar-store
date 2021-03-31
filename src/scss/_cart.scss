@@ -22,14 +22,12 @@
 
 .your-cart {
   min-height: 20rem;
-  display: flex;
   justify-content: center;
   align-items: center;
   .empty-cart-msg {
     color: $secondary-color;
   }
-}
-.your-cart {
+
   display: flex;
   flex-direction: column;
 
@@ -115,6 +113,17 @@
           @include icon-hover();
         }
       }
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .your-cart {
+    .your-cart-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
   }
 }

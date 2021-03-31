@@ -45,3 +45,27 @@
   opacity: 1;
   visibility: visible;
 }
+
+@media screen and (max-width: 475px) {
+  .msg-container {
+    max-width: 90vw;
+    h2 {
+      font-size: 1rem;
+    }
+    .summary-msg {
+      font-size: 0.9rem;
+    }
+    .success-btn-wrapper {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+      .continue-btn {
+        margin: 0.5rem 0;
+      }
+      .cart-btn {
+        margin: 0.5rem 0;
+      }
+    }
+  }
+} ;

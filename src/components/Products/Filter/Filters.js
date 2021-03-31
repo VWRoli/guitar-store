@@ -5,7 +5,7 @@ import Loading from '../../../Loading';
 import FilterGroup from './FilterGroup';
 import PropTypes from 'prop-types';
 
-const Filters = ({ visible }) => {
+const Filters = ({ visible, setVisible }) => {
   const { data, isError, isLoading } = useFetch(API_ROOT);
 
   //Loading screen
@@ -24,7 +24,10 @@ const Filters = ({ visible }) => {
 
   return (
     <section className={visible ? 'filters show-filters' : 'filters'}>
-      <h1>Filters:</h1>
+      <h1 className="filters-title">Filters:</h1>
+      <button className="close-filters" onClick={() => setVisible(!visible)}>
+        Close Filters
+      </button>
       <FilterGroup items={filterGroups(data, 'category')} name={'Category'} />
       <FilterGroup items={filterGroups(data, 'type')} name={'Type'} />
       <FilterGroup items={filterGroups(data, 'brand')} name={'Brand'} />
@@ -40,5 +43,6 @@ const Filters = ({ visible }) => {
 export default Filters;
 
 Filters.propTypes = {
+  setVisible: PropTypes.func.isRequired,
   visible: PropTypes.bool.isRequired,
 };

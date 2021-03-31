@@ -34,7 +34,7 @@ const SuccessMessage = () => {
             Total Cost: <span>{priceFormatter(total)}</span>
           </p>
         </div>
-        <div>
+        <div className="success-btn-wrapper">
           <Link to="/products" className="continue-btn" onClick={closeMessage}>
             Continue Shopping
           </Link>

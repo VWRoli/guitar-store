@@ -7,7 +7,7 @@ const Products = () => {
   return (
     <section className="products">
       <div className="container">
-        <Filters visible={visible} />
+        <Filters visible={visible} setVisible={setVisible} />
         <ProductsList visible={visible} setVisible={setVisible} />
       </div>
     </section>

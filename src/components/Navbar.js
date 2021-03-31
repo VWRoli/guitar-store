@@ -89,12 +89,24 @@ const Navbar = () => {
             <button className="navbar-icons">
               <FaSearch />
             </button>
-            <Link to="/compare" className="navbar-icons navbar-cart">
+            <Link
+              to="/compare"
+              className="navbar-icons navbar-cart"
+              onClick={() => {
+                setActive(false);
+              }}
+            >
               <FaBalanceScale />
               <span className="cart-item-total">{compare.length}</span>
             </Link>
 
-            <Link to="/cart" className="navbar-icons navbar-cart">
+            <Link
+              to="/cart"
+              className="navbar-icons navbar-cart"
+              onClick={() => {
+                setActive(false);
+              }}
+            >
               <FaShoppingCart />
               <span className="cart-item-total">{amount}</span>
             </Link>
