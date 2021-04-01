@@ -66,6 +66,23 @@
 @media screen and (max-width: 875px) {
   .display-options {
     display: none;
+    button {
+      &:hover {
+        @include secondary-btn();
+      }
+    }
+  }
+  .result-options {
+    flex-direction: column-reverse;
+  }
+  .pagination {
+    margin-top: 1rem;
+    button {
+      &:hover {
+        color: $main-color;
+        background-color: #fff;
+      }
+    }
   }
 }
 
@@ -74,13 +91,12 @@
     display: block;
     margin: 1rem;
   }
-}
-
-@media screen and (max-width: 500px) {
-  .result-options {
-    flex-direction: column-reverse;
-  }
   .pagination {
-    margin-top: 1rem;
+    button {
+      margin: 0.35rem;
+    }
+    .ellipsis {
+      display: none;
+    }
   }
 }

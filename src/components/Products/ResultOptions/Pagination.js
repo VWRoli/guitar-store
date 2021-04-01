@@ -1,8 +1,23 @@
+import React, { useState, useEffect } from 'react';
 import { FaChevronRight, FaChevronLeft } from 'react-icons/fa';
 import { useProductContext } from '../productContext';
 
 const Pagination = () => {
   const { page, hasNextPage, setPage } = useProductContext();
+
+  /*  const [size, setSize] = useState(window.innerWidth);
+
+  const checkSize = () => {
+    setSize(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', checkSize);
+    return () => {
+      window.addEventListener('resize', checkSize);
+    };
+  });
+ */
   return (
     <section className="pagination">
       {page !== 1 && <button onClick={() => setPage(1)}>1</button>}
