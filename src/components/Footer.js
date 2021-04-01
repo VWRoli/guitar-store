@@ -11,7 +11,7 @@ const Footer = () => {
     <footer>
       <section className="footer-subscription">
         <p>
-          This a project site for my portfolio only. The pictures are the
+          This is a project site for my portfolio only. The pictures are the
           property of Muziker.hu
         </p>
         <h3>Subscribe to our newsletter for the best deals possible</h3>
@@ -83,7 +83,7 @@ const Footer = () => {
           <Link to="/">Support</Link>
           <p>Phone: 123456789</p>
           <p>
-            Email: <a href="mailto:">guitarstore@guitarstroe.com</a>
+            Email: <a href="mailto:">guitarstore@guitarstore.com</a>
           </p>
         </div>
 

@@ -17,6 +17,7 @@ import Cart from './components/Cart/Cart';
 import { CartProvider } from './components/Cart/cartContext';
 import Compare from './components/Compare/Compare';
 import SuccessMessage from './components/SuccessMessage';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <main className="App">
           <Navbar />
           <SuccessMessage />
+          <ScrollToTop />
           <Switch>
             <Route exact path="/">
               <Home />

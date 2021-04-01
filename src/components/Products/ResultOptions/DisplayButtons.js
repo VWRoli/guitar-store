@@ -1,5 +1,5 @@
 import { useProductContext } from '../productContext';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const DisplayButtons = () => {
   const { setPage, setDisplayItems } = useProductContext();
