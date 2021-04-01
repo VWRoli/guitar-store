@@ -68,7 +68,7 @@ export const ProductsProvider = ({ children }) => {
       //Checking for next page
       const nextPageResponse = await fetch(
         `${API_ROOT}${state.sorting}${state.searchQuery}&_page=${
-          state.page
+          state.page + 1
         }&_limit=${state.displayItems}${state.filter.join('')}`
       );
 

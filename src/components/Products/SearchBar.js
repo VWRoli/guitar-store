@@ -10,7 +10,7 @@ const SearchBar = () => {
     e.preventDefault();
   };
   const handleChange = (e) => {
-    setSearchQuery(`q=${searchValue.current.value}`);
+    setSearchQuery(`&q=${searchValue.current.value}`);
   };
 
   return (
