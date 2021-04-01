@@ -1,14 +1,14 @@
 import { NavLink, Link } from 'react-router-dom';
 import { useState, useRef, useEffect } from 'react';
 import {
-  FaSearch,
   FaShoppingCart,
   FaBalanceScale,
   FaBars,
   FaChevronCircleUp,
 } from 'react-icons/fa';
 import { Link as ScrollLink } from 'react-scroll';
-import { useCartContext } from './Cart/cartContext';
+import { useCartContext } from '../Cart/cartContext';
+import AccountLogin from './AccountLogin';
 
 const Navbar = () => {
   const { amount, compare } = useCartContext();
@@ -83,9 +83,7 @@ const Navbar = () => {
             })}
           </ul>
           <div className="nav-controls">
-            <button className="navbar-icons">
-              <FaSearch />
-            </button>
+            <AccountLogin />
             <Link
               to="/compare"
               className="navbar-icons navbar-cart"

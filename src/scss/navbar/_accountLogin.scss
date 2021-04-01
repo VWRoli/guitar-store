@@ -1,0 +1,27 @@
+.login-box {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 99%;
+  z-index: 10;
+  background-color: $light-bg;
+  @include border-bg();
+  display: flex;
+  flex-direction: column;
+  margin-right: 1rem;
+  font-size: 0.9rem;
+  input {
+    border: 1px solid $muted;
+    padding: 5px;
+    margin-bottom: 5px;
+  }
+  button {
+    @include primary-btn();
+  }
+  a {
+    color: $main-color;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

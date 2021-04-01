@@ -55,10 +55,14 @@ nav {
   }
 }
 .nav-controls {
+  position: relative;
   .navbar-icons {
+    position: relative;
     @include reset-btn();
     font-size: 1.5rem;
-    margin: 0.5rem;
+    //margin: 0.5rem;
+    padding: 0.5rem;
+
     svg {
       @include icon-hover();
     }
@@ -67,8 +71,8 @@ nav {
     position: relative;
     .cart-item-total {
       position: absolute;
-      top: -5px;
-      right: -10px;
+      top: 0;
+      right: 0;
       background-color: $main-color;
       color: $light-bg;
       font-size: 0.85rem;

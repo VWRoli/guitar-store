@@ -8,7 +8,7 @@ import Home from './components/Home/Home';
 import Products from './components/Products/Products';
 import ErrorPage from './components/ErrorPage';
 import About from './components/About';
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar/Navbar';
 import OnSale from './components/OnSale';
 import SingleProduct from './components/SingleProduct/SingleProduct';
 import { ProductsProvider } from './components/Products/productContext';
