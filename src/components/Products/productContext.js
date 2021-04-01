@@ -10,6 +10,7 @@ import {
   SET_DISPLAY_ITEMS,
   SET_SORT_OPTION,
   SET_FILTER_OPTION,
+  SET_QUERY,
 } from '../../constant';
 
 const ProductContext = React.createContext();
@@ -22,8 +23,9 @@ const initialState = {
   page: 1,
   displayItems: 9,
   hasNextpage: false,
-  sorting: '?_sort=',
+  sorting: '?',
   filter: [],
+  searchQuery: '',
 };
 export const ProductsProvider = ({ children }) => {
   const [state, dispatch] = useReducer(productReducer, initialState);
@@ -44,13 +46,18 @@ export const ProductsProvider = ({ children }) => {
     dispatch({ type: SET_FILTER_OPTION, payload: filterOption });
   };
 
+  const setSearchQuery = (query) => {
+    dispatch({ type: SET_QUERY, payload: query });
+  };
+
   const fetchProducts = useCallback(async () => {
     dispatch({ type: SET_LOADING });
+
     try {
       const response = await fetch(
-        `${API_ROOT}${state.sorting}&_page=${state.page}&_limit=${
-          state.displayItems
-        }${state.filter.join('')}`
+        `${API_ROOT}${state.sorting}${state.searchQuery}&_page=${
+          state.page
+        }&_limit=${state.displayItems}${state.filter.join('')}`
       );
 
       if (!response.ok)
@@ -60,9 +67,9 @@ export const ProductsProvider = ({ children }) => {
 
       //Checking for next page
       const nextPageResponse = await fetch(
-        `${API_ROOT}${state.sorting}&_page=${state.page + 1}&_limit=${
-          state.displayItems
-        }${state.filter.join('')}`
+        `${API_ROOT}${state.sorting}${state.searchQuery}&_page=${
+          state.page
+        }&_limit=${state.displayItems}${state.filter.join('')}`
       );
 
       if (!nextPageResponse.ok)
@@ -78,7 +85,13 @@ export const ProductsProvider = ({ children }) => {
     } catch (error) {
       dispatch({ type: SET_ERROR, payload: error.message });
     }
-  }, [state.page, state.displayItems, state.sorting, state.filter]);
+  }, [
+    state.page,
+    state.displayItems,
+    state.sorting,
+    state.filter,
+    state.searchQuery,
+  ]);
 
   useEffect(() => {
     fetchProducts();
@@ -86,7 +99,14 @@ export const ProductsProvider = ({ children }) => {
 
   return (
     <ProductContext.Provider
-      value={{ ...state, setPage, setDisplayItems, setSorting, setFilters }}
+      value={{
+        ...state,
+        setPage,
+        setDisplayItems,
+        setSorting,
+        setFilters,
+        setSearchQuery,
+      }}
     >
       {children}
     </ProductContext.Provider>

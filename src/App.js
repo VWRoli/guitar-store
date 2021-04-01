@@ -24,38 +24,37 @@ function App() {
     <Router>
       <CartProvider>
         <main className="App">
-          <Navbar />
-          <SuccessMessage />
-          <ScrollToTop />
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route path="/products">
-              <ProductsProvider>
+          <ProductsProvider>
+            <Navbar />
+            <SuccessMessage />
+            <ScrollToTop />
+            <Switch>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route path="/products">
                 <Products />
-              </ProductsProvider>
-            </Route>
-            <Route path="/product/:id">
-              <SingleProduct />
-            </Route>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/onsale">
-              <OnSale />
-            </Route>
-            <Route path="/compare">
-              <Compare />
-            </Route>
-            <Route path="/cart">
-              <Cart />
-            </Route>
-            <Route path="*">
-              <ErrorPage />
-            </Route>
-          </Switch>
-
+              </Route>
+              <Route path="/product/:id">
+                <SingleProduct />
+              </Route>
+              <Route path="/about">
+                <About />
+              </Route>
+              <Route path="/onsale">
+                <OnSale />
+              </Route>
+              <Route path="/compare">
+                <Compare />
+              </Route>
+              <Route path="/cart">
+                <Cart />
+              </Route>
+              <Route path="*">
+                <ErrorPage />
+              </Route>
+            </Switch>
+          </ProductsProvider>
           <Footer />
         </main>
       </CartProvider>

@@ -9,6 +9,7 @@ export const SET_PAGE = 'SET_PAGE';
 export const SET_DISPLAY_ITEMS = 'SET_DISPLAY_ITEMS';
 export const SET_SORT_OPTION = 'SET_SORT_OPTION';
 export const SET_FILTER_OPTION = 'SET_FILTER_OPTION';
+export const SET_QUERY = 'SET_QUERY';
 
 //ACTION TYPES FOR CART CONTEXT
 export const CLEAR_CART = 'CLEAR_CART';

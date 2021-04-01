@@ -24,7 +24,7 @@ const ResultOptions = ({ setVisible, visible }) => {
       <form className="sorting-options">
         <label htmlFor="sort">Sort:</label>
         <select name="sort" value={sorting} onChange={handleChange}>
-          <option value="?_sort=">Default</option>
+          <option value="?">Default</option>
           <option value="?_sort=price&_order=asc">Price Ascending</option>
           <option value="?_sort=price&_order=desc">Price Descending</option>
           <option value="?_sort=rating&_order=desc">Ratings</option>

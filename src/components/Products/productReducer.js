@@ -7,6 +7,7 @@ import {
   SET_DISPLAY_ITEMS,
   SET_SORT_OPTION,
   SET_FILTER_OPTION,
+  SET_QUERY,
 } from '../../constant';
 
 const productReducer = (state, action) => {
@@ -31,6 +32,10 @@ const productReducer = (state, action) => {
   }
   if (action.type === SET_FILTER_OPTION) {
     return { ...state, filter: action.payload };
+  }
+
+  if (action.type === SET_QUERY) {
+    return { ...state, searchQuery: action.payload };
   }
 
   if (action.type === SET_ERROR) {
