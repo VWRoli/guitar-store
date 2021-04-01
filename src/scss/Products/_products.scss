@@ -23,6 +23,7 @@
 
 .products-list {
   flex: 9;
+  min-height: 20rem;
   .product-wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
