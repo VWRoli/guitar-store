@@ -1,0 +1,12 @@
+.search-bar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: $light-bg;
+  input {
+    border: 1px solid $muted;
+    margin: 5px;
+    padding: 5px;
+    width: 30rem;
+  }
+}

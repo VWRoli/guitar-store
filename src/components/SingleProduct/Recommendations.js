@@ -10,11 +10,10 @@ const Recommendations = () => {
   const { data: products, isLoading, isError } = useFetch(API_ROOT);
 
   //Generate a random number
-  const random = Math.floor(Math.random() * products.length);
+  const random = Math.floor(Math.random() * products.length - 1);
 
   //Get recommended guitars (6 random products)
   const recommendations = products.slice(random - 6, random);
-  console.log(recommendations);
   //Loading screen
   if (isLoading) {
     return <Loading />;

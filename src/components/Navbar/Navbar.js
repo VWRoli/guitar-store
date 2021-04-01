@@ -9,6 +9,7 @@ import {
 import { Link as ScrollLink } from 'react-scroll';
 import { useCartContext } from '../Cart/cartContext';
 import AccountLogin from './AccountLogin';
+import SearchBar from './SearchBar';
 
 const Navbar = () => {
   const { amount, compare } = useCartContext();
@@ -108,6 +109,7 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
+      <SearchBar />
       <div id="sale-banner" ref={bannerRef}>
         <p>
           Check out our On Sale Porducts! <Link to="/onSale">Here!</Link>
