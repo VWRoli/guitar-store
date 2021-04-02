@@ -123,3 +123,16 @@ $muted: #999;
     padding: 5px;
   }
 }
+
+@mixin inline-link() {
+  margin-left: 0.5rem;
+  border: none;
+  color: $main-color;
+  text-decoration: underline;
+  background-color: transparent;
+  cursor: pointer;
+  letter-spacing: 3px;
+  &:hover {
+    color: lighten($main-color, 15%);
+  }
+}

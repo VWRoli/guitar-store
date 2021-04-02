@@ -7,7 +7,13 @@
       margin-right: 1rem;
     }
     .type-rating {
-      max-width: 250px;
+      max-width: 350px;
+      display: flex;
+      align-items: center;
+      a {
+        @include inline-link();
+        font-size: 1rem;
+      }
     }
   }
   .info-banner {
@@ -115,16 +121,7 @@
       line-height: 1.75rem;
 
       .read-more {
-        margin-left: 0.5rem;
-        border: none;
-        color: $main-color;
-        text-decoration: underline;
-        background-color: transparent;
-        cursor: pointer;
-        letter-spacing: 3px;
-        &:hover {
-          color: lighten($main-color, 15%);
-        }
+        @include inline-link();
       }
     }
   }

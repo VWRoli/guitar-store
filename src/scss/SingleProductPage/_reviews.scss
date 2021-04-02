@@ -1,0 +1,23 @@
+#product-reviews {
+  @include container();
+  header {
+    @include top-bottom-border();
+    h3 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: $main-color;
+      .star-icon {
+        color: #ffcc02;
+      }
+    }
+    p {
+      color: $muted;
+      font-size: 0.9rem;
+    }
+  }
+  article {
+    @include border-bg();
+    margin: 1rem 0;
+  }
+}

@@ -55,6 +55,9 @@ const SingleProductHeader = ({ product }) => {
 
             <span className="rating-number">{rating}</span>
           </span>
+          <Link to="product-reviews" smooth={true} duration={500}>
+            Reviews
+          </Link>
         </div>
       </header>
       <div className="info-banner">

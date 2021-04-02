@@ -7,6 +7,7 @@ import { API_ROOT } from '../../constant';
 import SingleProductHeader from './SingleProductHeader';
 import ProductOverview from './ProductOverview';
 import Recommendations from './Recommendations';
+import Reviews from './Reviews';
 
 const SingleProduct = () => {
   //Get product id
@@ -29,6 +30,7 @@ const SingleProduct = () => {
       <SingleProductHeader product={product} />
       <Recommendations />
       <ProductOverview product={product} />
+      <Reviews />
     </>
   );
 };
