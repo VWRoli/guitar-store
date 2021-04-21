@@ -4,8 +4,6 @@ import {
   GET_TOTAL,
   TOGGLE_AMOUNT,
   ADD_ITEM,
-  OPEN_MESSAGE,
-  CLOSE_MESSAGE,
 } from '../constants/actionTypes';
 
 const defaultState = {
@@ -24,6 +22,7 @@ const cartReducer = (state = defaultState, action) => {
       if (action.payload === 'compare') {
         return { ...state, compare: [] };
       }
+      break;
     case REMOVE_ITEM:
       if (action.payload.source === 'cart') {
         const newCart = state.cart.filter(
@@ -37,6 +36,7 @@ const cartReducer = (state = defaultState, action) => {
         );
         return { ...state, compare: newCompare };
       }
+      break;
     case ADD_ITEM:
       //! ADDING TO CART
       if (action.payload.source === 'cart') {
@@ -71,6 +71,7 @@ const cartReducer = (state = defaultState, action) => {
           compare: [...state.compare, action.payload.product],
         };
       }
+      break;
     case TOGGLE_AMOUNT:
       const newCart = state.cart
         .map((item) => {

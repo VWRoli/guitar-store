@@ -1,4 +1,6 @@
 import { priceFormatter, calcOnSale } from '../../helpers';
+import { connect } from 'react-redux';
+import { openMessage } from '../../actions/modalActions';
 import {
   FaCartPlus,
   FaBalanceScale,
@@ -12,8 +14,8 @@ import { Link } from 'react-scroll';
 import ImageSlider from './ImageSlider';
 import { useCartContext } from '../Cart/cartContext';
 
-const SingleProductHeader = ({ product }) => {
-  const { addItem, openMessage, compare } = useCartContext();
+const SingleProductHeader = ({ product, openMessage }) => {
+  const { addItem, compare } = useCartContext();
 
   const {
     name,
@@ -43,59 +45,59 @@ const SingleProductHeader = ({ product }) => {
   };
 
   return (
-    <section className="single-product-header">
+    <section className='single-product-header'>
       <header>
         <h1>{name}</h1>
-        <div className="type-rating">
+        <div className='type-rating'>
           <span>Item ID: {productId}</span>
           <span>
             {Array.from(Array(rating)).map((_, i) => (
-              <FaStar key={i} className="star-icon" />
+              <FaStar key={i} className='star-icon' />
             ))}
 
-            <span className="rating-number">{rating}</span>
+            <span className='rating-number'>{rating}</span>
           </span>
-          <Link to="product-reviews" smooth={true} duration={500}>
+          <Link to='product-reviews' smooth={true} duration={500}>
             Reviews
           </Link>
         </div>
       </header>
-      <div className="info-banner">
-        {isOnSale ? <div className="sale-sticker">On Sale!</div> : ''}
+      <div className='info-banner'>
+        {isOnSale ? <div className='sale-sticker'>On Sale!</div> : ''}
         {isTopSeller ? (
-          <div className="top-seller-sticker">Top Seller</div>
+          <div className='top-seller-sticker'>Top Seller</div>
         ) : (
           ''
         )}
       </div>
-      <div className="header-content">
-        <article className="product-left">
+      <div className='header-content'>
+        <article className='product-left'>
           <ImageSlider images={images} />
         </article>
 
-        <aside className="product-right">
-          <div className="price-section">
+        <aside className='product-right'>
+          <div className='price-section'>
             <h2>
               {isOnSale ? (
                 <>
-                  <span className="old-price">{priceFormatter(price)}</span>
+                  <span className='old-price'>{priceFormatter(price)}</span>
                   <span>{priceFormatter(onSalePrice)}</span>
                 </>
               ) : (
                 priceFormatter(price)
               )}
             </h2>
-            <p className="stock">
+            <p className='stock'>
               In Stock:
               {inStock ? (
-                <FaCheckSquare className="stock-icon" />
+                <FaCheckSquare className='stock-icon' />
               ) : (
-                <FaMinusSquare className="outofstock-icon" />
+                <FaMinusSquare className='outofstock-icon' />
               )}
             </p>
           </div>
 
-          <div className="buy-section">
+          <div className='buy-section'>
             <button
               className={inStock ? 'add-to-cart-btn' : 'disable'}
               onClick={handleCart}
@@ -116,15 +118,15 @@ const SingleProductHeader = ({ product }) => {
             </button>
           </div>
 
-          <div className="short-description">
+          <div className='short-description'>
             <h3>Product Description:</h3>
             <p>
               {`${desc.substring(0, 200)}`}...
               <Link
-                to="overview"
+                to='overview'
                 smooth={true}
                 duration={500}
-                className="read-more"
+                className='read-more'
               >
                 Read More
               </Link>
@@ -136,7 +138,7 @@ const SingleProductHeader = ({ product }) => {
   );
 };
 
-export default SingleProductHeader;
+export default connect(null, { openMessage })(SingleProductHeader);
 
 SingleProductHeader.propTypes = {
   product: PropTypes.object.isRequired,

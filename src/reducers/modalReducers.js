@@ -1,3 +1,5 @@
+import { OPEN_MESSAGE, CLOSE_MESSAGE } from '../constants/actionTypes';
+
 const defaultState = {
   isMessageOpen: false,
 };
