@@ -14,7 +14,6 @@ const productReducer = (state, action) => {
   if (action.type === SET_PRODUCTS) {
     return { ...state, products: action.payload, isLoading: false };
   }
-
   if (action.type === SET_LOADING) {
     return { ...state, isLoading: true };
   }
