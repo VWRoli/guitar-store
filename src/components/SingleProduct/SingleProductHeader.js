@@ -1,6 +1,7 @@
 import { priceFormatter, calcOnSale } from '../../helpers';
 import { connect } from 'react-redux';
 import { openMessage } from '../../actions/modalActions';
+import { addCompareItem } from '../../actions/compareActions';
 import {
   FaCartPlus,
   FaBalanceScale,
@@ -10,13 +11,18 @@ import {
 } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 import { Link } from 'react-scroll';
-
 import ImageSlider from './ImageSlider';
-import { useCartContext } from '../Cart/cartContext';
 
-const SingleProductHeader = ({ product, openMessage }) => {
-  const { addItem, compare } = useCartContext();
+const mapStateToProps = (state) => ({
+  compare: state.compare.compare,
+});
 
+const SingleProductHeader = ({
+  product,
+  openMessage,
+  compare,
+  addCompareItem,
+}) => {
   const {
     name,
     desc,
@@ -35,13 +41,7 @@ const SingleProductHeader = ({ product, openMessage }) => {
 
   const handleCart = () => {
     openMessage();
-    addItem(product, 'cart');
-  };
-
-  const handleCompare = () => {
-    if (!isCompare) {
-      addItem(product, 'compare');
-    }
+    //addItem(product, 'cart');
   };
 
   return (
@@ -112,7 +112,7 @@ const SingleProductHeader = ({ product, openMessage }) => {
 
             <button
               className={!isCompare ? 'add-to-compare' : 'disable-btn'}
-              onClick={handleCompare}
+              onClick={() => addCompareItem(product)}
             >
               <FaBalanceScale />
             </button>
@@ -138,7 +138,9 @@ const SingleProductHeader = ({ product, openMessage }) => {
   );
 };
 
-export default connect(null, { openMessage })(SingleProductHeader);
+export default connect(mapStateToProps, { openMessage, addCompareItem })(
+  SingleProductHeader
+);
 
 SingleProductHeader.propTypes = {
   product: PropTypes.object.isRequired,

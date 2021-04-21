@@ -7,11 +7,17 @@ import {
   FaChevronCircleUp,
 } from 'react-icons/fa';
 import { Link as ScrollLink } from 'react-scroll';
+import { connect } from 'react-redux';
 import { useCartContext } from '../Cart/cartContext';
+//Components
 import AccountLogin from './AccountLogin';
 
-const Navbar = () => {
-  const { amount, compare } = useCartContext();
+const mapStateToProps = (state) => ({
+  compare: state.compare.compare,
+});
+
+const Navbar = ({ compare }) => {
+  const { amount } = useCartContext();
   //Scroll to top button
   const bannerRef = useRef(null);
 
@@ -50,18 +56,18 @@ const Navbar = () => {
 
   return (
     <>
-      <nav id="nav">
-        <div className="nav-center">
-          <div className="mobile-header">
-            <div className="nav-header">
+      <nav id='nav'>
+        <div className='nav-center'>
+          <div className='mobile-header'>
+            <div className='nav-header'>
               <h1>
-                <Link to="/">
+                <Link to='/'>
                   Guitar<span>Store</span>
                 </Link>
               </h1>
             </div>
-            <button className="menu-bars" onClick={() => setActive(!active)}>
-              <FaBars className="bars-icon" />
+            <button className='menu-bars' onClick={() => setActive(!active)}>
+              <FaBars className='bars-icon' />
             </button>
           </div>
           <ul className={active ? 'nav-links active-menu' : 'nav-links'}>
@@ -70,7 +76,7 @@ const Navbar = () => {
                 <li key={i}>
                   <NavLink
                     to={link.route}
-                    activeClassName="active-link"
+                    activeClassName='active-link'
                     exact={true}
                     onClick={() => {
                       setActive(false);
@@ -82,40 +88,40 @@ const Navbar = () => {
               );
             })}
           </ul>
-          <div className="nav-controls">
+          <div className='nav-controls'>
             <AccountLogin />
             <Link
-              to="/compare"
-              className="navbar-icons navbar-cart"
+              to='/compare'
+              className='navbar-icons navbar-cart'
               onClick={() => {
                 setActive(false);
               }}
             >
               <FaBalanceScale />
-              <span className="cart-item-total">{compare.length}</span>
+              <span className='cart-item-total'>{compare.length}</span>
             </Link>
 
             <Link
-              to="/cart"
-              className="navbar-icons navbar-cart"
+              to='/cart'
+              className='navbar-icons navbar-cart'
               onClick={() => {
                 setActive(false);
               }}
             >
               <FaShoppingCart />
-              <span className="cart-item-total">{amount}</span>
+              <span className='cart-item-total'>{amount}</span>
             </Link>
           </div>
         </div>
       </nav>
 
-      <div id="sale-banner" ref={bannerRef}>
+      <div id='sale-banner' ref={bannerRef}>
         <p>
-          Check out our On Sale Porducts! <Link to="/onSale">Here!</Link>
+          Check out our On Sale Porducts! <Link to='/onSale'>Here!</Link>
         </p>
       </div>
       <ScrollLink
-        to="nav"
+        to='nav'
         smooth={true}
         duration={500}
         className={visible ? 'to-top to-top-visible' : 'to-top'}
@@ -126,4 +132,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default connect(mapStateToProps)(Navbar);

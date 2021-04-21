@@ -1,14 +1,13 @@
 import {
   CLEAR_CART,
-  REMOVE_ITEM,
+  REMOVE_CART_ITEM,
   GET_TOTAL,
   TOGGLE_AMOUNT,
-  ADD_ITEM,
+  ADD_CART_ITEM,
 } from '../constants/actionTypes';
 
 const defaultState = {
   cart: [],
-  compare: [],
   total: 0,
   amount: 0,
 };
@@ -23,7 +22,7 @@ const cartReducer = (state = defaultState, action) => {
         return { ...state, compare: [] };
       }
       break;
-    case REMOVE_ITEM:
+    case REMOVE_CART_ITEM:
       if (action.payload.source === 'cart') {
         const newCart = state.cart.filter(
           (item) => item.id !== action.payload.id
@@ -37,7 +36,7 @@ const cartReducer = (state = defaultState, action) => {
         return { ...state, compare: newCompare };
       }
       break;
-    case ADD_ITEM:
+    case ADD_CART_ITEM:
       //! ADDING TO CART
       if (action.payload.source === 'cart') {
         //Check for product in cart
@@ -64,13 +63,7 @@ const cartReducer = (state = defaultState, action) => {
           return { ...state, cart: [...state.cart, newItem] };
         }
       }
-      //! ADDING TO COMPARE
-      if (action.payload.source === 'compare' && state.compare.length < 5) {
-        return {
-          ...state,
-          compare: [...state.compare, action.payload.product],
-        };
-      }
+
       break;
     case TOGGLE_AMOUNT:
       const newCart = state.cart

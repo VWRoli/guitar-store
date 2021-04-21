@@ -1,14 +1,20 @@
-import { useCartContext } from '../Cart/cartContext';
 import { FaTimesCircle } from 'react-icons/fa';
+import { connect } from 'react-redux';
+import {
+  clearCompareItems,
+  removeCompareItem,
+} from '../../actions/compareActions';
 
-const Compare = () => {
-  const { compare, removeItem, clearItems } = useCartContext();
+const mapStateToProps = (state) => ({
+  compare: state.compare.compare,
+});
 
+const Compare = ({ compare, clearCompareItems, removeCompareItem }) => {
   const containsAmp = compare.some((item) => item.category === 'amp');
   const containsGuitar = compare.some((item) => item.category === 'guitar');
 
   return (
-    <section className="compare">
+    <section className='compare'>
       {compare.length !== 0 ? (
         <>
           <table>
@@ -19,8 +25,8 @@ const Compare = () => {
                   <td key={item.id}>
                     <img src={item.images[0]} alt={item.name} />
                     <button
-                      className="delete-compare-item"
-                      onClick={() => removeItem(item.id, 'compare')}
+                      className='delete-compare-item'
+                      onClick={() => removeCompareItem(item.id)}
                     >
                       <FaTimesCircle />
                     </button>
@@ -177,17 +183,20 @@ const Compare = () => {
             </tbody>
           </table>
           <button
-            className="clear-compare-btn"
-            onClick={() => clearItems('compare')}
+            className='clear-compare-btn'
+            onClick={() => clearCompareItems()}
           >
             Clear Table
           </button>
         </>
       ) : (
-        <h2 className="no-comparison-msg">No items to compare...</h2>
+        <h2 className='no-comparison-msg'>No items to compare...</h2>
       )}
     </section>
   );
 };
 
-export default Compare;
+export default connect(mapStateToProps, {
+  clearCompareItems,
+  removeCompareItem,
+})(Compare);

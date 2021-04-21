@@ -10,10 +10,15 @@ import { Link } from 'react-router-dom';
 import { priceFormatter } from '../helpers';
 import { connect } from 'react-redux';
 import { openMessage } from '../actions/modalActions';
+import { addCompareItem } from '../actions/compareActions';
 import { useCartContext } from './Cart/cartContext';
 
-const ListItem = ({ product, openMessage }) => {
-  const { addItem, compare } = useCartContext();
+const mapStateToProps = (state) => ({
+  compare: state.compare.compare,
+});
+
+const ListItem = ({ product, openMessage, compare, addCompareItem }) => {
+  const { addItem } = useCartContext();
 
   const {
     images,
@@ -35,11 +40,6 @@ const ListItem = ({ product, openMessage }) => {
   };
 
   const isCompare = compare.some((item) => item.id === id);
-  const handleCompare = () => {
-    if (!isCompare) {
-      addItem(product, 'compare');
-    }
-  };
 
   return (
     <article className='list-item'>
@@ -90,7 +90,7 @@ const ListItem = ({ product, openMessage }) => {
         <div className='controls'>
           <button
             className={!isCompare ? 'control-icons' : 'disable-btn'}
-            onClick={handleCompare}
+            onClick={() => addCompareItem(product)}
           >
             <FaBalanceScale />
           </button>
@@ -106,7 +106,9 @@ const ListItem = ({ product, openMessage }) => {
   );
 };
 
-export default connect(null, { openMessage })(ListItem);
+export default connect(mapStateToProps, { openMessage, addCompareItem })(
+  ListItem
+);
 
 ListItem.propTypes = {
   product: PropTypes.object.isRequired,
