@@ -1,25 +1,24 @@
-import { useProductContext } from './productContext';
+import { connect } from 'react-redux';
 import { useRef } from 'react';
+import { setSearchQuery } from '../../actions/productActions';
 
-const SearchBar = () => {
-  const { setSearchQuery } = useProductContext();
-
+const SearchBar = ({ setSearchQuery }) => {
   const searchValue = useRef('');
 
   const onSubmit = (e) => {
     e.preventDefault();
   };
-  const handleChange = (e) => {
+  const handleChange = () => {
     setSearchQuery(`&q=${searchValue.current.value}`);
   };
 
   return (
-    <form className="search-bar" onSubmit={onSubmit}>
-      <label htmlFor="search"></label>
+    <form className='search-bar' onSubmit={onSubmit}>
+      <label htmlFor='search'></label>
       <input
-        type="text"
-        name="search"
-        placeholder="Search..."
+        type='text'
+        name='search'
+        placeholder='Search...'
         ref={searchValue}
         onChange={handleChange}
       />
@@ -27,4 +26,4 @@ const SearchBar = () => {
   );
 };
 
-export default SearchBar;
+export default connect(null, { setSearchQuery })(SearchBar);

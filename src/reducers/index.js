@@ -7,6 +7,6 @@ import modalReducer from './modalReducers';
 export default combineReducers({
   cart: cartReducer,
   modal: modalReducer,
-  product: productReducer,
+  products: productReducer,
   compare: compareReducer,
 });

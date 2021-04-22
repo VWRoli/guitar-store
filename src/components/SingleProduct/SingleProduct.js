@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import Loading from '../../Loading';
 import Error from '../../Error';
 import { useFetch } from '../../useFetch';
-import { API_ROOT } from '../../constant';
+import { API_ROOT } from '../../constants/constant';
 
 import SingleProductHeader from './SingleProductHeader';
 import ProductOverview from './ProductOverview';

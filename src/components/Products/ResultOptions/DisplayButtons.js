@@ -1,9 +1,8 @@
-import { useProductContext } from '../productContext';
+import { connect } from 'react-redux';
 import { useState } from 'react';
+import { setPage, setDisplayItems } from '../../../actions/productActions';
 
-const DisplayButtons = () => {
-  const { setPage, setDisplayItems } = useProductContext();
-
+const DisplayButtons = ({ setPage, setDisplayItems }) => {
   const buttons = [
     { label: '9', id: 1 },
     { label: '18', id: 2 },
@@ -19,7 +18,7 @@ const DisplayButtons = () => {
   };
 
   return (
-    <div className="display-options">
+    <div className='display-options'>
       {buttons.map((btn) => {
         return (
           <button
@@ -36,4 +35,4 @@ const DisplayButtons = () => {
   );
 };
 
-export default DisplayButtons;
+export default connect(null, { setPage, setDisplayItems })(DisplayButtons);

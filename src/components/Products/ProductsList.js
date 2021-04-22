@@ -1,11 +1,17 @@
-import { useProductContext } from './productContext';
+import { connect } from 'react-redux';
+//Components
 import ListItem from '../ListItem';
 import Loading from '../../Loading';
 import Error from '../../Error';
 
-const ProductsList = () => {
-  const { products, isLoading, isError, errorMsg } = useProductContext();
+const mapStateToProps = (state) => ({
+  products: state.products.products,
+  errorMsg: state.products.errorMsg,
+  isLoading: state.products.isLoading,
+  isError: state.products.isError,
+});
 
+const ProductsList = ({ products, isLoading, isError, errorMsg }) => {
   //Loading screen
   if (isLoading) return <Loading />;
 
@@ -14,7 +20,7 @@ const ProductsList = () => {
 
   //Render if there is no match for the filters
   if (products.length === 0)
-    return <h2 className="no-match-msg">No Products Match</h2>;
+    return <h2 className='no-match-msg'>No Products Match</h2>;
 
   return (
     <>
@@ -25,4 +31,4 @@ const ProductsList = () => {
   );
 };
 
-export default ProductsList;
+export default connect(mapStateToProps)(ProductsList);

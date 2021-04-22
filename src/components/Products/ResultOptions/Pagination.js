@@ -1,22 +1,26 @@
 import { FaChevronRight, FaChevronLeft } from 'react-icons/fa';
-import { useProductContext } from '../productContext';
+import { connect } from 'react-redux';
+import { setPage } from '../../../actions/productActions';
 
-const Pagination = () => {
-  const { page, hasNextPage, setPage } = useProductContext();
+const mapStateToProps = (state) => ({
+  page: state.products.page,
+  hasNextPage: state.products.hasNextPage,
+});
 
+const Pagination = ({ page, hasNextPage, setPage }) => {
   return (
-    <section className="pagination">
+    <section className='pagination'>
       {page !== 1 && <button onClick={() => setPage(1)}>1</button>}
       {page !== 1 && (
         <button onClick={() => setPage(page - 1)}>
           <FaChevronLeft />
         </button>
       )}
-      {page > 2 && <button className="ellipsis">...</button>}
+      {page > 2 && <button className='ellipsis'>...</button>}
       {page > 2 && (
         <button onClick={() => setPage(page - 1)}>{page - 1}</button>
       )}
-      <button className="active-page">{page}</button>
+      <button className='active-page'>{page}</button>
 
       {hasNextPage && (
         <button onClick={() => setPage(page + 1)}>{page + 1}</button>
@@ -30,4 +34,4 @@ const Pagination = () => {
   );
 };
 
-export default Pagination;
+export default connect(mapStateToProps, { setPage })(Pagination);

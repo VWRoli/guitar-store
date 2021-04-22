@@ -1,10 +1,14 @@
-import { useProductContext } from '../productContext';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { setPage, setFilters } from '../../../actions/productActions';
+//Components
 import Checkbox from './Checkbox';
 
-const FilterGroup = ({ items, name }) => {
-  const { setFilters, filter, setPage } = useProductContext();
+const mapStateToProps = (state) => ({
+  filter: state.products.filter,
+});
 
+const FilterGroup = ({ items, name, setFilters, filter, setPage }) => {
   const handleChange = (name, item) => {
     const clickedItem = `&${name.toLowerCase()}=${item}`;
 
@@ -40,7 +44,7 @@ const FilterGroup = ({ items, name }) => {
   );
 };
 
-export default FilterGroup;
+export default connect(mapStateToProps, { setFilters, setPage })(FilterGroup);
 
 FilterGroup.propTypes = {
   items: PropTypes.array.isRequired,

@@ -1,19 +1,23 @@
+import { useState } from 'react';
+import { connect } from 'react-redux';
+import { fetchProducts } from '../../actions/productActions';
+//Components
 import Filters from './Filter/Filters';
 import ProductsList from './ProductsList';
-import { useState } from 'react';
 import SearchBar from './SearchBar';
 import ResultOptions from './ResultOptions/ResultOptions';
 
-const Products = () => {
+const Products = ({ fetchProducts }) => {
+  fetchProducts();
   const [visible, setVisible] = useState(false);
   return (
-    <section className="products">
+    <section className='products'>
       <SearchBar />
-      <div className="container">
+      <div className='container'>
         <Filters visible={visible} setVisible={setVisible} />
-        <section className="products-list">
+        <section className='products-list'>
           <ResultOptions visible={visible} setVisible={setVisible} />
-          <div className="product-wrapper">
+          <div className='product-wrapper'>
             <ProductsList />
           </div>
           <ResultOptions visible={visible} setVisible={setVisible} />
@@ -23,4 +27,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default connect(null, { fetchProducts })(Products);

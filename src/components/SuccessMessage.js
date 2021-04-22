@@ -40,7 +40,7 @@ const SuccessMessage = ({ isMessageOpen, closeMessage, total, amount }) => {
           </p>
         </div>
         <div className='success-btn-wrapper'>
-          <Link to='/products' className='continue-btn' onClick={closeMessage}>
+          <Link to='#' className='continue-btn' onClick={closeMessage}>
             Continue Shopping
           </Link>
           <Link to='/cart' className='cart-btn' onClick={closeMessage}>

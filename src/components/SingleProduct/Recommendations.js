@@ -1,7 +1,7 @@
 import Slider from 'react-slick';
 import { settings } from '../../helpers';
 import { useFetch } from '../../useFetch';
-import { API_ROOT } from '../../constant';
+import { API_ROOT } from '../..//constants/constant';
 import Loading from '../../Loading';
 import Error from '../../Error';
 import ListItem from '../ListItem';
@@ -25,11 +25,11 @@ const Recommendations = () => {
   }
 
   return (
-    <section className="recommendations">
-      <div className="container">
+    <section className='recommendations'>
+      <div className='container'>
         <h2>Recommended For You</h2>
-        <div className="list-container">
-          <Slider {...settings} className="list">
+        <div className='list-container'>
+          <Slider {...settings} className='list'>
             {recommendations.map((product) => (
               <ListItem key={product.id} product={product} />
             ))}
