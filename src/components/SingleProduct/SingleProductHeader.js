@@ -2,6 +2,7 @@ import { priceFormatter, calcOnSale } from '../../helpers';
 import { connect } from 'react-redux';
 import { openMessage } from '../../actions/modalActions';
 import { addCompareItem } from '../../actions/compareActions';
+import { addCartItem } from '../../actions/cartActions';
 import {
   FaCartPlus,
   FaBalanceScale,
@@ -22,6 +23,7 @@ const SingleProductHeader = ({
   openMessage,
   compare,
   addCompareItem,
+  addCartItem,
 }) => {
   const {
     name,
@@ -41,7 +43,7 @@ const SingleProductHeader = ({
 
   const handleCart = () => {
     openMessage();
-    //addItem(product, 'cart');
+    addCartItem(product);
   };
 
   return (
@@ -138,9 +140,11 @@ const SingleProductHeader = ({
   );
 };
 
-export default connect(mapStateToProps, { openMessage, addCompareItem })(
-  SingleProductHeader
-);
+export default connect(mapStateToProps, {
+  openMessage,
+  addCompareItem,
+  addCartItem,
+})(SingleProductHeader);
 
 SingleProductHeader.propTypes = {
   product: PropTypes.object.isRequired,

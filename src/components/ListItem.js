@@ -11,15 +11,19 @@ import { priceFormatter } from '../helpers';
 import { connect } from 'react-redux';
 import { openMessage } from '../actions/modalActions';
 import { addCompareItem } from '../actions/compareActions';
-import { useCartContext } from './Cart/cartContext';
+import { addCartItem } from '../actions/cartActions';
 
 const mapStateToProps = (state) => ({
   compare: state.compare.compare,
 });
 
-const ListItem = ({ product, openMessage, compare, addCompareItem }) => {
-  const { addItem } = useCartContext();
-
+const ListItem = ({
+  product,
+  openMessage,
+  compare,
+  addCompareItem,
+  addCartItem,
+}) => {
   const {
     images,
     name,
@@ -36,7 +40,7 @@ const ListItem = ({ product, openMessage, compare, addCompareItem }) => {
 
   const handleCart = () => {
     openMessage();
-    addItem(product, 'cart');
+    addCartItem(product);
   };
 
   const isCompare = compare.some((item) => item.id === id);
@@ -106,9 +110,11 @@ const ListItem = ({ product, openMessage, compare, addCompareItem }) => {
   );
 };
 
-export default connect(mapStateToProps, { openMessage, addCompareItem })(
-  ListItem
-);
+export default connect(mapStateToProps, {
+  openMessage,
+  addCompareItem,
+  addCartItem,
+})(ListItem);
 
 ListItem.propTypes = {
   product: PropTypes.object.isRequired,

@@ -14,7 +14,6 @@ import SingleProduct from './components/SingleProduct/SingleProduct';
 import { ProductsProvider } from './components/Products/productContext';
 import Footer from './components/Footer';
 import Cart from './components/Cart/Cart';
-import { CartProvider } from './components/Cart/cartContext';
 import Compare from './components/Compare/Compare';
 import SuccessMessage from './components/SuccessMessage';
 import ScrollToTop from './components/ScrollToTop';
@@ -22,42 +21,40 @@ import ScrollToTop from './components/ScrollToTop';
 function App() {
   return (
     <Router>
-      <CartProvider>
-        <main className="App">
-          <ProductsProvider>
-            <Navbar />
-            <SuccessMessage />
-            <ScrollToTop />
-            <Switch>
-              <Route exact path="/">
-                <Home />
-              </Route>
-              <Route path="/products">
-                <Products />
-              </Route>
-              <Route path="/product/:id">
-                <SingleProduct />
-              </Route>
-              <Route path="/about">
-                <About />
-              </Route>
-              <Route path="/onsale">
-                <OnSale />
-              </Route>
-              <Route path="/compare">
-                <Compare />
-              </Route>
-              <Route path="/cart">
-                <Cart />
-              </Route>
-              <Route path="*">
-                <ErrorPage />
-              </Route>
-            </Switch>
-          </ProductsProvider>
-          <Footer />
-        </main>
-      </CartProvider>
+      <main className='App'>
+        <ProductsProvider>
+          <Navbar />
+          <SuccessMessage />
+          <ScrollToTop />
+          <Switch>
+            <Route exact path='/'>
+              <Home />
+            </Route>
+            <Route path='/products'>
+              <Products />
+            </Route>
+            <Route path='/product/:id'>
+              <SingleProduct />
+            </Route>
+            <Route path='/about'>
+              <About />
+            </Route>
+            <Route path='/onsale'>
+              <OnSale />
+            </Route>
+            <Route path='/compare'>
+              <Compare />
+            </Route>
+            <Route path='/cart'>
+              <Cart />
+            </Route>
+            <Route path='*'>
+              <ErrorPage />
+            </Route>
+          </Switch>
+        </ProductsProvider>
+        <Footer />
+      </main>
     </Router>
   );
 }

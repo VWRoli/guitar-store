@@ -8,16 +8,15 @@ import {
 } from 'react-icons/fa';
 import { Link as ScrollLink } from 'react-scroll';
 import { connect } from 'react-redux';
-import { useCartContext } from '../Cart/cartContext';
 //Components
 import AccountLogin from './AccountLogin';
 
 const mapStateToProps = (state) => ({
   compare: state.compare.compare,
+  amount: state.cart.amount,
 });
 
-const Navbar = ({ compare }) => {
-  const { amount } = useCartContext();
+const Navbar = ({ compare, amount }) => {
   //Scroll to top button
   const bannerRef = useRef(null);
 

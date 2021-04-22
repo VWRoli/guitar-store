@@ -1,17 +1,16 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useCartContext } from './Cart/cartContext';
 import { priceFormatter } from '../helpers';
 import { connect } from 'react-redux';
 import { closeMessage } from '../actions/modalActions';
 
 const mapStateToProps = (state) => ({
   isMessageOpen: state.modal.isMessageOpen,
+  amount: state.cart.amount,
+  total: state.cart.total,
 });
 
-const SuccessMessage = ({ isMessageOpen, closeMessage }) => {
-  const { total, amount } = useCartContext();
-
+const SuccessMessage = ({ isMessageOpen, closeMessage, total, amount }) => {
   //Close Message with Esc
   const handleKeyDown = (e) => {
     if (e.key === 'Escape') {
