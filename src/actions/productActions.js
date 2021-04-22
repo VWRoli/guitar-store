@@ -25,12 +25,10 @@ export const setSorting = (sortOption) => (dispatch) => {
 
 export const setFilters = (filterOption) => (dispatch) => {
   dispatch({ type: SET_FILTER_OPTION, payload: filterOption });
-  fetchProducts();
 };
 
 export const setSearchQuery = (query) => (dispatch) => {
   dispatch({ type: SET_QUERY, payload: query });
-  fetchProducts();
 };
 
 export const fetchProducts = () => async (dispatch, getState) => {

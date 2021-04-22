@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { fetchProducts } from '../../actions/productActions';
 //Components
@@ -7,9 +7,28 @@ import ProductsList from './ProductsList';
 import SearchBar from './SearchBar';
 import ResultOptions from './ResultOptions/ResultOptions';
 
-const Products = ({ fetchProducts }) => {
-  fetchProducts();
+const mapStateToProps = (state) => ({
+  page: state.products.page,
+  filter: state.products.filter,
+  displayItems: state.products.displayItems,
+  sorting: state.products.sorting,
+  searchQuery: state.products.searchQuery,
+});
+
+const Products = ({
+  fetchProducts,
+  page,
+  filter,
+  displayItems,
+  sorting,
+  searchQuery,
+}) => {
+  useEffect(() => {
+    fetchProducts();
+  }, [page, filter, displayItems, sorting, searchQuery]);
+
   const [visible, setVisible] = useState(false);
+
   return (
     <section className='products'>
       <SearchBar />
@@ -27,4 +46,4 @@ const Products = ({ fetchProducts }) => {
   );
 };
 
-export default connect(null, { fetchProducts })(Products);
+export default connect(mapStateToProps, { fetchProducts })(Products);
