@@ -118,4 +118,8 @@ export default connect(mapStateToProps, {
 
 ListItem.propTypes = {
   product: PropTypes.object.isRequired,
+  openMessage: PropTypes.func,
+  compare: PropTypes.array,
+  addCompareItem: PropTypes.func,
+  addCartItem: PropTypes.func,
 };

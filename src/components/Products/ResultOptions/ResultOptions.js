@@ -43,4 +43,6 @@ export default connect(mapStateToProps, { setSorting })(ResultOptions);
 ResultOptions.propTypes = {
   setVisible: PropTypes.func.isRequired,
   visible: PropTypes.bool.isRequired,
+  sorting: PropTypes.string,
+  setSorting: PropTypes.func,
 };

@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { useRef } from 'react';
+import PropTypes from 'prop-types';
 import { setSearchQuery } from '../../actions/productActions';
 
 const SearchBar = ({ setSearchQuery }) => {
@@ -27,3 +28,7 @@ const SearchBar = ({ setSearchQuery }) => {
 };
 
 export default connect(null, { setSearchQuery })(SearchBar);
+
+SearchBar.propTypes = {
+  setSearchQuery: PropTypes.func,
+};

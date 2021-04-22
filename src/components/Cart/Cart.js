@@ -1,4 +1,5 @@
 import { priceFormatter } from '../../helpers';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { clearCartItems } from '../../actions/cartActions';
@@ -48,3 +49,9 @@ const Cart = ({ cart, clearCartItems, total }) => {
 };
 
 export default connect(mapStateToProps, { clearCartItems })(Cart);
+
+Cart.propTypes = {
+  clearCartItems: PropTypes.func,
+  cart: PropTypes.array,
+  total: PropTypes.number,
+};

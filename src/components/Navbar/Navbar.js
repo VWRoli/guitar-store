@@ -8,6 +8,7 @@ import {
 } from 'react-icons/fa';
 import { Link as ScrollLink } from 'react-scroll';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 //Components
 import AccountLogin from './AccountLogin';
 
@@ -132,3 +133,8 @@ const Navbar = ({ compare, amount }) => {
 };
 
 export default connect(mapStateToProps)(Navbar);
+
+Navbar.propTypes = {
+  compare: PropTypes.array,
+  amount: PropTypes.number,
+};

@@ -1,5 +1,6 @@
 import { FaChevronRight, FaChevronLeft } from 'react-icons/fa';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { setPage } from '../../../actions/productActions';
 
 const mapStateToProps = (state) => ({
@@ -35,3 +36,9 @@ const Pagination = ({ page, hasNextPage, setPage }) => {
 };
 
 export default connect(mapStateToProps, { setPage })(Pagination);
+
+Pagination.propTypes = {
+  setPage: PropTypes.func,
+  page: PropTypes.number,
+  hasNextPage: PropTypes.bool,
+};

@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { connect } from 'react-redux';
 import { fetchProducts } from '../../actions/productActions';
+import PropTypes from 'prop-types';
 //Components
 import Filters from './Filter/Filters';
 import ProductsList from './ProductsList';
@@ -23,9 +24,12 @@ const Products = ({
   sorting,
   searchQuery,
 }) => {
-  useEffect(() => {
+  const getProducts = useCallback(() => {
     fetchProducts();
-  }, [page, filter, displayItems, sorting, searchQuery]);
+  }, [fetchProducts]);
+  useEffect(() => {
+    getProducts();
+  }, [getProducts, page, filter, displayItems, sorting, searchQuery]);
 
   const [visible, setVisible] = useState(false);
 
@@ -47,3 +51,12 @@ const Products = ({
 };
 
 export default connect(mapStateToProps, { fetchProducts })(Products);
+
+Products.propTypes = {
+  page: PropTypes.number,
+  fetchProducts: PropTypes.func,
+  filter: PropTypes.array,
+  sorting: PropTypes.string,
+  displayItems: PropTypes.number,
+  searchQuery: PropTypes.string,
+};

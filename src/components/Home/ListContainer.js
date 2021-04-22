@@ -1,10 +1,11 @@
-import ListItem from '../ListItem';
 import { settings, filterProducts } from '../../helpers';
 import Slider from 'react-slick';
-import Loading from '../../Loading';
-import Error from '../../Error';
 import { useFetch } from '../../useFetch';
 import { API_ROOT } from '../../constants/constant';
+//Components
+import ListItem from '../ListItem';
+import Error from '../../Error';
+import Loading from '../../Loading';
 
 const ListContainer = () => {
   const { data: products, isLoading, isError } = useFetch(API_ROOT);

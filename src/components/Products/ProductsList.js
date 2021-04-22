@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 //Components
 import ListItem from '../ListItem';
 import Loading from '../../Loading';
@@ -32,3 +33,10 @@ const ProductsList = ({ products, isLoading, isError, errorMsg }) => {
 };
 
 export default connect(mapStateToProps)(ProductsList);
+
+ProductsList.propTypes = {
+  products: PropTypes.array,
+  isLoading: PropTypes.bool,
+  isError: PropTypes.bool,
+  errorMsg: PropTypes.string,
+};

@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 import { setPage, setDisplayItems } from '../../../actions/productActions';
 
 const DisplayButtons = ({ setPage, setDisplayItems }) => {
@@ -36,3 +37,8 @@ const DisplayButtons = ({ setPage, setDisplayItems }) => {
 };
 
 export default connect(null, { setPage, setDisplayItems })(DisplayButtons);
+
+DisplayButtons.propTypes = {
+  setPage: PropTypes.func,
+  setDisplayItems: PropTypes.func,
+};

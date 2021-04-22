@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { priceFormatter } from '../helpers';
 import { connect } from 'react-redux';
 import { closeMessage } from '../actions/modalActions';
+import PropTypes from 'prop-types';
 
 const mapStateToProps = (state) => ({
   isMessageOpen: state.modal.isMessageOpen,
@@ -53,3 +54,10 @@ const SuccessMessage = ({ isMessageOpen, closeMessage, total, amount }) => {
 };
 
 export default connect(mapStateToProps, { closeMessage })(SuccessMessage);
+
+SuccessMessage.propTypes = {
+  isMessageOpen: PropTypes.bool,
+  closeMessage: PropTypes.func,
+  total: PropTypes.number,
+  amount: PropTypes.number,
+};

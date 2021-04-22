@@ -148,4 +148,8 @@ export default connect(mapStateToProps, {
 
 SingleProductHeader.propTypes = {
   product: PropTypes.object.isRequired,
+  openMessage: PropTypes.func,
+  compare: PropTypes.array,
+  addCompareItem: PropTypes.func,
+  addCartItem: PropTypes.func,
 };

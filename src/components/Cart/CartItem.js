@@ -63,4 +63,6 @@ export default connect(null, { toggleCartAmount, removeCartItem })(CartItem);
 
 CartItem.propTypes = {
   item: PropTypes.object,
+  toggleCartAmount: PropTypes.func,
+  removeCartItem: PropTypes.func,
 };

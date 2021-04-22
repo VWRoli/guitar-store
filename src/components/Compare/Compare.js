@@ -1,5 +1,6 @@
 import { FaTimesCircle } from 'react-icons/fa';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import {
   clearCompareItems,
   removeCompareItem,
@@ -200,3 +201,9 @@ export default connect(mapStateToProps, {
   clearCompareItems,
   removeCompareItem,
 })(Compare);
+
+Compare.propTypes = {
+  clearCompareItems: PropTypes.func,
+  compare: PropTypes.array,
+  removeCompareItem: PropTypes.func,
+};

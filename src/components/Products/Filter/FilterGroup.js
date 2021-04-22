@@ -49,4 +49,7 @@ export default connect(mapStateToProps, { setFilters, setPage })(FilterGroup);
 FilterGroup.propTypes = {
   items: PropTypes.array.isRequired,
   name: PropTypes.string.isRequired,
+  setFilters: PropTypes.func,
+  filter: PropTypes.array,
+  setPage: PropTypes.func,
 };
