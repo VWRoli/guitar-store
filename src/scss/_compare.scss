@@ -23,6 +23,13 @@
     }
   }
 }
+.compare-link {
+  color: $main-color;
+  font-weight: 500;
+  &:hover {
+    color: lighten($main-color, 10%);
+  }
+}
 .no-comparison-msg {
   align-self: center;
   color: $secondary-color;

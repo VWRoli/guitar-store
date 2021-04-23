@@ -111,7 +111,7 @@
         font-size: 1.5rem;
         margin: 0.5rem;
         color: $muted;
-        cursor: not-allowed;
+        pointer-events: none;
         width: fit-content;
       }
     }

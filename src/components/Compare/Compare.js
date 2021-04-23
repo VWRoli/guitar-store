@@ -5,6 +5,7 @@ import {
   clearCompareItems,
   removeCompareItem,
 } from '../../actions/compareActions';
+import { Link } from 'react-router-dom';
 
 const mapStateToProps = (state) => ({
   compare: state.compare.compare,
@@ -37,7 +38,11 @@ const Compare = ({ compare, clearCompareItems, removeCompareItem }) => {
               <tr>
                 <th>Name:</th>
                 {compare.map((item) => (
-                  <td key={item.id}>{item.name}</td>
+                  <td key={item.id}>
+                    <Link to={`/product/${item.id}`} className='compare-link'>
+                      {item.name}
+                    </Link>
+                  </td>
                 ))}
               </tr>
 

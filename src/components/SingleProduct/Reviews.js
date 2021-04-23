@@ -8,14 +8,32 @@ const reviewsUrl = `http://jsonplaceholder.typicode.com/posts/1/comments`;
 const Reviews = () => {
   const { data: reviews, isLoading, isError } = useFetch(reviewsUrl);
 
-  if (isLoading) return <Loading />;
+  //Handle Loading
+  if (isLoading)
+    return (
+      <section id='product-reviews'>
+        <header>
+          <h2 id='reviews'>Reviews</h2>
+        </header>
+        <Loading />
+      </section>
+    );
 
-  if (isError) return <Error />;
+  //Handle Error
+  if (isError)
+    return (
+      <section id='product-reviews'>
+        <header>
+          <h2 id='reviews'>Reviews</h2>
+        </header>
+        <Error />
+      </section>
+    );
 
   return (
-    <section id="product-reviews">
+    <section id='product-reviews'>
       <header>
-        <h2 id="reviews">Reviews</h2>
+        <h2 id='reviews'>Reviews</h2>
       </header>
       {reviews.map((review) => (
         <ReviewComment {...review} key={review.id} />
