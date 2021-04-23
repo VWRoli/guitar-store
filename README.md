@@ -1,6 +1,6 @@
 # Guitar Store
 
-Complete frontend for a Guitar E-Commerce website. [Live Demo](https://guitar-store-site.netlify.app/).
+Complete frontend for a mock Guitar E-Commerce website. [Live Demo](https://guitar-store-site.netlify.app/).
 
 - Created a mock Rest API for storing product data. [Guitar Store API](https://github.com/VWRoli/guitar-store-api)
 - Products are paginated and can be filtered, sorted and searched.
