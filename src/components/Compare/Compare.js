@@ -28,8 +28,7 @@ const Compare = ({ compare, clearCompareItems, removeCompareItem }) => {
                     <img src={item.images[0]} alt={item.name} />
                     <button
                       className='delete-compare-item'
-                      onClick={() => removeCompareItem(item.id)}
-                    >
+                      onClick={() => removeCompareItem(item.id)}>
                       <FaTimesCircle />
                     </button>
                   </td>
@@ -190,8 +189,7 @@ const Compare = ({ compare, clearCompareItems, removeCompareItem }) => {
           </table>
           <button
             className='clear-compare-btn'
-            onClick={() => clearCompareItems()}
-          >
+            onClick={() => clearCompareItems()}>
             Clear Table
           </button>
         </>
