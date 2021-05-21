@@ -17,42 +17,17 @@ import Navbar from './components/Navbar/Navbar';
 import SuccessMessage from './components/SuccessMessage';
 import ScrollToTop from './components/ScrollToTop';
 import Footer from './components/Footer';
+import AdminLayout from './AdminLayout';
+import PublicLayout from './PublicLayout';
 
 function App() {
   return (
     <Router>
-      <main className='App'>
-        <Navbar />
-        <SuccessMessage />
-        <ScrollToTop />
+      <main className="App">
         <Switch>
-          <Route exact path='/'>
-            <Home />
-          </Route>
-          <Route path='/products'>
-            <Products />
-          </Route>
-          <Route path='/product/:id'>
-            <SingleProduct />
-          </Route>
-          <Route path='/about'>
-            <About />
-          </Route>
-          <Route path='/onsale'>
-            <OnSale />
-          </Route>
-          <Route path='/compare'>
-            <Compare />
-          </Route>
-          <Route path='/cart'>
-            <Cart />
-          </Route>
-          <Route path='*'>
-            <ErrorPage />
-          </Route>
+          <Route path="/admin" component={AdminLayout} />
+          <Route path="/" component={PublicLayout} />
         </Switch>
-
-        <Footer />
       </main>
     </Router>
   );
