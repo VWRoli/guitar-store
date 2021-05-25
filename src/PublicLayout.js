@@ -7,14 +7,15 @@ import Compare from './components/Compare/Compare';
 import ErrorPage from './components/ErrorPage';
 import Footer from './components/Footer';
 import Home from './components/Home/Home';
-import Navbar from './components/Navbar/Navbar';
 import OnSale from './components/OnSale';
 import Products from './components/Products/Products';
+//Components
+import Navbar from './components/Navbar/Navbar';
 import ScrollToTop from './components/ScrollToTop';
 import SingleProduct from './components/SingleProduct/SingleProduct';
 import SuccessMessage from './components/SuccessMessage';
 
-const PublicLayout = ({ match }) => {
+const PublicLayout = () => {
   return (
     <>
       <Navbar />

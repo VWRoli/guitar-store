@@ -1,8 +1,10 @@
+import MainDashboard from './MainDashboard';
+
 const AdminDashboard = () => {
   return (
-    <div>
-      <h1>This is the admin Dash</h1>
-    </div>
+    <>
+      <MainDashboard />
+    </>
   );
 };
 
