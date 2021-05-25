@@ -56,18 +56,18 @@ const Navbar = ({ compare, amount }) => {
 
   return (
     <>
-      <nav id='nav'>
-        <div className='nav-center'>
-          <div className='mobile-header'>
-            <div className='nav-header'>
+      <nav id="nav">
+        <div className="nav-center">
+          <div className="mobile-header">
+            <div className="nav-header">
               <h1>
-                <Link to='/'>
+                <Link to="/">
                   Guitar<span>Store</span>
                 </Link>
               </h1>
             </div>
-            <button className='menu-bars' onClick={() => setActive(!active)}>
-              <FaBars className='bars-icon' />
+            <button className="menu-bars" onClick={() => setActive(!active)}>
+              <FaBars className="bars-icon" />
             </button>
           </div>
           <ul className={active ? 'nav-links active-menu' : 'nav-links'}>
@@ -76,56 +76,56 @@ const Navbar = ({ compare, amount }) => {
                 <li key={i}>
                   <NavLink
                     to={link.route}
-                    activeClassName='active-link'
+                    activeClassName="active-link"
                     exact={true}
                     onClick={() => {
                       setActive(false);
-                    }}
-                  >
+                    }}>
                     {link.label}
                   </NavLink>
                 </li>
               );
             })}
           </ul>
-          <div className='nav-controls'>
+          <div className="nav-controls">
             <AccountLogin />
             <Link
-              to='/compare'
-              className='navbar-icons navbar-cart'
+              to="/compare"
+              className="navbar-icons navbar-cart"
               onClick={() => {
                 setActive(false);
-              }}
-            >
+              }}>
               <FaBalanceScale />
-              <span className='cart-item-total'>{compare.length}</span>
+              <span className="cart-item-total">{compare.length}</span>
             </Link>
 
             <Link
-              to='/cart'
-              className='navbar-icons navbar-cart'
+              to="/cart"
+              className="navbar-icons navbar-cart"
               onClick={() => {
                 setActive(false);
-              }}
-            >
+              }}>
               <FaShoppingCart />
-              <span className='cart-item-total'>{amount}</span>
+              <span className="cart-item-total">{amount}</span>
             </Link>
           </div>
         </div>
       </nav>
 
-      <div id='sale-banner' ref={bannerRef}>
+      <div id="sale-banner" ref={bannerRef}>
+        <div className="banner-placeholder"></div>
         <p>
-          Check out our On Sale Porducts! <Link to='/onSale'>Here!</Link>
+          Check out our On Sale Porducts! <Link to="/onSale">Here!</Link>
         </p>
+        <Link to="/admin" id="admin-btn">
+          Admin Dashboard
+        </Link>
       </div>
       <ScrollLink
-        to='nav'
+        to="nav"
         smooth={true}
         duration={500}
-        className={visible ? 'to-top to-top-visible' : 'to-top'}
-      >
+        className={visible ? 'to-top to-top-visible' : 'to-top'}>
         <FaChevronCircleUp />
       </ScrollLink>
     </>
