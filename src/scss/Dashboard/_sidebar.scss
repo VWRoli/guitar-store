@@ -1,8 +1,37 @@
 .admin-sidebar {
-  background-color: slategray;
+  background-color: $secondary-color;
+  color: $light-bg;
   position: absolute;
   top: 0;
   left: 0;
   width: 15vw;
   height: 100vh;
+}
+.admin-profile-menu {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+  .admin-profile-img-container {
+    margin: auto;
+    width: 75px;
+    img {
+      border-radius: 50%;
+    }
+  }
+}
+.admin-side-menu {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid $light-bg;
+  border-bottom: 1px solid $light-bg;
+  li {
+    padding: 0.5rem;
+    a {
+      color: $light-bg;
+    }
+    &:hover {
+      background-color: $main-color;
+      cursor: pointer;
+    }
+  }
 }
