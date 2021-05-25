@@ -1,8 +1,14 @@
+import Header from './Header';
+import MainDashboard from './MainDashboard';
+import Sidebar from './Sidebar/Sidebar';
+
 const AdminDashboard = () => {
   return (
-    <div>
-      <h1>This is the admin Dash</h1>
-    </div>
+    <>
+      <Header />
+      <Sidebar />
+      <MainDashboard />
+    </>
   );
 };
 
