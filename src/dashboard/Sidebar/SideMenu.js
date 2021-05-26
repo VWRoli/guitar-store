@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const LINK_ITEMS = [
-  { label: 'Dashboard', route: '/admin' },
+  { label: 'Dashboard', route: '/admin/main' },
   { label: 'Products', route: '/admin/products' },
   { label: 'Orders', route: '/admin/orders' },
   { label: 'Customers', route: '/admin/customers' },
@@ -13,7 +13,9 @@ const SideMenu = () => {
     <ul className="admin-side-menu">
       {LINK_ITEMS.map((item) => (
         <li key={item.label}>
-          <Link to={item.route}>{item.label}</Link>
+          <NavLink to={item.route} activeClassName="active-link">
+            {item.label}
+          </NavLink>
         </li>
       ))}
     </ul>
