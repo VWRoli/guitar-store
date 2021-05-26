@@ -11,7 +11,7 @@ function App() {
     <Router>
       <main className="App">
         <Switch>
-          <Route path="/admin" component={AdminLayout} />
+          <Route path="/dashboard" component={AdminLayout} />
           <Route path="/" component={PublicLayout} />
         </Switch>
       </main>

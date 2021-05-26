@@ -117,7 +117,7 @@ const Navbar = ({ compare, amount }) => {
         <p>
           Check out our On Sale Porducts! <Link to="/onSale">Here!</Link>
         </p>
-        <Link to="/admin" id="admin-btn">
+        <Link to="/dashboard" id="admin-btn">
           Admin Dashboard
         </Link>
       </div>

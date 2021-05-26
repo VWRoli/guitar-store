@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom';
 import { FaCog, FaEnvelope, FaSignOutAlt } from 'react-icons/fa';
+import Breadcrumbs from './Breadcrumbs';
 
 const Header = () => {
   return (
     <header className="admin-header">
-      <div className="breadcrumbs">
+      <div className="breadcrumbs-container">
         <h1>Dashboard</h1>
-        <p>Dashboard &gt; Main</p>
+        <Breadcrumbs />
       </div>
       <div className="admin-header-icons-container">
         <Link to="/">

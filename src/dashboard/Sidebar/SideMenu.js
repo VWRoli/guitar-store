@@ -1,11 +1,12 @@
 import { NavLink } from 'react-router-dom';
 
 const LINK_ITEMS = [
-  { label: 'Dashboard', route: '/admin/main' },
-  { label: 'Products', route: '/admin/products' },
-  { label: 'Orders', route: '/admin/orders' },
-  { label: 'Customers', route: '/admin/customers' },
-  { label: 'Stats', route: '/admin/stats' },
+  { label: 'Dashboard', route: '/dashboard' },
+  { label: 'Products', route: '/dashboard/products' },
+  { label: 'Orders', route: '/dashboard/orders' },
+  { label: 'Customers', route: '/dashboard/customers' },
+  { label: 'Addresses', route: '/dashboard/customers/addresses' },
+  { label: 'Stats', route: '/dashboard/stats' },
 ];
 
 const SideMenu = () => {
@@ -13,9 +14,7 @@ const SideMenu = () => {
     <ul className="admin-side-menu">
       {LINK_ITEMS.map((item) => (
         <li key={item.label}>
-          <NavLink to={item.route} activeClassName="active-link">
-            {item.label}
-          </NavLink>
+          <NavLink to={item.route}>{item.label}</NavLink>
         </li>
       ))}
     </ul>

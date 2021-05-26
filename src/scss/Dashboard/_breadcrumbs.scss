@@ -1,0 +1,16 @@
+.breadcrumbs {
+  display: flex;
+  text-transform: capitalize;
+  a {
+    color: $light-bg;
+    margin-right: 0.5rem;
+    &::after {
+      content: '>';
+      margin-left: 0.5rem;
+    }
+  }
+  p {
+    font-weight: 500;
+    color: $muted;
+  }
+}
