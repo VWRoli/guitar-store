@@ -24,8 +24,15 @@
   flex-direction: column;
   border-top: 1px solid $light-bg;
   border-bottom: 1px solid $light-bg;
-  li {
-    a {
+  .admin-menu-item {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    a,
+    p {
       display: inline-block;
       padding: 0.5rem;
       width: 100%;
@@ -37,7 +44,39 @@
     }
   }
 }
-/*not working interferes with front page and routes too */
-/* .active-link {
-  background-color: $main-color;
-} */
+
+.admin-menu-icons {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+}
+
+.dropdown-menu {
+  background-color: darken($secondary-color, 10%);
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+
+  .dropdown-menu-item {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    a,
+    p {
+      display: inline-block;
+      padding: 0.5rem;
+      width: 100%;
+      color: $light-bg;
+      font-size: 0.9rem;
+    }
+    &:hover {
+      background-color: darken($secondary-color, 5%);
+      cursor: pointer;
+    }
+  }
+}
+.toggle-dropdown {
+  height: auto;
+  max-height: 17vh;
+}
