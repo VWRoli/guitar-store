@@ -1,6 +1,6 @@
 const ProfileMenu = () => {
   return (
-    <header className="admin-profile-menu">
+    <header className="admin-profile">
       <h2>Admin</h2>
       <div className="admin-profile-img-container">
         <img
@@ -8,7 +8,7 @@ const ProfileMenu = () => {
           alt="Admin User"
         />
       </div>
-      <h3>Admin User</h3>
+      <h3>Paige Turner</h3>
     </header>
   );
 };

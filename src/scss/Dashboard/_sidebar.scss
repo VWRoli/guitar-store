@@ -1,24 +1,24 @@
 .admin-sidebar {
   background-color: $secondary-color;
   color: $light-bg;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 15vw;
+  width: 280px;
   height: 100vh;
+  transition: all 0.25s;
 }
-.admin-profile-menu {
-  text-align: center;
-  margin-top: 2rem;
-  margin-bottom: 5rem;
-  .admin-profile-img-container {
-    margin: auto;
-    width: 75px;
-    img {
-      border-radius: 50%;
-    }
-  }
+.admin-sidebar.collapsed {
+  width: 62px;
 }
+.admin-sidebar.collapsed .admin-menu-icons {
+  margin: 0.5rem;
+}
+
+.admin-sidebar.collapsed .sidebar-text {
+  display: none;
+}
+
 .admin-side-menu {
   display: flex;
   flex-direction: column;
@@ -30,18 +30,20 @@
     align-items: center;
     padding-left: 1rem;
     padding-right: 1rem;
+    color: $light-bg;
 
-    a,
-    p {
-      display: inline-block;
-      padding: 0.5rem;
-      width: 100%;
-      color: $light-bg;
-    }
     &:hover {
       background-color: $main-color;
       cursor: pointer;
     }
+  }
+}
+.sidebar-text {
+  display: inline-block;
+  padding: 0.5rem;
+  width: 100%;
+  a {
+    color: $light-bg;
   }
 }
 
@@ -79,4 +81,12 @@
 .toggle-dropdown {
   height: auto;
   max-height: 17vh;
+}
+
+.dropdown-icon {
+  transition: all 0.5s ease-in-out;
+}
+
+.rotate-icon {
+  transform: rotate(180deg);
 }
