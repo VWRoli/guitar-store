@@ -1,5 +1,5 @@
 const Adresses = () => {
-  return <section className="admin-container">Adresses</section>;
+  return <section>Adresses</section>;
 };
 
 export default Adresses;

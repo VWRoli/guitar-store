@@ -1,5 +1,5 @@
 const Orders = () => {
-  return <section className="admin-container">Orders</section>;
+  return <section>Orders</section>;
 };
 
 export default Orders;

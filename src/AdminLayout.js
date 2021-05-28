@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 //Pages
-import MainDashboard from './dashboard/MainDashboard';
-import Header from './dashboard/Header';
+import MainDashboard from './dashboard/Main/MainDashboard';
+import Header from './dashboard/Header/Header';
 import Products from './dashboard/Products';
 import Sidebar from './dashboard/Sidebar/Sidebar';
 import Customers from './dashboard/Customers';

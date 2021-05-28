@@ -1,5 +1,5 @@
 const Stats = () => {
-  return <section className="admin-container">Stats</section>;
+  return <section>Stats</section>;
 };
 
 export default Stats;
