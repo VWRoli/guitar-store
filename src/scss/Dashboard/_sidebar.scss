@@ -19,6 +19,7 @@
   display: none;
 }
 
+//?SIDE MENU
 .admin-side-menu {
   display: flex;
   flex-direction: column;
@@ -51,7 +52,7 @@
   font-size: 1.5rem;
   line-height: 1.5rem;
 }
-
+//?DROPDOWN
 .dropdown-menu {
   background-color: darken($secondary-color, 10%);
   max-height: 0;

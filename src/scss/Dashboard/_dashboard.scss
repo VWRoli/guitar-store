@@ -1,7 +1,13 @@
 .admin-container {
   margin-left: 280px;
   position: relative;
+  background-color: bisque;
+  transition: all 0.25s;
 }
+.admin-container.collapsed {
+  margin-left: 62px;
+}
+//? ADMIN HEADER
 .admin-header {
   background-color: $main-color;
   color: $light-bg;
@@ -10,6 +16,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.25rem 1rem;
+  transition: all 0.25s;
   .admin-header-icons {
     @include reset-btn();
     color: $light-bg;
@@ -17,6 +24,11 @@
     margin: 0.5rem;
   }
 }
+.admin-header.collapsed {
+  margin-left: 62px;
+}
+
+//?ADMIN PROFILE
 .admin-profile {
   text-align: center;
   margin-bottom: 5rem;
@@ -38,12 +50,13 @@
   width: 45px;
 }
 
-.minimize-menu {
+//?COLLAPSE MENU
+.collapse-menu {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding: 0.5rem;
-  .minimize-menu-btn {
+  .collapse-menu-btn {
     cursor: pointer;
   }
 }
