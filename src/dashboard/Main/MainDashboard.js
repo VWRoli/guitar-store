@@ -1,6 +1,8 @@
 import * as FaIcons from 'react-icons/fa';
 import StatsCard from './StatsCard';
 import { data } from './cardData';
+import MainChart from './MainChart';
+import TopSellers from './TopSellers';
 
 const MainDashboard = () => {
   const visitors = {
@@ -33,14 +35,19 @@ const MainDashboard = () => {
   };
 
   return (
-    <section className="main-dashboard">
+    <div className="main-dashboard">
+      <h1 className="admin-welcome-title">Welcome back, Paige!</h1>
       <div className="stat-cards-container">
         <StatsCard data={data} props={visitors} />
         <StatsCard data={data} props={orders} />
         <StatsCard data={data} props={users} />
         <StatsCard data={data} props={income} />
       </div>
-    </section>
+      <div className="admin-main-content-wrapper">
+        <MainChart />
+        <TopSellers />
+      </div>
+    </div>
   );
 };
 

@@ -1,0 +1,56 @@
+.admin-main-content-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.main-chart-container {
+  grid-column: span 2;
+  height: 380px;
+}
+
+//?ADMIN TOP SELLER
+.admin-top-seller-listitem {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  .admin-top-seller-img-container {
+    grid-column: span 1;
+    width: 75px;
+    margin-right: 0.5rem;
+    img {
+      width: 100%;
+    }
+  }
+  div {
+    grid-column: span 3;
+    h5 {
+      color: $main-color;
+    }
+    p {
+      color: $muted;
+      font-size: 0.85rem;
+    }
+  }
+  .admin-top-seller-price-wrapper {
+    grid-column: span 1;
+    display: grid;
+    place-content: center;
+  }
+}
+//? ADMIN GROUP
+.admin-group {
+  background-color: $light-bg;
+  margin: 1rem;
+  padding: 0.5rem;
+  .admin-group-header {
+    color: $main-color;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 1rem;
+  }
+  .admin-group-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 1rem;
+    a {
+      @include inline-link();
+    }
+  }
+}

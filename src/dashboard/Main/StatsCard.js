@@ -1,4 +1,4 @@
-import { AreaChart, ResponsiveContainer, Area, Tooltip } from 'recharts';
+import { AreaChart, ResponsiveContainer, Area } from 'recharts';
 
 const StatsCard = ({ data, props }) => {
   const { title, count, dataRange, bgColor, icon } = props;
@@ -17,7 +17,7 @@ const StatsCard = ({ data, props }) => {
       </header>
       <div className="chart-container">
         <ResponsiveContainer width="100%" height="100%">
-          <AreaChart width={150} height={75} data={data}>
+          <AreaChart data={data}>
             <defs>
               <linearGradient id="priceGradient" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="15%" stopColor="#fff" stopOpacity={0.8} />
