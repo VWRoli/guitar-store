@@ -3,6 +3,24 @@ $secondary-color: #424242;
 $light-bg: #f6f6f6;
 $sale-color: #d80e2f;
 $muted: #999;
+
+// .admin-theme-light {
+//   --dark-text: #767b89;
+//   --light-text: #fff;
+//   --dark-background: #e8edf7;
+//   --light-background: #fff;
+//   --accent: #016a78;
+//   --button-border: #ddd;
+// }
+// .admin-theme-dark {
+//   --dark-text: #999;
+//   --light-text: #ddd;
+//   --dark-background: #262d47;
+//   --light-background: #323b5a;
+//   --accent: #b8dbd9;
+//   --button-border: #3f4864;
+// }
+
 @mixin reset-btn {
   background-color: transparent;
   border: none;

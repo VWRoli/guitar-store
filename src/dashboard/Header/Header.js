@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FaCog, FaEnvelope, FaSignOutAlt } from 'react-icons/fa';
+import { FaCog, FaEnvelope, FaMoon, FaSignOutAlt } from 'react-icons/fa';
 import Breadcrumbs from './Breadcrumbs';
 
 const Header = ({ isExpanded }) => {
@@ -14,7 +14,10 @@ const Header = ({ isExpanded }) => {
           <FaSignOutAlt className="admin-header-icons" />
         </Link>
         <FaEnvelope className="admin-header-icons" />
+
         <FaCog className="admin-header-icons" />
+
+        <FaMoon className="admin-header-icons" />
       </div>
     </header>
   );
