@@ -6,8 +6,8 @@ import { API_ROOT } from '../../constants/constant';
 import ListItem from '../ListItem';
 import Error from '../../Error';
 import Loading from '../../Loading';
-import Skeleton from "../Skeleton";
-import SkeletonList from "../SkeletonList";
+import Skeleton from '../Skeleton';
+import SkeletonList from '../SkeletonList';
 
 const ListContainer = () => {
   const { data: products, isLoading, isError } = useFetch(API_ROOT);
@@ -35,39 +35,49 @@ const ListContainer = () => {
 
   return (
     <>
-      <h2 className='list-title'>Guitars On Sale:</h2>
-      {isLoading ? <SkeletonList itemNumber={4}/> : <Slider {...settings} className='list'>
-        {guitarsOnSale.map((product) => (
+      <h2 className="list-title">Guitars On Sale:</h2>
+      {isLoading ? (
+        <SkeletonList itemNumber={4} />
+      ) : (
+        <Slider {...settings} className="list">
+          {guitarsOnSale.map((product) => (
             <ListItem key={product.id} product={product} />
-        ))
-        }
-      </Slider>}
-      
+          ))}
+        </Slider>
+      )}
 
-      <h2 className='list-title'>Amps On Sale:</h2>
-      {isLoading ? <SkeletonList itemNumber={4}/> : <Slider {...settings} className='list'>
-        {ampsOnSale.map((product) => (
+      <h2 className="list-title">Amps On Sale:</h2>
+      {isLoading ? (
+        <SkeletonList itemNumber={4} />
+      ) : (
+        <Slider {...settings} className="list">
+          {ampsOnSale.map((product) => (
             <ListItem key={product.id} product={product} />
-        ))
-        }
-      </Slider>}
+          ))}
+        </Slider>
+      )}
 
-      <h2 className='list-title'>Top Seller Guitars:</h2>
-      {isLoading ? <SkeletonList itemNumber={4}/> : <Slider {...settings} className='list'>
-        {topGuitars.map((product) => (
+      <h2 className="list-title">Top Seller Guitars:</h2>
+      {isLoading ? (
+        <SkeletonList itemNumber={4} />
+      ) : (
+        <Slider {...settings} className="list">
+          {topGuitars.map((product) => (
             <ListItem key={product.id} product={product} />
-        ))
-        }
-      </Slider>}
+          ))}
+        </Slider>
+      )}
 
-      <h2 className='list-title'>Top Seller Amps:</h2>
-
-      {isLoading ? <SkeletonList itemNumber={4}/> : <Slider {...settings} className='list'>
-        {topAmps.map((product) => (
+      <h2 className="list-title">Top Seller Amps:</h2>
+      {isLoading ? (
+        <SkeletonList itemNumber={4} />
+      ) : (
+        <Slider {...settings} className="list">
+          {topAmps.map((product) => (
             <ListItem key={product.id} product={product} />
-        ))
-        }
-      </Slider>}
+          ))}
+        </Slider>
+      )}
     </>
   );
 };
