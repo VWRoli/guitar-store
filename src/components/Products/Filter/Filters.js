@@ -3,16 +3,12 @@ import { API_ROOT } from '../../../constants/constant';
 import PropTypes from 'prop-types';
 //Components
 import Error from '../../../Error';
-import Loading from '../../../Loading';
 import FilterGroup from './FilterGroup';
 
 const Filters = ({ visible, setVisible }) => {
   const { data, isError, isLoading } = useFetch(API_ROOT);
 
-  //Loading screen
-  if (isLoading) return <Loading />;
-
-  //Errro handling
+  //Error handling
   if (isError) return <Error />;
 
   //Filter groups
@@ -29,10 +25,26 @@ const Filters = ({ visible, setVisible }) => {
       <button className="close-filters" onClick={() => setVisible(!visible)}>
         Close Filters
       </button>
-      <FilterGroup items={filterGroups(data, 'category')} name={'Category'} />
-      <FilterGroup items={filterGroups(data, 'type')} name={'Type'} />
-      <FilterGroup items={filterGroups(data, 'brand')} name={'Brand'} />
-      <FilterGroup items={filterGroups(data, 'color')} name={'Color'} />
+      <FilterGroup
+        items={filterGroups(data, 'category')}
+        name={'Category'}
+        isLoading={isLoading}
+      />
+      <FilterGroup
+        items={filterGroups(data, 'type')}
+        name={'Type'}
+        isLoading={isLoading}
+      />
+      <FilterGroup
+        items={filterGroups(data, 'brand')}
+        name={'Brand'}
+        isLoading={isLoading}
+      />
+      <FilterGroup
+        items={filterGroups(data, 'color')}
+        name={'Color'}
+        isLoading={isLoading}
+      />
       <FilterGroup
         items={filterGroups(data, 'orientation')}
         name={'Orientation'}
