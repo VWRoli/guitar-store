@@ -1,6 +1,7 @@
 .skeleton {
   opacity: 0.7;
   animation: skeleton-loading 2s ease-in-out infinite alternate;
+  border-radius: 3px;
 }
 .skeleton-title {
   width: 90%;

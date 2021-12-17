@@ -1,11 +1,7 @@
-import { FaStar } from 'react-icons/fa';
-
 const Skeleton = () => {
   return (
-    <article className="list-item" style={{ width: '350px' }}>
-      <div className="img-container skeleton">
-        <img src="" className="" />
-      </div>
+    <article className="list-item">
+      <div className="img-container skeleton"></div>
       <div className="skeleton skeleton-title"></div>
       <div className="skeleton-text-container">
         <div className="skeleton skeleton-text"></div>

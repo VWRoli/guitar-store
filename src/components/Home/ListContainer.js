@@ -5,16 +5,10 @@ import { API_ROOT } from '../../constants/constant';
 //Components
 import ListItem from '../ListItem';
 import Error from '../../Error';
-import Loading from '../../Loading';
-import Skeleton from '../Skeleton';
 import SkeletonList from '../SkeletonList';
 
 const ListContainer = () => {
   const { data: products, isLoading, isError } = useFetch(API_ROOT);
-  //Loading screen
-  /* if (isLoading) {
-    return <Loading />;
-  } */
 
   //Error Message
   if (isError) {
@@ -36,6 +30,7 @@ const ListContainer = () => {
   return (
     <>
       <h2 className="list-title">Guitars On Sale:</h2>
+
       {isLoading ? (
         <SkeletonList itemNumber={4} />
       ) : (
