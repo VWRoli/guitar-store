@@ -8,10 +8,10 @@ const middleware = [thunk];
 
 const createStoreWithMiddleware = applyMiddleware(
   save({ states: ['compare', 'cart'] }),
-  ...middleware
+  ...middleware,
 )(createStore);
 
 export const store = createStoreWithMiddleware(
   rootReducer,
-  load({ states: ['compare', 'cart'] })
+  load({ states: ['compare', 'cart'] }),
 );

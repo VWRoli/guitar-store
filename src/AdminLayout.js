@@ -31,9 +31,8 @@ const AdminLayout = () => {
       <Header isExpanded={isExpanded} />
       <Sidebar handleToggler={handleToggler} isExpanded={isExpanded} />
       <div
-        className={
-          isExpanded ? 'admin-container' : 'admin-container collapsed'
-        }>
+        className={isExpanded ? 'admin-container' : 'admin-container collapsed'}
+      >
         <Switch>
           <Route exact path="/dashboard" render={() => <MainDashboard />} />
           <Route exact path="/dashboard/products" render={() => <Products />} />

@@ -25,8 +25,8 @@ const Filters = ({ visible, setVisible }) => {
 
   return (
     <section className={visible ? 'filters show-filters' : 'filters'}>
-      <h1 className='filters-title'>Filters:</h1>
-      <button className='close-filters' onClick={() => setVisible(!visible)}>
+      <h1 className="filters-title">Filters:</h1>
+      <button className="close-filters" onClick={() => setVisible(!visible)}>
         Close Filters
       </button>
       <FilterGroup items={filterGroups(data, 'category')} name={'Category'} />

@@ -11,11 +11,11 @@ const CartItem = ({ item, toggleCartAmount, removeCartItem }) => {
   const onSalePrice = price * 0.9;
 
   return (
-    <div className='your-cart-item'>
-      <div className='cart-item-img'>
+    <div className="your-cart-item">
+      <div className="cart-item-img">
         <img src={images[0]} alt={name} />
       </div>
-      <div className='item-info'>
+      <div className="item-info">
         <h3>
           <Link to={`/product/${id}`}>{name}</Link>
         </h3>
@@ -24,15 +24,15 @@ const CartItem = ({ item, toggleCartAmount, removeCartItem }) => {
           Orders placed until 12:00, will be shipped the same day, if the item
           is in stock.
         </p>
-        <button className='delete-item' onClick={() => removeCartItem(id)}>
+        <button className="delete-item" onClick={() => removeCartItem(id)}>
           <FaTrash />
         </button>
       </div>
-      <div className='item-price'>
+      <div className="item-price">
         <h3>
           {isOnSale ? (
             <>
-              <span className='old-price'>{priceFormatter(price)}</span>
+              <span className="old-price">{priceFormatter(price)}</span>
               <span>{priceFormatter(onSalePrice * amount)}</span>
             </>
           ) : (
@@ -41,7 +41,7 @@ const CartItem = ({ item, toggleCartAmount, removeCartItem }) => {
         </h3>
         <div>
           Quantity
-          <div className='quantity-controls'>
+          <div className="quantity-controls">
             <button onClick={() => toggleCartAmount(id, 'decrease')}>
               <FaChevronDown />
             </button>

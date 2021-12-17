@@ -24,11 +24,11 @@ const OnSale = () => {
 
   return (
     <>
-      <h1 className='onsale-title'>Our On Sale Products:</h1>
+      <h1 className="onsale-title">Our On Sale Products:</h1>
       {isLoading ? (
         <Loading />
       ) : (
-        <div className='onsale-wrapper'>
+        <div className="onsale-wrapper">
           {productsOnSale.map((product) => (
             <ListItem product={product} key={product.id} />
           ))}

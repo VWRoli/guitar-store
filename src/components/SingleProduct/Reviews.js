@@ -11,9 +11,9 @@ const Reviews = () => {
   //Handle Loading
   if (isLoading)
     return (
-      <section id='product-reviews'>
+      <section id="product-reviews">
         <header>
-          <h2 id='reviews'>Reviews</h2>
+          <h2 id="reviews">Reviews</h2>
         </header>
         <Loading />
       </section>
@@ -22,18 +22,18 @@ const Reviews = () => {
   //Handle Error
   if (isError)
     return (
-      <section id='product-reviews'>
+      <section id="product-reviews">
         <header>
-          <h2 id='reviews'>Reviews</h2>
+          <h2 id="reviews">Reviews</h2>
         </header>
         <Error />
       </section>
     );
 
   return (
-    <section id='product-reviews'>
+    <section id="product-reviews">
       <header>
-        <h2 id='reviews'>Reviews</h2>
+        <h2 id="reviews">Reviews</h2>
       </header>
       {reviews.map((review) => (
         <ReviewComment {...review} key={review.id} />

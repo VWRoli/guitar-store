@@ -47,7 +47,7 @@ const SideMenu = () => {
               <span className="sidebar-text">{item.label}</span>
             </NavLink>
           </li>
-        )
+        ),
       )}
     </ul>
   );

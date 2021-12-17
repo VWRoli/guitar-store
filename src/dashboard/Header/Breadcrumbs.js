@@ -1,4 +1,5 @@
 import { Link, withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const Breadcrumbs = (props) => {
   const {
@@ -24,3 +25,7 @@ const Breadcrumbs = (props) => {
 };
 
 export default withRouter(Breadcrumbs);
+
+Breadcrumbs.propTypes = {
+  location: PropTypes.string,
+};

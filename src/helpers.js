@@ -1,4 +1,5 @@
 import { FaChevronCircleRight, FaChevronCircleLeft } from 'react-icons/fa';
+import PropTypes from 'prop-types';
 
 //Price formatter
 export const priceFormatter = (price) => {
@@ -16,7 +17,7 @@ export const priceFormatter = (price) => {
 //Filter products
 export const filterProducts = (products, category, condition) => {
   return products.filter(
-    (product) => product.category === category && product[condition]
+    (product) => product.category === category && product[condition],
   );
 };
 
@@ -41,6 +42,12 @@ function SampleNextArrow(props) {
   );
 }
 
+SampleNextArrow.propTypes = {
+  className: PropTypes.string,
+  onClick: PropTypes.func,
+  style: PropTypes.object,
+};
+
 //Slider prev arrow
 function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
@@ -52,6 +59,13 @@ function SamplePrevArrow(props) {
     />
   );
 }
+
+SamplePrevArrow.propTypes = {
+  className: PropTypes.string,
+  onClick: PropTypes.func,
+  style: PropTypes.object,
+};
+
 //Slider settings
 export const settings = {
   infinite: false,

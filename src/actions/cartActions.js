@@ -41,11 +41,11 @@ export const addCartItem = (product) => (dispatch, getState) => {
   if (inCart) {
     //Delete existing item from cart
     const newCart = getState().cart.cart.filter(
-      (item) => item.id !== product.id
+      (item) => item.id !== product.id,
     );
     //create new item
     const [newItem] = getState().cart.cart.filter(
-      (item) => product.id === item.id
+      (item) => product.id === item.id,
     );
     //update new item amount
     const updatedItem = { ...newItem, amount: newItem.amount + 1 };

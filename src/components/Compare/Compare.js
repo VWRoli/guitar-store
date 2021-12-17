@@ -16,7 +16,7 @@ const Compare = ({ compare, clearCompareItems, removeCompareItem }) => {
   const containsGuitar = compare.some((item) => item.category === 'guitar');
 
   return (
-    <section className='compare'>
+    <section className="compare">
       {compare.length !== 0 ? (
         <>
           <table>
@@ -27,8 +27,9 @@ const Compare = ({ compare, clearCompareItems, removeCompareItem }) => {
                   <td key={item.id}>
                     <img src={item.images[0]} alt={item.name} />
                     <button
-                      className='delete-compare-item'
-                      onClick={() => removeCompareItem(item.id)}>
+                      className="delete-compare-item"
+                      onClick={() => removeCompareItem(item.id)}
+                    >
                       <FaTimesCircle />
                     </button>
                   </td>
@@ -38,7 +39,7 @@ const Compare = ({ compare, clearCompareItems, removeCompareItem }) => {
                 <th>Name:</th>
                 {compare.map((item) => (
                   <td key={item.id}>
-                    <Link to={`/product/${item.id}`} className='compare-link'>
+                    <Link to={`/product/${item.id}`} className="compare-link">
                       {item.name}
                     </Link>
                   </td>
@@ -102,7 +103,7 @@ const Compare = ({ compare, clearCompareItems, removeCompareItem }) => {
                         <td key={item.id}>{item.pickups.config}</td>
                       ) : (
                         <td key={item.id}></td>
-                      )
+                      ),
                     )}
                   </tr>
 
@@ -113,7 +114,7 @@ const Compare = ({ compare, clearCompareItems, removeCompareItem }) => {
                         <td key={item.id}>{item.pickups.neck}</td>
                       ) : (
                         <td key={item.id}></td>
-                      )
+                      ),
                     )}
                   </tr>
                   <tr>
@@ -123,7 +124,7 @@ const Compare = ({ compare, clearCompareItems, removeCompareItem }) => {
                         <td key={item.id}>{item.pickups.middle}</td>
                       ) : (
                         <td key={item.id}></td>
-                      )
+                      ),
                     )}
                   </tr>
                   <tr>
@@ -133,7 +134,7 @@ const Compare = ({ compare, clearCompareItems, removeCompareItem }) => {
                         <td key={item.id}>{item.pickups.bridge}</td>
                       ) : (
                         <td key={item.id}></td>
-                      )
+                      ),
                     )}
                   </tr>
 
@@ -188,13 +189,14 @@ const Compare = ({ compare, clearCompareItems, removeCompareItem }) => {
             </tbody>
           </table>
           <button
-            className='clear-compare-btn'
-            onClick={() => clearCompareItems()}>
+            className="clear-compare-btn"
+            onClick={() => clearCompareItems()}
+          >
             Clear Table
           </button>
         </>
       ) : (
-        <h2 className='no-comparison-msg'>No items to compare...</h2>
+        <h2 className="no-comparison-msg">No items to compare...</h2>
       )}
     </section>
   );

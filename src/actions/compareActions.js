@@ -10,7 +10,7 @@ export const clearCompareItems = () => (dispatch) => {
 
 export const removeCompareItem = (id) => (dispatch, getState) => {
   const newCompareItems = getState().compare.compare.filter(
-    (item) => item.id !== id
+    (item) => item.id !== id,
   );
   dispatch({ type: REMOVE_COMPARE_ITEM, payload: newCompareItems });
 };

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const Dropdown = ({ item }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +19,8 @@ const Dropdown = ({ item }) => {
         />
       </li>
       <ul
-        className={isOpen ? 'dropdown-menu toggle-dropdown' : 'dropdown-menu'}>
+        className={isOpen ? 'dropdown-menu toggle-dropdown' : 'dropdown-menu'}
+      >
         {item.submenus.map((submenu, i) => {
           return (
             <li key={i} className="dropdown-menu-item">
@@ -35,3 +37,7 @@ const Dropdown = ({ item }) => {
 };
 
 export default Dropdown;
+
+Dropdown.propTypes = {
+  item: PropTypes.object,
+};

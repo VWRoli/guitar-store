@@ -19,7 +19,7 @@ const DisplayButtons = ({ setPage, setDisplayItems }) => {
   };
 
   return (
-    <div className='display-options'>
+    <div className="display-options">
       {buttons.map((btn) => {
         return (
           <button

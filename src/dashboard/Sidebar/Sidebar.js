@@ -1,7 +1,7 @@
 import ProfileMenu from './ProfileMenu';
 import { FiChevronsLeft, FiChevronsRight } from 'react-icons/fi';
-
 import SideMenu from './SideMenu';
+import PropTypes from 'prop-types';
 
 const Sidebar = ({ handleToggler, isExpanded }) => {
   return (
@@ -26,3 +26,8 @@ const Sidebar = ({ handleToggler, isExpanded }) => {
 };
 
 export default Sidebar;
+
+Sidebar.propTypes = {
+  handleToggler: PropTypes.func,
+  isExpanded: PropTypes.bool,
+};

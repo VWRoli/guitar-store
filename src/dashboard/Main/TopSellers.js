@@ -10,7 +10,7 @@ const TopSellers = () => {
     isLoading,
     isError,
   } = useFetch(
-    'https://my-guitarstore-api.herokuapp.com/products?_page=1&_limit=4'
+    'https://my-guitarstore-api.herokuapp.com/products?_page=1&_limit=4',
   );
 
   //Loading screen

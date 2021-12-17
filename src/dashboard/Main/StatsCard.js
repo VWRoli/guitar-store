@@ -1,4 +1,5 @@
 import { AreaChart, ResponsiveContainer, Area } from 'recharts';
+import PropTypes from 'prop-types';
 
 const StatsCard = ({ data, props }) => {
   const { title, count, dataRange, bgColor, icon } = props;
@@ -40,3 +41,13 @@ const StatsCard = ({ data, props }) => {
 };
 
 export default StatsCard;
+
+StatsCard.propTypes = {
+  data: PropTypes.array,
+  props: PropTypes.object,
+  title: PropTypes.string,
+  count: PropTypes.number,
+  dataRange: PropTypes.string,
+  bgColor: PropTypes.string,
+  icon: PropTypes.element,
+};

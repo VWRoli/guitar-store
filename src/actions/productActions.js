@@ -39,7 +39,7 @@ export const fetchProducts = () => async (dispatch, getState) => {
         getState().products.searchQuery
       }&_page=${getState().products.page}&_limit=${
         getState().products.displayItems
-      }${getState().products.filter.join('')}`
+      }${getState().products.filter.join('')}`,
     );
 
     if (!response.ok) throw new Error(`${response.status} Products not found`);
@@ -52,7 +52,7 @@ export const fetchProducts = () => async (dispatch, getState) => {
         getState().products.searchQuery
       }&_page=${getState().products.page + 1}&_limit=${
         getState().products.displayItems
-      }${getState().products.filter.join('')}`
+      }${getState().products.filter.join('')}`,
     );
 
     if (!nextPageResponse.ok)

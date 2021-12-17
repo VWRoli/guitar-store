@@ -14,12 +14,12 @@ const SearchBar = ({ setSearchQuery }) => {
   };
 
   return (
-    <form className='search-bar' onSubmit={onSubmit}>
-      <label htmlFor='search'></label>
+    <form className="search-bar" onSubmit={onSubmit}>
+      <label htmlFor="search"></label>
       <input
-        type='text'
-        name='search'
-        placeholder='Search...'
+        type="text"
+        name="search"
+        placeholder="Search..."
         ref={searchValue}
         onChange={handleChange}
       />

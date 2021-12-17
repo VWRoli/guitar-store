@@ -25,7 +25,7 @@ const cartReducer = (state = defaultState, action) => {
 
     case TOGGLE_CART_AMOUNT:
       return { ...state, cart: action.payload };
-    case GET_CART_TOTAL:
+    case GET_CART_TOTAL: {
       const { total, amount } = state.cart.reduce(
         (cartTotal, cartItem) => {
           const { price, amount, isOnSale } = cartItem;
@@ -41,10 +41,10 @@ const cartReducer = (state = defaultState, action) => {
           cartTotal.amount += amount;
           return cartTotal;
         },
-        { total: 0, amount: 0 }
+        { total: 0, amount: 0 },
       );
       return { ...state, total, amount };
-
+    }
     default:
       return state;
   }

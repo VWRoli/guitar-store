@@ -34,13 +34,13 @@ const Products = ({
   const [visible, setVisible] = useState(false);
 
   return (
-    <section className='products'>
+    <section className="products">
       <SearchBar />
-      <div className='container'>
+      <div className="container">
         <Filters visible={visible} setVisible={setVisible} />
-        <section className='products-list'>
+        <section className="products-list">
           <ResultOptions visible={visible} setVisible={setVisible} />
-          <div className='product-wrapper'>
+          <div className="product-wrapper">
             <ProductsList />
           </div>
           <ResultOptions visible={visible} setVisible={setVisible} />

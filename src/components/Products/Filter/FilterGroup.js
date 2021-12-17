@@ -16,7 +16,7 @@ const FilterGroup = ({ items, name, setFilters, filter, setPage }) => {
 
     if (checkIfExists) {
       const removedFilters = filter.filter(
-        (filterItem) => filterItem !== clickedItem
+        (filterItem) => filterItem !== clickedItem,
       );
       setFilters(removedFilters);
     } else {

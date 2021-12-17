@@ -80,7 +80,8 @@ const Navbar = ({ compare, amount }) => {
                     exact={true}
                     onClick={() => {
                       setActive(false);
-                    }}>
+                    }}
+                  >
                     {link.label}
                   </NavLink>
                 </li>
@@ -94,7 +95,8 @@ const Navbar = ({ compare, amount }) => {
               className="navbar-icons navbar-cart"
               onClick={() => {
                 setActive(false);
-              }}>
+              }}
+            >
               <FaBalanceScale />
               <span className="cart-item-total">{compare.length}</span>
             </Link>
@@ -104,7 +106,8 @@ const Navbar = ({ compare, amount }) => {
               className="navbar-icons navbar-cart"
               onClick={() => {
                 setActive(false);
-              }}>
+              }}
+            >
               <FaShoppingCart />
               <span className="cart-item-total">{amount}</span>
             </Link>
@@ -125,7 +128,8 @@ const Navbar = ({ compare, amount }) => {
         to="nav"
         smooth={true}
         duration={500}
-        className={visible ? 'to-top to-top-visible' : 'to-top'}>
+        className={visible ? 'to-top to-top-visible' : 'to-top'}
+      >
         <FaChevronCircleUp />
       </ScrollLink>
     </>

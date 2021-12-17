@@ -30,9 +30,9 @@ const SuccessMessage = ({ isMessageOpen, closeMessage, total, amount }) => {
       className={isMessageOpen ? 'overlay show-message' : 'overlay'}
       onClick={closeMessage}
     >
-      <div className='msg-container'>
+      <div className="msg-container">
         <h2>Item added to your cart</h2>
-        <div className='summary-msg'>
+        <div className="summary-msg">
           <p>
             You have <span>{amount}</span> item in your cart
           </p>
@@ -40,11 +40,11 @@ const SuccessMessage = ({ isMessageOpen, closeMessage, total, amount }) => {
             Total Cost: <span>{priceFormatter(total)}</span>
           </p>
         </div>
-        <div className='success-btn-wrapper'>
-          <Link to='#' className='continue-btn' onClick={closeMessage}>
+        <div className="success-btn-wrapper">
+          <Link to="#" className="continue-btn" onClick={closeMessage}>
             Continue Shopping
           </Link>
-          <Link to='/cart' className='cart-btn' onClick={closeMessage}>
+          <Link to="/cart" className="cart-btn" onClick={closeMessage}>
             Cart / Checkout
           </Link>
         </div>

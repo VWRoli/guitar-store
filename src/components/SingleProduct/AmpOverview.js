@@ -1,16 +1,8 @@
 import PropTypes from 'prop-types';
 
 const AmpOverview = ({ product }) => {
-  const {
-    name,
-    brand,
-    type,
-    power,
-    speakers,
-    speakerType,
-    reverb,
-    usb,
-  } = product;
+  const { name, brand, type, power, speakers, speakerType, reverb, usb } =
+    product;
 
   return (
     <tbody>
