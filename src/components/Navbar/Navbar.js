@@ -116,13 +116,9 @@ const Navbar = ({ compare, amount }) => {
       </nav>
 
       <div id="sale-banner" ref={bannerRef}>
-        <div className="banner-placeholder"></div>
         <p>
           Check out our On Sale Porducts! <Link to="/onSale">Here!</Link>
         </p>
-        <Link to="/dashboard" id="admin-btn">
-          Admin Dashboard
-        </Link>
       </div>
       <ScrollLink
         to="nav"

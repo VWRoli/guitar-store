@@ -1,1 +1,1 @@
-export const API_ROOT = `https://my-guitarstore-api.herokuapp.com/products/`;
+export const API_ROOT = process.env.REACT_APP_API_URL;
