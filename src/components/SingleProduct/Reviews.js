@@ -3,7 +3,7 @@ import Loading from '../../Loading';
 import { useFetch } from '../../useFetch';
 import ReviewComment from './ReviewComment';
 
-const reviewsUrl = `http://jsonplaceholder.typicode.com/posts/1/comments`;
+const reviewsUrl = `https://jsonplaceholder.typicode.com/posts/1/comments`;
 
 const Reviews = () => {
   const { data: reviews, isLoading, isError } = useFetch(reviewsUrl);
