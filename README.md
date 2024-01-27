@@ -4,6 +4,12 @@
 
 [Live Demo](https://guitar-store-site.netlify.app/).
 
+### The backend is hosted on render.com
+
+> Render spins down a Free web service that goes 15 minutes without receiving inbound traffic. Render spins the service back up whenever it next receives a request to process.
+
+> Spinning up a service takes a few seconds, which causes a noticeable delay for incoming requests until the service is back up and running. For example, a browser page load will hang momentarily.
+
 ## Intro
 
 Complete frontend for a Guitar E-Commerce website. I also created the backend API to store the products.
